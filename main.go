@@ -148,6 +148,91 @@ func (gs *GameState) handleStoryNode(node Node) {
 // handleEncounterNode は遭遇戦ノードの処理 (簡易版)
 func (gs *GameState) handleEncounterNode(node Node) {
 	fmt.Println("\n--- エンカウント！ ---")
+
+	var currentEnemy *Enemy // 現在の敵へのポインタを保持する変数
+
+	// エンカウント情報が完全かチェックし、敵を設定
+	if node.Encounter != nil && node.Encounter.Type == "combat" &&
+		node.Encounter.CombatData != nil && len(node.Encounter.CombatData.Enemies) > 0 {
+
+		// 敵は常に1体という前提なので、最初の敵を取得
+		currentEnemy = &node.Encounter.CombatData.Enemies[0]
+
+		fmt.Printf("戦闘システム: %s, 難易度: %s\n",
+			node.Encounter.CombatSystemType,
+			node.Encounter.CombatData.Difficulty)
+		fmt.Printf("敵: %s (HP:%d AC:%d)\n", currentEnemy.Name, currentEnemy.Stats.HP, currentEnemy.Stats.AC)
+
+	} else {
+		fmt.Println("エンカウント情報が不完全です。または敵がいません。ゲーム終了。")
+		gs.CurrentNodeID = "game_over" // 不完全ならゲームオーバーへ
+		return                         // 関数を終了
+	}
+
+	// プレイヤーの簡易ステータス（ここでは固定値）
+	playerAtk := 15
+	// playerHP := 15 // 現在のロジックでは使用されないためコメントアウト
+	// playerDef := 15 // 現在のロジックでは使用されないためコメントアウト
+
+	for {
+		fmt.Printf("\n%s (HP:%d AC:%d)\n",
+			currentEnemy.Name, currentEnemy.Stats.HP, currentEnemy.Stats.AC) // 敵のHPを更新して表示
+
+		// プレイヤーの選択肢を表示
+		fmt.Println("選択してください (番号): ")
+		fmt.Println("1. 力を込めて物理で殴る")
+		fmt.Println("2. 心を鎮めて魔法を唱える")
+		fmt.Println("3. 懐を探って道具を使う")
+
+		input, _ := gs.Reader.ReadString('\n')
+		input = strings.TrimSpace(input)
+		choiceNum, err := strconv.Atoi(input)
+
+		if err != nil || choiceNum < 1 || choiceNum > 3 { // 入力エラーまたは範囲外の場合
+			fmt.Println("無効な入力です。1〜3で選択してください。")
+			continue // ループの最初に戻る
+		}
+
+		// 選択肢に応じた処理
+		switch choiceNum {
+		case 1: // 物理攻撃
+			damage := playerAtk - currentEnemy.Stats.AC // 簡易的にプレイヤーの攻撃力をそのままダメージとする
+			currentEnemy.Stats.HP -= damage
+			fmt.Printf("あなたは%sに%dダメージを与えた！\n", currentEnemy.Name, damage)
+		case 2: // 魔法
+			fmt.Println("しかし何も起きなかった。")
+		case 3: // 道具
+			fmt.Println("何も持っていない。")
+		}
+
+		// 敵のHPチェック
+		if currentEnemy.Stats.HP <= 0 {
+			fmt.Printf("%sを倒した！\n", currentEnemy.Name)
+			// 勝利した場合の次のノードを探す
+			foundOutcome := false
+			for _, outcome := range node.Outcomes {
+				if outcome.Condition == "combat_won" { // "combat_won" 条件をチェック
+					gs.CurrentNodeID = outcome.NextNodeID
+					foundOutcome = true
+					break
+				}
+			}
+			if !foundOutcome {
+				fmt.Println("エラー: 勝利時の次のノードが見つかりません。ゲーム終了。")
+				gs.CurrentNodeID = "game_over"
+			}
+			break // 戦闘ループを終了し、次のノードへ
+		}
+
+		// (敵の攻撃など、ターン制の処理を追加する場合はここに記述)
+		// 現状は敵の攻撃はないため、敵のHPが0にならない限りループが続く
+	}
+}
+
+/*
+// handleEncounterNode は遭遇戦ノードの処理 (簡易版)
+func (gs *GameState) handleEncounterNode(node Node) {
+	fmt.Println("\n--- エンカウント！ ---")
 	if node.Encounter != nil && node.Encounter.Type == "combat" {
 		fmt.Printf("戦闘システム: %s, 難易度: %s\n",
 			node.Encounter.CombatSystemType,
@@ -166,19 +251,33 @@ func (gs *GameState) handleEncounterNode(node Node) {
 
 	for {
 		fmt.Print("選択してください (番号): ")
+		fmt.Print("1.力を込めて物理で殴る")
+		fmt.Print("2.心を鎮めて魔法を唱える")
+		fmt.Print("3.懐を探って道具を使う")
 		input, _ := gs.Reader.ReadString('\n')
 		input = strings.TrimSpace(input)
 		choiceNum, err := strconv.Atoi(input)
 
-		if err == nil && (choiceNum == 1 || choiceNum == 2) {
-			var chosenCondition string
+		if err == nil && (choiceNum >= 1 && choiceNum <= 3) {
+			//var chosenCondition string
+			var playerAtk int := 15
+			var playerHP int := 15
+			var playerDef int := 15
 			if choiceNum == 1 {
-				chosenCondition = "combat_won"
-			} else {
-				chosenCondition = "combat_lost"
+				enemy.Stats.HP = enemy.Stats.HP - playerAtk
 			}
+			elseif choiceNum == 2 {
+				fmt.Print("しかし何も起きなかった")
+			}
+			elseif choiceNum == 3 {
+				fmt.Print("何も持っていない")
+			}
+			else {
+				fmt.Print("無効な入力です。もう一度入力してください。")
+			}}
 
 			// 選択された結果に対応する次のノードを探す
+			/*
 			foundOutcome := false
 			for _, outcome := range node.Outcomes {
 				if outcome.Condition == chosenCondition {
@@ -187,16 +286,21 @@ func (gs *GameState) handleEncounterNode(node Node) {
 					break
 				}
 			}
+			 if enemy.Stats.HP <= 0 {
+				gs.nodes.outcome = "combat_won"
+			}
+
 			if !foundOutcome {
 				fmt.Println("エラー: 選択された結果に対応する次のノードが見つかりません。ゲーム終了。")
 				gs.CurrentNodeID = "game_over"
 			}
 			break
 		} else {
-			fmt.Println("無効な入力です。1か2で選択してください。")
+			fmt.Println("無効な入力です。もう一度入力してください。")
 		}
 	}
 }
+*/
 
 func main() {
 	// TOMLファイルを読み込む
