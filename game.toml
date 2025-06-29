@@ -1,0 +1,68 @@
+# game.toml
+[[nodes]]
+id = "start_node"
+type = "story"
+text = "あなたは森の入り口に立っています。"
+
+[[nodes.choices]]
+text = "森の中へ進む"
+next_node_id = "forest_path"
+
+[[nodes.choices]]
+text = "引き返す"
+next_node_id = "village_entrance"
+
+[[nodes]]
+id = "forest_path"
+type = "encounter"
+text = "突然、オークが現れた！"
+
+[nodes.encounter]
+type = "combat"
+combat_system_type = "DnD5e"
+
+[nodes.encounter.combat_data]
+terrain = "forest"
+difficulty = "medium"
+
+[[nodes.encounter.combat_data.enemies]]
+name = "Orc"
+
+[nodes.encounter.combat_data.enemies.stats]
+hp = 15
+ac = 13
+
+[[nodes.outcomes]]
+condition = "combat_won"
+next_node_id = "clearing"
+
+[[nodes.outcomes]]
+condition = "combat_lost"
+next_node_id = "game_over"
+
+[[nodes]]
+id = "village_entrance"
+type = "story"
+text = "あなたは村の入り口に戻ってきました。冒険はまだ始まったばかりです。"
+
+[[nodes.choices]]
+text = "もう一度森へ"
+next_node_id = "start_node"
+
+[[nodes.choices]]
+text = "家に帰る"
+next_node_id = "game_over"
+
+[[nodes]]
+id = "clearing"
+type = "story"
+text = "オークを倒し、あなたは開けた場所に出ました。遠くに何かが見えます。"
+
+[[nodes.choices]]
+text = "さらに奥へ"
+next_node_id = "game_over" # 仮のゴール
+
+[[nodes]]
+id = "game_over"
+type = "end"
+text = "ゲームオーバー。あなたの旅はここで終わりました。"
