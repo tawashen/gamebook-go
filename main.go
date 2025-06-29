@@ -161,7 +161,8 @@ func (gs *GameState) handleEncounterNode(node Node) {
 		fmt.Printf("戦闘システム: %s, 難易度: %s\n",
 			node.Encounter.CombatSystemType,
 			node.Encounter.CombatData.Difficulty)
-		fmt.Printf("敵: %s (HP:%d AC:%d)\n", currentEnemy.Name, currentEnemy.Stats.HP, currentEnemy.Stats.AC)
+		fmt.Printf("敵: %s (HP:%d AC:%d)\n",
+			currentEnemy.Name, currentEnemy.Stats.HP, currentEnemy.Stats.AC)
 
 	} else {
 		fmt.Println("エンカウント情報が不完全です。または敵がいません。ゲーム終了。")
