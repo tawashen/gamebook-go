@@ -1,0 +1,1621 @@
+# combat_results_table.toml
+
+# Random Number 1 の行
+[[results]]
+RandNum = 1
+ComRatio = -11
+EnemyLoss = 0
+PlayerLoss = 0
+IsKilled = true # K
+
+[[results]]
+RandNum = 1
+ComRatio = -10
+EnemyLoss = 0
+PlayerLoss = 0
+IsKilled = true # K
+
+[[results]]
+RandNum = 1
+ComRatio = -9
+EnemyLoss = 0
+PlayerLoss = 0
+IsKilled = true
+
+[[results]]
+RandNum = 1
+ComRatio = -8
+EnemyLoss = 0
+PlayerLoss = 8
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = -7
+EnemyLoss = 0
+PlayerLoss = 8
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = -6
+EnemyLoss = 0
+PlayerLoss = 6
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = -5
+EnemyLoss = 0
+PlayerLoss = 6
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = -4
+EnemyLoss = 1
+PlayerLoss = 6
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = -3
+EnemyLoss = 1
+PlayerLoss = 6
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = -2
+EnemyLoss = 2
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = -1
+EnemyLoss = 2
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = 0
+EnemyLoss = 3
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = 1
+EnemyLoss = 4
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = 2
+EnemyLoss = 4
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = 3
+EnemyLoss = 5
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = 4
+EnemyLoss = 5
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = 5
+EnemyLoss = 6
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = 6
+EnemyLoss = 6
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = 7
+EnemyLoss = 7
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = 8
+EnemyLoss = 7
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = 9
+EnemyLoss = 8
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = 10
+EnemyLoss = 8
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 1
+ComRatio = 11
+EnemyLoss = 9
+PlayerLoss = 3
+IsKilled = false
+
+# Random Number 2 の行
+[[results]]
+RandNum = 2
+ComRatio = -11
+EnemyLoss = 0
+PlayerLoss = 0
+IsKilled = true # K
+
+[[results]]
+RandNum = 2
+ComRatio = -10
+EnemyLoss = 0
+PlayerLoss = 8
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = -9
+EnemyLoss = 0
+PlayerLoss = 8
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = -8
+EnemyLoss = 0
+PlayerLoss = 7
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = -7
+EnemyLoss = 0
+PlayerLoss = 7
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = -6
+EnemyLoss = 1
+PlayerLoss = 6
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = -5
+EnemyLoss = 1
+PlayerLoss = 6
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = -4
+EnemyLoss = 2
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = -3
+EnemyLoss = 2
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = -2
+EnemyLoss = 3
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = -1
+EnemyLoss = 3
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = 0
+EnemyLoss = 4
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = 1
+EnemyLoss = 4
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = 2
+EnemyLoss = 4
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = 3
+EnemyLoss = 6
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = 4
+EnemyLoss = 6
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = 5
+EnemyLoss = 7
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = 6
+EnemyLoss = 7
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = 7
+EnemyLoss = 8
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = 8
+EnemyLoss = 8
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = 9
+EnemyLoss = 9
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = 10
+EnemyLoss = 9
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 2
+ComRatio = 11
+EnemyLoss = 10
+PlayerLoss = 2
+IsKilled = false
+
+# Random Number 3 の行
+[[results]]
+RandNum = 3
+ComRatio = -11
+EnemyLoss = 0
+PlayerLoss = 8
+IsKilled = true # K
+
+[[results]]
+RandNum = 3
+ComRatio = -10
+EnemyLoss = 0
+PlayerLoss = 7
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = -9
+EnemyLoss = 0
+PlayerLoss = 7
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = -8
+EnemyLoss = 1
+PlayerLoss = 6
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = -7
+EnemyLoss = 1
+PlayerLoss = 6
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = -6
+EnemyLoss = 2
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = -5
+EnemyLoss = 2
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = -4
+EnemyLoss = 3
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = -3
+EnemyLoss = 3
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = -2
+EnemyLoss = 4
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = -1
+EnemyLoss = 4
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = 0
+EnemyLoss = 5
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = 1
+EnemyLoss = 6
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = 2
+EnemyLoss = 6
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = 3
+EnemyLoss = 7
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = 4
+EnemyLoss = 7
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = 5
+EnemyLoss = 8
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = 6
+EnemyLoss = 8
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = 7
+EnemyLoss = 9
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = 8
+EnemyLoss = 9
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = 9
+EnemyLoss = 10
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = 10
+EnemyLoss = 10
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 3
+ComRatio = 11
+EnemyLoss = 11
+PlayerLoss = 2
+IsKilled = false
+
+# Random Number 4 の行
+[[results]]
+RandNum = 4
+ComRatio = -11
+EnemyLoss = 0
+PlayerLoss = 8
+IsKilled = false # K
+
+[[results]]
+RandNum = 4
+ComRatio = -10
+EnemyLoss = 1
+PlayerLoss = 7
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = -9
+EnemyLoss = 1
+PlayerLoss = 7
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = -8
+EnemyLoss = 2
+PlayerLoss = 6
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = -7
+EnemyLoss = 2
+PlayerLoss = 6
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = -6
+EnemyLoss = 3
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = -5
+EnemyLoss = 3
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = -4
+EnemyLoss = 4
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = -3
+EnemyLoss = 4
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = -2
+EnemyLoss = 5
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = -1
+EnemyLoss = 5
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = 0
+EnemyLoss = 6
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = 1
+EnemyLoss = 7
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = 2
+EnemyLoss = 7
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = 3
+EnemyLoss = 8
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = 4
+EnemyLoss = 8
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = 5
+EnemyLoss = 9
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = 6
+EnemyLoss = 9
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = 7
+EnemyLoss = 10
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = 8
+EnemyLoss = 10
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = 9
+EnemyLoss = 11
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = 10
+EnemyLoss = 11
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 4
+ComRatio = 11
+EnemyLoss = 12
+PlayerLoss = 2
+IsKilled = false
+
+# Random Number 5 の行
+[[results]]
+RandNum = 5
+ComRatio = -11
+EnemyLoss = 1
+PlayerLoss = 7
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = -10
+EnemyLoss = 2
+PlayerLoss = 6
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = -9
+EnemyLoss = 2
+PlayerLoss = 6
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = -8
+EnemyLoss = 3
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = -7
+EnemyLoss = 3
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = -6
+EnemyLoss = 4
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = -5
+EnemyLoss = 4
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = -4
+EnemyLoss = 5
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = -3
+EnemyLoss = 5
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = -2
+EnemyLoss = 6
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = -1
+EnemyLoss = 6
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = 0
+EnemyLoss = 7
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = 1
+EnemyLoss = 8
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = 2
+EnemyLoss = 8
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = 3
+EnemyLoss = 9
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = 4
+EnemyLoss = 9
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = 5
+EnemyLoss = 10
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = 6
+EnemyLoss = 10
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = 7
+EnemyLoss = 11
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = 8
+EnemyLoss = 11
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = 9
+EnemyLoss = 12
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = 10
+EnemyLoss = 12
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 5
+ComRatio = 11
+EnemyLoss = 14
+PlayerLoss = 1
+IsKilled = false
+
+# Random Number 6 の行
+[[results]]
+RandNum = 6
+ComRatio = -11
+EnemyLoss = 2
+PlayerLoss = 6
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = -10
+EnemyLoss = 3
+PlayerLoss = 6
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = -9
+EnemyLoss = 3
+PlayerLoss = 6
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = -8
+EnemyLoss = 4
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = -7
+EnemyLoss = 4
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = -6
+EnemyLoss = 5
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = -5
+EnemyLoss = 5
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = -4
+EnemyLoss = 6
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = -3
+EnemyLoss = 6
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = -2
+EnemyLoss = 7
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = -1
+EnemyLoss = 7
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = 0
+EnemyLoss = 8
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = 1
+EnemyLoss = 9
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = 2
+EnemyLoss = 9
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = 3
+EnemyLoss = 10
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = 4
+EnemyLoss = 10
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = 5
+EnemyLoss = 11
+PlayerLoss = 1
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = 6
+EnemyLoss = 11
+PlayerLoss = 1
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = 7
+EnemyLoss = 12
+PlayerLoss = 1
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = 8
+EnemyLoss = 12
+PlayerLoss = 1
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = 9
+EnemyLoss = 14
+PlayerLoss = 1
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = 10
+EnemyLoss = 14
+PlayerLoss = 1
+IsKilled = false
+
+[[results]]
+RandNum = 6
+ComRatio = 11
+EnemyLoss = 16
+PlayerLoss = 1
+IsKilled = false
+
+# Random Number 7 の行
+[[results]]
+RandNum = 7
+ComRatio = -11
+EnemyLoss = 3
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = -10
+EnemyLoss = 4
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = -9
+EnemyLoss = 4
+PlayerLoss = 5
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = -8
+EnemyLoss = 5
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = -7
+EnemyLoss = 5
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = -6
+EnemyLoss = 6
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = -5
+EnemyLoss = 6
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = -4
+EnemyLoss = 7
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = -3
+EnemyLoss = 7
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = -2
+EnemyLoss = 8
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = -1
+EnemyLoss = 8
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = 0
+EnemyLoss = 9
+PlayerLoss = 1
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = 1
+EnemyLoss = 10
+PlayerLoss = 1
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = 2
+EnemyLoss = 10
+PlayerLoss = 1
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = 3
+EnemyLoss = 11
+PlayerLoss = 1 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = 4
+EnemyLoss = 11
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = 5
+EnemyLoss = 12
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = 6
+EnemyLoss = 12
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = 7
+EnemyLoss = 14
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = 8
+EnemyLoss = 14
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = 9
+EnemyLoss = 16
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = 10
+EnemyLoss = 16
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 7
+ComRatio = 11
+EnemyLoss = 18
+PlayerLoss = 0 # 0
+IsKilled = false
+
+# Random Number 8 の行
+[[results]]
+RandNum = 8
+ComRatio = -11
+EnemyLoss = 4
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = -10
+EnemyLoss = 5
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = -9
+EnemyLoss = 5
+PlayerLoss = 4
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = -8
+EnemyLoss = 6
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = -7
+EnemyLoss = 6
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = -6
+EnemyLoss = 7
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = -5
+EnemyLoss = 7
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = -4
+EnemyLoss = 8
+PlayerLoss = 1
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = -3
+EnemyLoss = 8
+PlayerLoss = 1
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = -2
+EnemyLoss = 9
+PlayerLoss = 1
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = -1
+EnemyLoss = 9
+PlayerLoss = 1 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = 0
+EnemyLoss = 10
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = 1
+EnemyLoss = 11
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = 2
+EnemyLoss = 11
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = 3
+EnemyLoss = 12
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = 4
+EnemyLoss = 12
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = 5
+EnemyLoss = 14
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = 6
+EnemyLoss = 14
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = 7
+EnemyLoss = 16
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 8
+ComRatio = 8
+EnemyLoss = 16
+PlayerLoss = 0 # K
+IsKilled = true
+
+[[results]]
+RandNum = 8
+ComRatio = 9
+EnemyLoss = 18
+PlayerLoss = 0 # K
+IsKilled = true
+
+[[results]]
+RandNum = 8
+ComRatio = 10
+EnemyLoss = 18
+PlayerLoss = 0 # K
+IsKilled = true
+
+[[results]]
+RandNum = 8
+ComRatio = 11
+EnemyLoss = 18
+PlayerLoss = 0
+IsKilled = true # K
+
+# Random Number 9 の行
+[[results]]
+RandNum = 9
+ComRatio = -11
+EnemyLoss = 5
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = -10
+EnemyLoss = 6
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = -9
+EnemyLoss = 6
+PlayerLoss = 3
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = -8
+EnemyLoss = 7
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = -7
+EnemyLoss = 7
+PlayerLoss = 2
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = -6
+EnemyLoss = 8
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = -5
+EnemyLoss = 8
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = -4
+EnemyLoss = 9
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = -3
+EnemyLoss = 9
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = -2
+EnemyLoss = 10
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = -1
+EnemyLoss = 10
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = 0
+EnemyLoss = 11
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = 1
+EnemyLoss = 12
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = 2
+EnemyLoss = 12
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = 3
+EnemyLoss = 14
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = 4
+EnemyLoss = 14
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = 5
+EnemyLoss = 16
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = 6
+EnemyLoss = 16
+PlayerLoss = 0 # 0
+IsKilled = false
+
+[[results]]
+RandNum = 9
+ComRatio = 7
+EnemyLoss = 18
+PlayerLoss = 0 # K
+IsKilled = true
+
+[[results]]
+RandNum = 9
+ComRatio = 8
+EnemyLoss = 18
+PlayerLoss = 0 # K
+IsKilled = true
+
+[[results]]
+RandNum = 9
+ComRatio = 9
+EnemyLoss = 18
+PlayerLoss = 0
+IsKilled = true # K
+
+[[results]]
+RandNum = 9
+ComRatio = 10
+EnemyLoss = 18
+PlayerLoss = 0
+IsKilled = true # K
+
+[[results]]
+RandNum = 9
+ComRatio = 11
+EnemyLoss = 18
+PlayerLoss = 0
+IsKilled = true # K
+
+# Random Number 0 (最下段) --- これは元の表の最下段と同じ値を繰り返します
+[[results]]
+RandNum = 0
+ComRatio = -11
+EnemyLoss = 6
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = -10
+EnemyLoss = 7
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = -9
+EnemyLoss = 8
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = -8
+EnemyLoss = 9
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = -7
+EnemyLoss = 10
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = -6
+EnemyLoss = 10
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = -5
+EnemyLoss = 11
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = -4
+EnemyLoss = 12
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = -3
+EnemyLoss = 14
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = -2
+EnemyLoss = 14
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = -1
+EnemyLoss = 16
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = 0
+EnemyLoss = 12 # 元のテーブルに合わせる
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = 1
+EnemyLoss = 14 # 元のテーブルに合わせる
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = 2
+EnemyLoss = 16 # 元のテーブルに合わせる
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = 3
+EnemyLoss = 18 # 元のテーブルに合わせる
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = 4
+EnemyLoss = 18 # 元のテーブルに合わせる
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = 5
+EnemyLoss = 18 # 元のテーブルに合わせる
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = 6
+EnemyLoss = 18 # 元のテーブルに合わせる
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = 7
+EnemyLoss = 18 # 元のテーブルに合わせる
+PlayerLoss = 0
+IsKilled = false
+
+[[results]]
+RandNum = 0
+ComRatio = 8
+EnemyLoss = 18
+PlayerLoss = 0
+IsKilled = true # K
+
+[[results]]
+RandNum = 0
+ComRatio = 9
+EnemyLoss = 18
+PlayerLoss = 0
+IsKilled = true # K
+
+[[results]]
+RandNum = 0
+ComRatio = 10
+EnemyLoss = 18
+PlayerLoss = 0
+IsKilled = true # K
+
+[[results]]
+RandNum = 0
+ComRatio = 11
+EnemyLoss = 18
+PlayerLoss = 0
+IsKilled = true # K
