@@ -7,6 +7,7 @@ import (
 	"log"
 	"math/rand"
 	"os"
+	"path/filepath" // Remove since it's not used
 	"strconv"
 	"strings"
 	"time"
@@ -70,6 +71,30 @@ type Outcome struct {
 	NextNodeID string `toml:"next_node_id"`
 }
 
+func init() {
+	fmt.Println("Initializing CRT...")
+	// crtマップを初期化
+	crt = make(map[KeyPair]DamagePair)
+
+	// TOMLファイルのパス
+	filePath := filepath.Join(".", "combat_result_table.toml") // 実行ファイルと同じディレクトリを想定
+
+	// TOMLファイルを読み込み
+	var data CRTData
+	if _, err := toml.DecodeFile(filePath, &data); err != nil {
+		fmt.Fprintf(os.Stderr, "Error decoding TOML file: %v\n", err)
+		// エラーが発生した場合、プログラムを終了させるか、デフォルト値を設定するなどの対応が必要
+		os.Exit(1) // 例として終了
+	}
+
+	// 読み込んだデータをマップに格納
+	for _, result := range data.Results {
+		crt[result.KeyPair] = result.DamagePair
+	}
+	fmt.Println("CRT initialized successfully.")
+
+}
+
 // --- ゲームロジック ---
 
 // GameState は現在のゲームの状態を保持する
@@ -80,271 +105,26 @@ type GameState struct {
 }
 
 type KeyPair struct {
-	RandNum  int
-	ComRatio int
+	RandNum  int `toml:"RandNum"`
+	ComRatio int `toml:"ComRatio"`
 }
 
 type DamagePair struct {
-	EnemyLoss  int
-	PlayerLoss int
-	IsKilled   bool
+	EnemyLoss  int  `toml:"EnemyLoss"`
+	PlayerLoss int  `toml:"PlayerLoss"`
+	IsKilled   bool `toml:"IsKilled"`
 }
 
-func createCombatResultsTable() map[KeyPair]DamagePair {
-	crt := make(map[KeyPair]DamagePair)
-
-	// --- Random Number 1 ---
-	crt[KeyPair{RandNum: 1, ComRatio: -11}] = DamagePair{EnemyLoss: 0, PlayerLoss: 0, IsKilled: true} // K
-	crt[KeyPair{RandNum: 1, ComRatio: -10}] = DamagePair{EnemyLoss: 0, PlayerLoss: 0, IsKilled: true} // K
-	crt[KeyPair{RandNum: 1, ComRatio: -9}] = DamagePair{EnemyLoss: 0, PlayerLoss: 0, IsKilled: true}
-	crt[KeyPair{RandNum: 1, ComRatio: -8}] = DamagePair{EnemyLoss: 0, PlayerLoss: 8}
-	crt[KeyPair{RandNum: 1, ComRatio: -7}] = DamagePair{EnemyLoss: 0, PlayerLoss: 8}
-	crt[KeyPair{RandNum: 1, ComRatio: -6}] = DamagePair{EnemyLoss: 0, PlayerLoss: 6}
-	crt[KeyPair{RandNum: 1, ComRatio: -5}] = DamagePair{EnemyLoss: 0, PlayerLoss: 6}
-	crt[KeyPair{RandNum: 1, ComRatio: -4}] = DamagePair{EnemyLoss: 1, PlayerLoss: 6}
-	crt[KeyPair{RandNum: 1, ComRatio: -3}] = DamagePair{EnemyLoss: 1, PlayerLoss: 6}
-	crt[KeyPair{RandNum: 1, ComRatio: -2}] = DamagePair{EnemyLoss: 2, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 1, ComRatio: -1}] = DamagePair{EnemyLoss: 2, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 1, ComRatio: 0}] = DamagePair{EnemyLoss: 3, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 1, ComRatio: 1}] = DamagePair{EnemyLoss: 4, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 1, ComRatio: 2}] = DamagePair{EnemyLoss: 4, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 1, ComRatio: 3}] = DamagePair{EnemyLoss: 5, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 1, ComRatio: 4}] = DamagePair{EnemyLoss: 5, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 1, ComRatio: 5}] = DamagePair{EnemyLoss: 6, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 1, ComRatio: 6}] = DamagePair{EnemyLoss: 6, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 1, ComRatio: 7}] = DamagePair{EnemyLoss: 7, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 1, ComRatio: 8}] = DamagePair{EnemyLoss: 7, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 1, ComRatio: 9}] = DamagePair{EnemyLoss: 8, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 1, ComRatio: 10}] = DamagePair{EnemyLoss: 8, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 1, ComRatio: 11}] = DamagePair{EnemyLoss: 9, PlayerLoss: 3}
-
-	// --- Random Number 2 ---
-	crt[KeyPair{RandNum: 2, ComRatio: -11}] = DamagePair{EnemyLoss: 0, PlayerLoss: 0, IsKilled: true} // K
-	crt[KeyPair{RandNum: 2, ComRatio: -10}] = DamagePair{EnemyLoss: 0, PlayerLoss: 8}
-	crt[KeyPair{RandNum: 2, ComRatio: -9}] = DamagePair{EnemyLoss: 0, PlayerLoss: 8}
-	crt[KeyPair{RandNum: 2, ComRatio: -8}] = DamagePair{EnemyLoss: 0, PlayerLoss: 7}
-	crt[KeyPair{RandNum: 2, ComRatio: -7}] = DamagePair{EnemyLoss: 0, PlayerLoss: 7}
-	crt[KeyPair{RandNum: 2, ComRatio: -6}] = DamagePair{EnemyLoss: 1, PlayerLoss: 6}
-	crt[KeyPair{RandNum: 2, ComRatio: -5}] = DamagePair{EnemyLoss: 1, PlayerLoss: 6}
-	crt[KeyPair{RandNum: 2, ComRatio: -4}] = DamagePair{EnemyLoss: 2, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 2, ComRatio: -3}] = DamagePair{EnemyLoss: 2, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 2, ComRatio: -2}] = DamagePair{EnemyLoss: 3, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 2, ComRatio: -1}] = DamagePair{EnemyLoss: 3, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 2, ComRatio: 0}] = DamagePair{EnemyLoss: 4, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 2, ComRatio: 1}] = DamagePair{EnemyLoss: 4, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 2, ComRatio: 2}] = DamagePair{EnemyLoss: 4, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 2, ComRatio: 3}] = DamagePair{EnemyLoss: 6, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 2, ComRatio: 4}] = DamagePair{EnemyLoss: 6, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 2, ComRatio: 5}] = DamagePair{EnemyLoss: 7, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 2, ComRatio: 6}] = DamagePair{EnemyLoss: 7, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 2, ComRatio: 7}] = DamagePair{EnemyLoss: 8, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 2, ComRatio: 8}] = DamagePair{EnemyLoss: 8, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 2, ComRatio: 9}] = DamagePair{EnemyLoss: 9, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 2, ComRatio: 10}] = DamagePair{EnemyLoss: 9, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 2, ComRatio: 11}] = DamagePair{EnemyLoss: 10, PlayerLoss: 2}
-
-	// --- Random Number 3 ---
-	crt[KeyPair{RandNum: 3, ComRatio: -11}] = DamagePair{EnemyLoss: 0, PlayerLoss: 8, IsKilled: true} // K
-	crt[KeyPair{RandNum: 3, ComRatio: -10}] = DamagePair{EnemyLoss: 0, PlayerLoss: 7}
-	crt[KeyPair{RandNum: 3, ComRatio: -9}] = DamagePair{EnemyLoss: 0, PlayerLoss: 7}
-	crt[KeyPair{RandNum: 3, ComRatio: -8}] = DamagePair{EnemyLoss: 1, PlayerLoss: 6}
-	crt[KeyPair{RandNum: 3, ComRatio: -7}] = DamagePair{EnemyLoss: 1, PlayerLoss: 6}
-	crt[KeyPair{RandNum: 3, ComRatio: -6}] = DamagePair{EnemyLoss: 2, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 3, ComRatio: -5}] = DamagePair{EnemyLoss: 2, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 3, ComRatio: -4}] = DamagePair{EnemyLoss: 3, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 3, ComRatio: -3}] = DamagePair{EnemyLoss: 3, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 3, ComRatio: -2}] = DamagePair{EnemyLoss: 4, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 3, ComRatio: -1}] = DamagePair{EnemyLoss: 4, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 3, ComRatio: 0}] = DamagePair{EnemyLoss: 5, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 3, ComRatio: 1}] = DamagePair{EnemyLoss: 6, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 3, ComRatio: 2}] = DamagePair{EnemyLoss: 6, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 3, ComRatio: 3}] = DamagePair{EnemyLoss: 7, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 3, ComRatio: 4}] = DamagePair{EnemyLoss: 7, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 3, ComRatio: 5}] = DamagePair{EnemyLoss: 8, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 3, ComRatio: 6}] = DamagePair{EnemyLoss: 8, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 3, ComRatio: 7}] = DamagePair{EnemyLoss: 9, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 3, ComRatio: 8}] = DamagePair{EnemyLoss: 9, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 3, ComRatio: 9}] = DamagePair{EnemyLoss: 10, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 3, ComRatio: 10}] = DamagePair{EnemyLoss: 10, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 3, ComRatio: 11}] = DamagePair{EnemyLoss: 11, PlayerLoss: 2}
-
-	// --- Random Number 4 ---
-	crt[KeyPair{RandNum: 4, ComRatio: -11}] = DamagePair{EnemyLoss: 0, PlayerLoss: 8} // K
-	crt[KeyPair{RandNum: 4, ComRatio: -10}] = DamagePair{EnemyLoss: 1, PlayerLoss: 7}
-	crt[KeyPair{RandNum: 4, ComRatio: -9}] = DamagePair{EnemyLoss: 1, PlayerLoss: 7}
-	crt[KeyPair{RandNum: 4, ComRatio: -8}] = DamagePair{EnemyLoss: 2, PlayerLoss: 6}
-	crt[KeyPair{RandNum: 4, ComRatio: -7}] = DamagePair{EnemyLoss: 2, PlayerLoss: 6}
-	crt[KeyPair{RandNum: 4, ComRatio: -6}] = DamagePair{EnemyLoss: 3, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 4, ComRatio: -5}] = DamagePair{EnemyLoss: 3, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 4, ComRatio: -4}] = DamagePair{EnemyLoss: 4, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 4, ComRatio: -3}] = DamagePair{EnemyLoss: 4, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 4, ComRatio: -2}] = DamagePair{EnemyLoss: 5, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 4, ComRatio: -1}] = DamagePair{EnemyLoss: 5, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 4, ComRatio: 0}] = DamagePair{EnemyLoss: 6, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 4, ComRatio: 1}] = DamagePair{EnemyLoss: 7, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 4, ComRatio: 2}] = DamagePair{EnemyLoss: 7, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 4, ComRatio: 3}] = DamagePair{EnemyLoss: 8, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 4, ComRatio: 4}] = DamagePair{EnemyLoss: 8, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 4, ComRatio: 5}] = DamagePair{EnemyLoss: 9, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 4, ComRatio: 6}] = DamagePair{EnemyLoss: 9, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 4, ComRatio: 7}] = DamagePair{EnemyLoss: 10, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 4, ComRatio: 8}] = DamagePair{EnemyLoss: 10, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 4, ComRatio: 9}] = DamagePair{EnemyLoss: 11, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 4, ComRatio: 10}] = DamagePair{EnemyLoss: 11, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 4, ComRatio: 11}] = DamagePair{EnemyLoss: 12, PlayerLoss: 2}
-
-	// --- Random Number 5 ---
-	crt[KeyPair{RandNum: 5, ComRatio: -11}] = DamagePair{EnemyLoss: 1, PlayerLoss: 7}
-	crt[KeyPair{RandNum: 5, ComRatio: -10}] = DamagePair{EnemyLoss: 2, PlayerLoss: 6}
-	crt[KeyPair{RandNum: 5, ComRatio: -9}] = DamagePair{EnemyLoss: 2, PlayerLoss: 6}
-	crt[KeyPair{RandNum: 5, ComRatio: -8}] = DamagePair{EnemyLoss: 3, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 5, ComRatio: -7}] = DamagePair{EnemyLoss: 3, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 5, ComRatio: -6}] = DamagePair{EnemyLoss: 4, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 5, ComRatio: -5}] = DamagePair{EnemyLoss: 4, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 5, ComRatio: -4}] = DamagePair{EnemyLoss: 5, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 5, ComRatio: -3}] = DamagePair{EnemyLoss: 5, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 5, ComRatio: -2}] = DamagePair{EnemyLoss: 6, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 5, ComRatio: -1}] = DamagePair{EnemyLoss: 6, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 5, ComRatio: 0}] = DamagePair{EnemyLoss: 7, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 5, ComRatio: 1}] = DamagePair{EnemyLoss: 8, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 5, ComRatio: 2}] = DamagePair{EnemyLoss: 8, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 5, ComRatio: 3}] = DamagePair{EnemyLoss: 9, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 5, ComRatio: 4}] = DamagePair{EnemyLoss: 9, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 5, ComRatio: 5}] = DamagePair{EnemyLoss: 10, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 5, ComRatio: 6}] = DamagePair{EnemyLoss: 10, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 5, ComRatio: 7}] = DamagePair{EnemyLoss: 11, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 5, ComRatio: 8}] = DamagePair{EnemyLoss: 11, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 5, ComRatio: 9}] = DamagePair{EnemyLoss: 12, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 5, ComRatio: 10}] = DamagePair{EnemyLoss: 12, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 5, ComRatio: 11}] = DamagePair{EnemyLoss: 14, PlayerLoss: 1}
-
-	// --- Random Number 6 ---
-	crt[KeyPair{RandNum: 6, ComRatio: -11}] = DamagePair{EnemyLoss: 2, PlayerLoss: 6}
-	crt[KeyPair{RandNum: 6, ComRatio: -10}] = DamagePair{EnemyLoss: 3, PlayerLoss: 6}
-	crt[KeyPair{RandNum: 6, ComRatio: -9}] = DamagePair{EnemyLoss: 3, PlayerLoss: 6}
-	crt[KeyPair{RandNum: 6, ComRatio: -8}] = DamagePair{EnemyLoss: 4, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 6, ComRatio: -7}] = DamagePair{EnemyLoss: 4, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 6, ComRatio: -6}] = DamagePair{EnemyLoss: 5, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 6, ComRatio: -5}] = DamagePair{EnemyLoss: 5, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 6, ComRatio: -4}] = DamagePair{EnemyLoss: 6, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 6, ComRatio: -3}] = DamagePair{EnemyLoss: 6, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 6, ComRatio: -2}] = DamagePair{EnemyLoss: 7, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 6, ComRatio: -1}] = DamagePair{EnemyLoss: 7, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 6, ComRatio: 0}] = DamagePair{EnemyLoss: 8, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 6, ComRatio: 1}] = DamagePair{EnemyLoss: 9, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 6, ComRatio: 2}] = DamagePair{EnemyLoss: 9, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 6, ComRatio: 3}] = DamagePair{EnemyLoss: 10, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 6, ComRatio: 4}] = DamagePair{EnemyLoss: 10, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 6, ComRatio: 5}] = DamagePair{EnemyLoss: 11, PlayerLoss: 1}
-	crt[KeyPair{RandNum: 6, ComRatio: 6}] = DamagePair{EnemyLoss: 11, PlayerLoss: 1}
-	crt[KeyPair{RandNum: 6, ComRatio: 7}] = DamagePair{EnemyLoss: 12, PlayerLoss: 1}
-	crt[KeyPair{RandNum: 6, ComRatio: 8}] = DamagePair{EnemyLoss: 12, PlayerLoss: 1}
-	crt[KeyPair{RandNum: 6, ComRatio: 9}] = DamagePair{EnemyLoss: 14, PlayerLoss: 1}
-	crt[KeyPair{RandNum: 6, ComRatio: 10}] = DamagePair{EnemyLoss: 14, PlayerLoss: 1}
-	crt[KeyPair{RandNum: 6, ComRatio: 11}] = DamagePair{EnemyLoss: 16, PlayerLoss: 1}
-
-	// --- Random Number 7 ---
-	crt[KeyPair{RandNum: 7, ComRatio: -11}] = DamagePair{EnemyLoss: 3, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 7, ComRatio: -10}] = DamagePair{EnemyLoss: 4, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 7, ComRatio: -9}] = DamagePair{EnemyLoss: 4, PlayerLoss: 5}
-	crt[KeyPair{RandNum: 7, ComRatio: -8}] = DamagePair{EnemyLoss: 5, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 7, ComRatio: -7}] = DamagePair{EnemyLoss: 5, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 7, ComRatio: -6}] = DamagePair{EnemyLoss: 6, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 7, ComRatio: -5}] = DamagePair{EnemyLoss: 6, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 7, ComRatio: -4}] = DamagePair{EnemyLoss: 7, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 7, ComRatio: -3}] = DamagePair{EnemyLoss: 7, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 7, ComRatio: -2}] = DamagePair{EnemyLoss: 8, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 7, ComRatio: -1}] = DamagePair{EnemyLoss: 8, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 7, ComRatio: 0}] = DamagePair{EnemyLoss: 9, PlayerLoss: 1}
-	crt[KeyPair{RandNum: 7, ComRatio: 1}] = DamagePair{EnemyLoss: 10, PlayerLoss: 1}
-	crt[KeyPair{RandNum: 7, ComRatio: 2}] = DamagePair{EnemyLoss: 10, PlayerLoss: 1}
-	crt[KeyPair{RandNum: 7, ComRatio: 3}] = DamagePair{EnemyLoss: 11, PlayerLoss: 1}  // 0
-	crt[KeyPair{RandNum: 7, ComRatio: 4}] = DamagePair{EnemyLoss: 11, PlayerLoss: 0}  // 0
-	crt[KeyPair{RandNum: 7, ComRatio: 5}] = DamagePair{EnemyLoss: 12, PlayerLoss: 0}  // 0
-	crt[KeyPair{RandNum: 7, ComRatio: 6}] = DamagePair{EnemyLoss: 12, PlayerLoss: 0}  // 0
-	crt[KeyPair{RandNum: 7, ComRatio: 7}] = DamagePair{EnemyLoss: 14, PlayerLoss: 0}  // 0
-	crt[KeyPair{RandNum: 7, ComRatio: 8}] = DamagePair{EnemyLoss: 14, PlayerLoss: 0}  // 0
-	crt[KeyPair{RandNum: 7, ComRatio: 9}] = DamagePair{EnemyLoss: 16, PlayerLoss: 0}  // 0
-	crt[KeyPair{RandNum: 7, ComRatio: 10}] = DamagePair{EnemyLoss: 16, PlayerLoss: 0} // 0
-	crt[KeyPair{RandNum: 7, ComRatio: 11}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0} // 0
-
-	// --- Random Number 8 ---
-	crt[KeyPair{RandNum: 8, ComRatio: -11}] = DamagePair{EnemyLoss: 4, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 8, ComRatio: -10}] = DamagePair{EnemyLoss: 5, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 8, ComRatio: -9}] = DamagePair{EnemyLoss: 5, PlayerLoss: 4}
-	crt[KeyPair{RandNum: 8, ComRatio: -8}] = DamagePair{EnemyLoss: 6, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 8, ComRatio: -7}] = DamagePair{EnemyLoss: 6, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 8, ComRatio: -6}] = DamagePair{EnemyLoss: 7, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 8, ComRatio: -5}] = DamagePair{EnemyLoss: 7, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 8, ComRatio: -4}] = DamagePair{EnemyLoss: 8, PlayerLoss: 1}
-	crt[KeyPair{RandNum: 8, ComRatio: -3}] = DamagePair{EnemyLoss: 8, PlayerLoss: 1}
-	crt[KeyPair{RandNum: 8, ComRatio: -2}] = DamagePair{EnemyLoss: 9, PlayerLoss: 1}
-	crt[KeyPair{RandNum: 8, ComRatio: -1}] = DamagePair{EnemyLoss: 9, PlayerLoss: 1}                  // 0
-	crt[KeyPair{RandNum: 8, ComRatio: 0}] = DamagePair{EnemyLoss: 10, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 8, ComRatio: 1}] = DamagePair{EnemyLoss: 11, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 8, ComRatio: 2}] = DamagePair{EnemyLoss: 11, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 8, ComRatio: 3}] = DamagePair{EnemyLoss: 12, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 8, ComRatio: 4}] = DamagePair{EnemyLoss: 12, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 8, ComRatio: 5}] = DamagePair{EnemyLoss: 14, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 8, ComRatio: 6}] = DamagePair{EnemyLoss: 14, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 8, ComRatio: 7}] = DamagePair{EnemyLoss: 16, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 8, ComRatio: 8}] = DamagePair{EnemyLoss: 16, PlayerLoss: 0}                  // K
-	crt[KeyPair{RandNum: 8, ComRatio: 9}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0}                  // K
-	crt[KeyPair{RandNum: 8, ComRatio: 10}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0}                 // K
-	crt[KeyPair{RandNum: 8, ComRatio: 11}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0, IsKilled: true} // K
-
-	// --- Random Number 9 ---
-	crt[KeyPair{RandNum: 9, ComRatio: -11}] = DamagePair{EnemyLoss: 5, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 9, ComRatio: -10}] = DamagePair{EnemyLoss: 6, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 9, ComRatio: -9}] = DamagePair{EnemyLoss: 6, PlayerLoss: 3}
-	crt[KeyPair{RandNum: 9, ComRatio: -8}] = DamagePair{EnemyLoss: 7, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 9, ComRatio: -7}] = DamagePair{EnemyLoss: 7, PlayerLoss: 2}
-	crt[KeyPair{RandNum: 9, ComRatio: -6}] = DamagePair{EnemyLoss: 8, PlayerLoss: 0}
-	crt[KeyPair{RandNum: 9, ComRatio: -5}] = DamagePair{EnemyLoss: 8, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 9, ComRatio: -4}] = DamagePair{EnemyLoss: 9, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 9, ComRatio: -3}] = DamagePair{EnemyLoss: 9, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 9, ComRatio: -2}] = DamagePair{EnemyLoss: 10, PlayerLoss: 0}                 // 0
-	crt[KeyPair{RandNum: 9, ComRatio: -1}] = DamagePair{EnemyLoss: 10, PlayerLoss: 0}                 // 0
-	crt[KeyPair{RandNum: 9, ComRatio: 0}] = DamagePair{EnemyLoss: 11, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 9, ComRatio: 1}] = DamagePair{EnemyLoss: 12, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 9, ComRatio: 2}] = DamagePair{EnemyLoss: 12, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 9, ComRatio: 3}] = DamagePair{EnemyLoss: 14, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 9, ComRatio: 4}] = DamagePair{EnemyLoss: 14, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 9, ComRatio: 5}] = DamagePair{EnemyLoss: 16, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 9, ComRatio: 6}] = DamagePair{EnemyLoss: 16, PlayerLoss: 0}                  // 0
-	crt[KeyPair{RandNum: 9, ComRatio: 7}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0}                  // K
-	crt[KeyPair{RandNum: 9, ComRatio: 8}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0}                  // K
-	crt[KeyPair{RandNum: 9, ComRatio: 9}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0, IsKilled: true}  // K
-	crt[KeyPair{RandNum: 9, ComRatio: 10}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0, IsKilled: true} // K
-	crt[KeyPair{RandNum: 9, ComRatio: 11}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0, IsKilled: true} // K
-
-	// --- Random Number 0 (最下段) ---
-	crt[KeyPair{RandNum: 0, ComRatio: -11}] = DamagePair{EnemyLoss: 6, PlayerLoss: 0}
-	crt[KeyPair{RandNum: 0, ComRatio: -10}] = DamagePair{EnemyLoss: 7, PlayerLoss: 0}
-	crt[KeyPair{RandNum: 0, ComRatio: -9}] = DamagePair{EnemyLoss: 8, PlayerLoss: 0}
-	crt[KeyPair{RandNum: 0, ComRatio: -8}] = DamagePair{EnemyLoss: 9, PlayerLoss: 0}
-	crt[KeyPair{RandNum: 0, ComRatio: -7}] = DamagePair{EnemyLoss: 10, PlayerLoss: 0}
-	crt[KeyPair{RandNum: 0, ComRatio: -6}] = DamagePair{EnemyLoss: 10, PlayerLoss: 0}
-	crt[KeyPair{RandNum: 0, ComRatio: -5}] = DamagePair{EnemyLoss: 11, PlayerLoss: 0}
-	crt[KeyPair{RandNum: 0, ComRatio: -4}] = DamagePair{EnemyLoss: 12, PlayerLoss: 0}
-	crt[KeyPair{RandNum: 0, ComRatio: -3}] = DamagePair{EnemyLoss: 14, PlayerLoss: 0}
-	crt[KeyPair{RandNum: 0, ComRatio: -2}] = DamagePair{EnemyLoss: 14, PlayerLoss: 0}
-	crt[KeyPair{RandNum: 0, ComRatio: -1}] = DamagePair{EnemyLoss: 16, PlayerLoss: 0}
-	crt[KeyPair{RandNum: 0, ComRatio: 0}] = DamagePair{EnemyLoss: 12, PlayerLoss: 0}                  // 上で定義済みだが念のため
-	crt[KeyPair{RandNum: 0, ComRatio: 1}] = DamagePair{EnemyLoss: 14, PlayerLoss: 0}                  // 上で定義済みだが念のため
-	crt[KeyPair{RandNum: 0, ComRatio: 2}] = DamagePair{EnemyLoss: 16, PlayerLoss: 0}                  // 上で定義済みだが念のため
-	crt[KeyPair{RandNum: 0, ComRatio: 3}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0}                  // 上で定義済みだが念のため
-	crt[KeyPair{RandNum: 0, ComRatio: 4}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0}                  // 上で定義済みだが念のため
-	crt[KeyPair{RandNum: 0, ComRatio: 5}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0}                  // 上で定義済みだが念のため
-	crt[KeyPair{RandNum: 0, ComRatio: 6}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0}                  // 上で定義済みだが念のため
-	crt[KeyPair{RandNum: 0, ComRatio: 7}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0}                  // 上で定義済みだが念のため
-	crt[KeyPair{RandNum: 0, ComRatio: 8}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0, IsKilled: true}  // K
-	crt[KeyPair{RandNum: 0, ComRatio: 9}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0, IsKilled: true}  // K
-	crt[KeyPair{RandNum: 0, ComRatio: 10}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0, IsKilled: true} // K
-	crt[KeyPair{RandNum: 0, ComRatio: 11}] = DamagePair{EnemyLoss: 18, PlayerLoss: 0, IsKilled: true} // K
-
-	return crt
+// CRTData はTOMLファイル全体の構造を定義します
+type CRTData struct {
+	Results []struct {
+		KeyPair
+		DamagePair
+	} `toml:"results"`
 }
+
+// グローバル変数としてCRTマップを宣言
+var crt map[KeyPair]DamagePair
 
 func normalizeCombatRatio(ratio int) int {
 	if ratio <= -11 {
@@ -511,6 +291,34 @@ func (gs *GameState) handleEncounterNode(node Node) {
 }
 
 func main() {
+	/*
+		source := rand.NewSource(time.Now().UnixNano())
+		r := rand.New(source)
+
+
+		// --- 使い方例 ---
+		// 1. 乱数を振る (0-9)
+		randomNumber := r.Intn(10)
+
+		// 2. Combat Ratioを計算する (例としてここでは固定値)
+		// 実際のゲームでは、プレイヤーのCOMBAT SKILLと敵のCOMBAT SKILLの差などから計算されます
+		exampleCombatRatio := 5 // 例えば、+5 の戦闘比率だったとする
+
+		// 3. Combat Ratioを正規化する
+		normalizedCR := normalizeCombatRatio(exampleCombatRatio)
+
+		// 4. マップから結果を取得する
+		key := KeyPair{RandNum: randomNumber, ComRatio: normalizedCR}
+		result, ok := crt[key]
+
+		if ok {
+			fmt.Printf("Random Number: %d, Combat Ratio: %d, EnemyLoss: %d, PlayerLoss: %d\n",
+				randomNumber, exampleCombatRatio, result.EnemyLoss, result.PlayerLoss)
+		} else {
+			fmt.Println("Key not found in the map.")
+		}
+
+	*/
 	// TOMLファイルを読み込む
 	tomlData, err := ioutil.ReadFile("game.toml")
 	if err != nil {
@@ -523,38 +331,29 @@ func main() {
 	if _, err := toml.Decode(string(tomlData), &config); err != nil {
 		log.Fatalf("Error decoding TOML: %v", err)
 	}
+	// ゲームの状態を初期化し、ゲームを開始
+	gameState := NewGameState(&config)
+	gameState.Run()
 
-	// CRTのマップを一度だけ生成
-	combatResultsTable := createCombatResultsTable()
+}
+
+func makeCombatResult(PCS int, ECS int) DamagePair {
 
 	source := rand.NewSource(time.Now().UnixNano())
 	r := rand.New(source)
 
-	// --- 使い方例 ---
-	// 1. 乱数を振る (0-9)
 	randomNumber := r.Intn(10)
 
-	// 2. Combat Ratioを計算する (例としてここでは固定値)
-	// 実際のゲームでは、プレイヤーのCOMBAT SKILLと敵のCOMBAT SKILLの差などから計算されます
-	exampleCombatRatio := 5 // 例えば、+5 の戦闘比率だったとする
+	CombatRatio := PCS - ECS // 例えば、+5 の戦闘比率だったとする
 
-	// 3. Combat Ratioを正規化する
-	normalizedCR := normalizeCombatRatio(exampleCombatRatio)
+	normalizedCR := normalizeCombatRatio(CombatRatio)
 
-	// 4. マップから結果を取得する
 	key := KeyPair{RandNum: randomNumber, ComRatio: normalizedCR}
-	result, ok := combatResultsTable[key]
+	result, ok := crt[key]
 
 	if ok {
-		fmt.Printf("Random Number: %d, Combat Ratio: %d, EnemyLoss: %d, PlayerLoss: %d\n",
-			randomNumber, exampleCombatRatio, result.EnemyLoss, result.PlayerLoss)
+		return result
 	} else {
 		fmt.Println("Key not found in the map.")
 	}
-
-	/*
-		// ゲームの状態を初期化し、ゲームを開始
-		gameState := NewGameState(&config)
-		gameState.Run()
-	*/
 }
