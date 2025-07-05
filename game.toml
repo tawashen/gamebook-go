@@ -26,12 +26,21 @@ text = "突然、オークが現れた！"
         difficulty = "medium"
 
             [[nodes.encounter.combat_data.enemies]]
-            name = "Orc"
+            name = "Orc1"
 
                 [nodes.encounter.combat_data.enemies.stats]
                 hp = 15
                 ac = 13
                 drop = "dragon slayer"
+            
+            [[nodes.encounter.combat_data.enemies]]
+            name = "Orc2"
+
+                [nodes.encounter.combat_data.enemies.stats]
+                hp = 12
+                ac = 10
+                drop = "diamond sword"
+
 
     [[nodes.outcomes]]
     condition = "combat_won"
