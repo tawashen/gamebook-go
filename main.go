@@ -205,6 +205,33 @@ func (gs *GameState) handleStoryNode(node Node) {
 	}
 }
 
+func makeCombatResult(PCS int, ECS int) DamagePair {
+
+	source := rand.NewSource(time.Now().UnixNano())
+	r := rand.New(source)
+
+	randomNumber := r.Intn(10)
+
+	CombatRatio := PCS - ECS // 例えば、+5 の戦闘比率だったとする
+
+	normalizedCR := normalizeCombatRatio(CombatRatio)
+
+	key := KeyPair{RandNum: randomNumber, ComRatio: normalizedCR}
+	result, ok := crt[key]
+
+	if ok {
+		return result
+	} else {
+		fmt.Println("Key not found in the map.")
+		return DamagePair{
+			EnemyLoss:  0,
+			PlayerLoss: 0,
+			IsKilled:   false,
+		}
+	}
+
+}
+
 // handleEncounterNode は遭遇戦ノードの処理 (簡易版)
 func (gs *GameState) handleEncounterNode(node Node) {
 	fmt.Println("\n--- エンカウント！ ---")
@@ -231,6 +258,7 @@ func (gs *GameState) handleEncounterNode(node Node) {
 	}
 
 	// プレイヤーの簡易ステータス（ここでは固定値）
+	playerHP := 15
 	playerAC := 15
 	// playerHP := 15 // 現在のロジックでは使用されないためコメントアウト
 	// playerDef := 15 // 現在のロジックでは使用されないためコメントアウト
@@ -257,9 +285,14 @@ func (gs *GameState) handleEncounterNode(node Node) {
 		// 選択肢に応じた処理
 		switch choiceNum {
 		case 1: // 物理攻撃
-			damage := playerAC - currentEnemy.Stats.AC // 簡易的にプレイヤーの攻撃力をそのままダメージとする
-			currentEnemy.Stats.HP -= damage
-			fmt.Printf("あなたは%sに%dダメージを与えた！\n", currentEnemy.Name, damage)
+			//	damage := playerAC - currentEnemy.Stats.AC // 簡易的にプレイヤーの攻撃力をそのままダメージとする
+			//	currentEnemy.Stats.HP -= damage
+			Edamage := makeCombatResult(playerAC, currentEnemy.Stats.AC).EnemyLoss
+			Pdamage := makeCombatResult(playerAC, currentEnemy.Stats.AC).PlayerLoss
+			currentEnemy.Stats.HP -= Edamage
+			playerHP -= Pdamage
+			fmt.Printf("あなたは%sに%dダメージを与えた！\nそしてあなたは%dダメージを受けた！\n",
+				currentEnemy.Name, Edamage, Pdamage)
 		case 2: // 魔法
 			fmt.Println("しかし何も起きなかった。")
 		case 3: // 道具
@@ -283,6 +316,12 @@ func (gs *GameState) handleEncounterNode(node Node) {
 				gs.CurrentNodeID = "game_over"
 			}
 			break // 戦闘ループを終了し、次のノードへ
+		}
+
+		if playerHP <= 0 {
+			fmt.Println("あなたは倒れた！")
+			gs.CurrentNodeID = "game_over"
+			break // プレイヤーのHPが0以下になった場合、ゲームオーバーへ
 		}
 
 		// (敵の攻撃など、ターン制の処理を追加する場合はここに記述)
@@ -335,25 +374,4 @@ func main() {
 	gameState := NewGameState(&config)
 	gameState.Run()
 
-}
-
-func makeCombatResult(PCS int, ECS int) DamagePair {
-
-	source := rand.NewSource(time.Now().UnixNano())
-	r := rand.New(source)
-
-	randomNumber := r.Intn(10)
-
-	CombatRatio := PCS - ECS // 例えば、+5 の戦闘比率だったとする
-
-	normalizedCR := normalizeCombatRatio(CombatRatio)
-
-	key := KeyPair{RandNum: randomNumber, ComRatio: normalizedCR}
-	result, ok := crt[key]
-
-	if ok {
-		return result
-	} else {
-		fmt.Println("Key not found in the map.")
-	}
 }
