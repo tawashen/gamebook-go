@@ -71,12 +71,14 @@ type Outcome struct {
 	NextNodeID string `toml:"next_node_id"`
 }
 
+/*
  type PlayerStats {
 	HP int
 	CS int
 	GOLD int
-	
+
  }
+*/
 
 func init() {
 	fmt.Println("Initializing CRT...")
