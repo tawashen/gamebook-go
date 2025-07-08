@@ -62,7 +62,7 @@ type Enemy struct {
 // Stats は敵のステータス
 type Stats struct {
 	HP int `toml:"hp"`
-	AC int `toml:"ac"`
+	CS int `toml:"ac"`
 }
 
 // Outcome は遭遇戦の結果と次に進むノードを表す構造体
@@ -71,14 +71,29 @@ type Outcome struct {
 	NextNodeID string `toml:"next_node_id"`
 }
 
-/*
- type PlayerStats {
-	HP int
-	CS int
-	GOLD int
+type KaiDisciplines struct {
+	Kamouflage     bool
+	Hunting        bool
+	SixthSense     bool
+	Tracking       bool
+	Healing        bool
+	WeaponSkill    bool
+	MindBlast      bool
+	MindShield     bool
+	AnimalKinship  bool
+	MindOverMatter bool
+}
 
- }
-*/
+type Player struct {
+	HP             int
+	CS             int //combat skill
+	GOLD           int
+	MEAL           int
+	KaiDisciplines KaiDisciplines //Kai Disciplines
+	Weapon         []string       //Weapon
+	Armor          []string       //Armor
+	Items          []string       //Items
+}
 
 func init() {
 	fmt.Println("Initializing CRT...")
@@ -108,6 +123,7 @@ func init() {
 
 // GameState は現在のゲームの状態を保持する
 type GameState struct {
+	Player        *Player
 	CurrentNodeID string
 	Nodes         map[string]Node // IDでノードを検索するためのマップ
 	Reader        *bufio.Reader   // ユーザー入力を受け取るためのリーダー
@@ -147,11 +163,32 @@ func normalizeCombatRatio(ratio int) int {
 
 // NewGameState は新しいGameStateを初期化する
 func NewGameState(config *GameConfig) *GameState {
-	nodeMap := make(map[string]Node)
+	nodeMap := make(map[string]Node) //ノードのマップを作成
 	for _, node := range config.Nodes {
 		nodeMap[node.ID] = node
 	}
-	return &GameState{
+	return &GameState{ //GameState初期化
+		Player: &Player{
+			HP:   15,
+			CS:   5,
+			GOLD: 100,
+			MEAL: 10,
+			KaiDisciplines: KaiDisciplines{
+				Kamouflage:     false,
+				Hunting:        false,
+				SixthSense:     false,
+				Tracking:       false,
+				Healing:        false,
+				WeaponSkill:    false,
+				MindBlast:      false,
+				MindShield:     false,
+				AnimalKinship:  false,
+				MindOverMatter: false,
+			},
+			Weapon: []string{"Sword"},
+			Armor:  []string{"Leather"},
+		},
+
 		CurrentNodeID: config.Nodes[0].ID, // 最初のノードから開始
 		Nodes:         nodeMap,
 		Reader:        bufio.NewReader(os.Stdin),
@@ -245,10 +282,6 @@ func makeCombatResult(PCS int, ECS int) DamagePair {
 func (gs *GameState) handleEncounterNode(node Node) {
 	fmt.Println("\n--- エンカウント！ ---")
 
-	// プレイヤーの簡易ステータス（ここでは固定値）
-	playerHP := 15
-	playerAC := 15
-
 	//var currentEnemy *Enemy // 現在の敵へのポインタを保持する変数
 
 	for _, currentEnemy := range node.Encounter.CombatData.Enemies {
@@ -258,11 +291,11 @@ func (gs *GameState) handleEncounterNode(node Node) {
 			node.Encounter.CombatSystemType,
 			node.Encounter.CombatData.Difficulty)
 		fmt.Printf("敵: %s (HP:%d AC:%d)\n",
-			currentEnemy.Name, currentEnemy.Stats.HP, currentEnemy.Stats.AC)
+			currentEnemy.Name, currentEnemy.Stats.HP, currentEnemy.Stats.CS)
 
 		for {
 			fmt.Printf("\n%s (HP:%d AC:%d)\n",
-				currentEnemy.Name, currentEnemy.Stats.HP, currentEnemy.Stats.AC) // 敵のHPを更新して表示
+				currentEnemy.Name, currentEnemy.Stats.HP, currentEnemy.Stats.CS) // 敵のHPを更新して表示
 
 			// プレイヤーの選択肢を表示
 			fmt.Println("選択してください (番号): ")
@@ -284,10 +317,10 @@ func (gs *GameState) handleEncounterNode(node Node) {
 			case 1: // 物理攻撃
 				//	damage := playerAC - currentEnemy.Stats.AC // 簡易的にプレイヤーの攻撃力をそのままダメージとする
 				//	currentEnemy.Stats.HP -= damage
-				Edamage := makeCombatResult(playerAC, currentEnemy.Stats.AC).EnemyLoss
-				Pdamage := makeCombatResult(playerAC, currentEnemy.Stats.AC).PlayerLoss
+				Edamage := makeCombatResult(gs.Player.CS, currentEnemy.Stats.CS).EnemyLoss
+				Pdamage := makeCombatResult(gs.Player.CS, currentEnemy.Stats.CS).PlayerLoss
 				currentEnemy.Stats.HP -= Edamage
-				playerHP -= Pdamage
+				gs.Player.HP -= Pdamage
 				fmt.Printf("あなたは%sに%dダメージを与えた！\nそしてあなたは%dダメージを受けた！\n",
 					currentEnemy.Name, Edamage, Pdamage)
 			case 2: // 魔法
@@ -315,7 +348,7 @@ func (gs *GameState) handleEncounterNode(node Node) {
 				break // 戦闘ループを終了し、次のノードへ
 			}
 
-			if playerHP <= 0 {
+			if gs.Player.HP <= 0 {
 				fmt.Println("あなたは倒れた！")
 				gs.CurrentNodeID = "game_over"
 				break // プレイヤーのHPが0以下になった場合、ゲームオーバーへ
@@ -327,34 +360,6 @@ func (gs *GameState) handleEncounterNode(node Node) {
 
 func main() {
 
-	/*
-		source := rand.NewSource(time.Now().UnixNano())
-		r := rand.New(source)
-
-
-		// --- 使い方例 ---
-		// 1. 乱数を振る (0-9)
-		randomNumber := r.Intn(10)
-
-		// 2. Combat Ratioを計算する (例としてここでは固定値)
-		// 実際のゲームでは、プレイヤーのCOMBAT SKILLと敵のCOMBAT SKILLの差などから計算されます
-		exampleCombatRatio := 5 // 例えば、+5 の戦闘比率だったとする
-
-		// 3. Combat Ratioを正規化する
-		normalizedCR := normalizeCombatRatio(exampleCombatRatio)
-
-		// 4. マップから結果を取得する
-		key := KeyPair{RandNum: randomNumber, ComRatio: normalizedCR}
-		result, ok := crt[key]
-
-		if ok {
-			fmt.Printf("Random Number: %d, Combat Ratio: %d, EnemyLoss: %d, PlayerLoss: %d\n",
-				randomNumber, exampleCombatRatio, result.EnemyLoss, result.PlayerLoss)
-		} else {
-			fmt.Println("Key not found in the map.")
-		}
-
-	*/
 	// TOMLファイルを読み込む
 	tomlData, err := ioutil.ReadFile("game.toml")
 	if err != nil {
