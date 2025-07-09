@@ -1,0 +1,11 @@
+If you have the Kai Discipline　が含まれたパラグラフはtypeをdisciplines_check
+
+if you have ...(ex. silver key . etc)　が含まれたパラグラフはtypeをitem_check
+
+Pick a number from the Random Number Table　が含まれた場合はtypeをRandom_roll
+
+
+
+
+分かりました、ではサンプルにあった、id,title,descriptionのみはサンプルどおりに出力、typeは値を空白""で、ただの選択肢のみの場合は
+
