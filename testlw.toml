@@ -1,0 +1,61 @@
+[[nodes]]
+id = "1"
+type = "story"
+text = """
+これはテストデータです
+テキストも仮のものです
+"""
+    [[nodes.choices]]
+    description = "If you wish to use your Kai Discipline of Sixth Sense, turn to 2."
+    next_node_id = "2"
+    required_discipline = "Sixth Sense"
+
+    [[nodes.choices]]
+    description = "If you wish to take the right path into the wood, turn to 3."
+    next_node_id = "3"
+    required_item = "Silver Key"
+
+    [[nodes.choices]]
+    description = "If you wish to follow the left track, turn to 4."
+    next_node_id = "4"
+
+[[nodes]]
+id = "2"
+type = "encounter"
+text = """
+これはテストデータです
+アークデーモンが現れた
+"""
+    [node.encounter]
+        [nodes.encounter.combat_data]
+            [[nodes.encounter.enemies.stats]]
+            Name = "アークデーモンA"
+            HP = 10
+            CS = 10
+            [[nodes.encounter.enemies.stats]]
+            Name = "アークデーモンB"
+            HP = 10
+            CS = 10
+    [[node.outcomes]]
+    condition = "combat_won"
+    next_node_id = "5"
+    [[node.outcomes]]
+    condition = "combat_lost"
+    next_node_id = "game_over"
+
+[[nodes]]
+id = "3"
+type = "random_roll"
+text = "1-5なら6へ　6-0なら7へ"
+    [[nodes.outcomes]]
+    condition_int = [1,2,3,4,5]
+    next_node_id = "6"
+    [[nodes.outcomes]]
+    condition_int = [6,7,8,9,0]
+    next_node_id = "7"
+
+
+[[nodes]]
+id = "game_over"
+type = "end"
+text = "ゲームオーバー。あなたの旅はここで終わりました。"

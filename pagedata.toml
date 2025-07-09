@@ -60,8 +60,7 @@ description = "If you wish to follow this man, turn to 196."
 next_node_id = "196"
 
 [[nodes.choices]]
-description = "If you wish to decline his offer and return to the crowded
-streets, turn to 144."
+description = "If you wish to decline his offer and return to the crowded streets, turn to 144."
 next_node_id = "144"
 
 [[nodes]]
@@ -2456,3 +2455,3258 @@ warm green cloak about you and drift off into an uneasy sleep."""
 [[nodes.choices]]
 description = "Turn to 256."
 next_node_id = "256"
+
+# Paragraph 150
+[[nodes]]
+id = "150"
+title = "Paragraph 150"
+description = """Although a little overcooked, the food tastes fine (although it is not
+enough for a whole Meal) and the clear water slakes your thirst.
+You have spent nearly half an hour resting in this house when you
+suddenly realize the delay.
+Prepare your equipment and leave."""
+[[nodes.outcomes]]
+next_node_id = "83"
+
+# Paragraph 151
+[[nodes]]
+id = "151"
+title = "Paragraph 151"
+description = """If you concentrate on the keyhole, you could move the mechanism of the lock and open it. You can then make the pin levitate
+and free it from the lockplate, avoiding falling prey to any traps
+that may be set off as the door unlocks."""
+[[nodes.options]]
+text = "If you wish to use your Kai Discipline of Mind Over Matter to open this lock and levitate the pin"
+[[nodes.options]]
+text = "If you wish to remove the pin"
+[[nodes.outcomes]]
+next_node_id = "87"
+[[nodes.outcomes]]
+next_node_id = "337"
+
+# Paragraph 152
+[[nodes]]
+id = "152"
+title = "Paragraph 152"
+description = """The herbalist offers you a selection of special potions. Some increase your strength; some induce invisibility; some give you great
+powers of stealth; and others give you the power of turning yourself into a gaseous form. The man pulls open the bottom drawer
+of the counter to reveal a magnificent wand. He says that it is a
+powerful weapon against all evil creatures, and that it will make
+you invulnerable in battle. He points to the mystical inscriptions
+which cover the black staff."""
+[[nodes.options]]
+text = "If you wish to lean over the counter and read the strange inscriptions"
+[[nodes.options]]
+text = "If you are more interested in the potions"
+[[nodes.outcomes]]
+next_node_id = "49"
+[[nodes.outcomes]]
+next_node_id = "231"
+
+# Paragraph 153
+[[nodes]]
+id = "153"
+title = "Paragraph 153"
+description = """Before you are the tall grey-white walls and glimmering spires of
+Holmgard, the city’s banners fluttering from the battlements in the
+fresh morning breeze. Stretching out towards the west, the River
+Eledil traces its course from the mountains of the Durncrag Range
+to the Holmgulf. But below the mountain peaks you can see a
+vast black army marching relentlessly on towards the capital.
+To your right you can see the highway heading off over the
+rolling plain towards Holmgard. At a gallop you could make the
+outer fieldworks of the city’s defences in less than an hour, but you
+would be in the open for most of the time and vulnerable to attack
+by Kraan. Directly ahead of you, a wide river drifts sluggishly
+towards the Eledil. If you abandoned your horse, you could swim
+towards the outer defences under cover of the river banks. Or
+there is a final alternative. To your left lies the Graveyard of the
+Ancients. These tombs and crumbling monuments to a forgotten
+age would conceal your approach but it is a forbidden area. Many
+are the unnamed horrors that lie there in restless sleep, waiting to
+consume the unwary trespasser."""
+[[nodes.options]]
+text = "If you will try your luck by the highway"
+[[nodes.options]]
+text = "If you feel that you stand a better chance of reaching the capital via the river then"
+[[nodes.options]]
+text = "Or if you are brave enough to risk the unknown perils of the Graveyard of the Ancients"
+[[nodes.outcomes]]
+next_node_id = "202"
+[[nodes.outcomes]]
+next_node_id = "135"
+[[nodes.outcomes]]
+next_node_id = "329"
+
+# Paragraph 154
+[[nodes]]
+id = "154"
+title = "Paragraph 154"
+description = """You are dizzy from your wound and you stumble through the trees
+like a blind man.
+Suddenly you fall forward as if the ground has been snatched
+from beneath your feet. You have fallen head-first into a hunting
+pit. As you look up, you can see four Drakkarim levelling their
+bows at you, evil sneers spreading simultaneously across their ugly
+faces.
+As the world darkens, the last thing you feel are the black shafts
+of their arrows deep in your chest. You have failed in your mission."""
+
+# Paragraph 155
+[[nodes]]
+id = "155"
+title = "Paragraph 155"
+description = """As you approach, the group of people stop talking. You can see by
+their expressions that they recognize your green Kai cloak. Slowly,
+one of the men extends his hand in friendship and says, ‘My Lord,
+we had heard a rumour that the Kai were destroyed. Heaven be
+praised that it is not so. We feared all was lost.’
+You do not tell them of the destruction of the monastery, for
+they are refugees from Toran and have lost everything they owned.
+Their only hope now is that the Kai Lords will lead an army to victory. You learn that the northern port was attacked from both air
+and sea, and that the forces of the Darklords far outnumbered the
+King’s brave garrison. You reassure them that Sommerlund will
+not fall and wish them luck on their journey ahead."""
+[[nodes.outcomes]]
+next_node_id = "70"
+
+# Paragraph 156
+[[nodes]]
+id = "156"
+title = "Paragraph 156"
+description = """Black arrows embed themselves in the mud all around you. More
+Giaks have appeared on the steep slope of the river bank and are
+firing at you. There is no cover on this side of the river."""
+[[nodes.options]]
+text = "If you wish to dive into the water and swim with the current"
+[[nodes.options]]
+text = "If you wish to swim across to the cover of the trees on the other bank"
+[[nodes.outcomes]]
+next_node_id = "294"
+[[nodes.outcomes]]
+next_node_id = "245"
+
+# Paragraph 157
+[[nodes]]
+id = "157"
+title = "Paragraph 157"
+description = """The forest begins to thin out until finally you can make out a road
+through the trees ahead. The highway is full of people heading
+south. Many are wheeling their possessions along on handcarts."""
+[[nodes.options]]
+text = "If you wish to join the refugees and perhaps learn more of what has happened in the north"
+[[nodes.options]]
+text = "If you would prefer to continue to move south but under cover of the trees"
+[[nodes.outcomes]]
+next_node_id = "30"
+[[nodes.outcomes]]
+next_node_id = "167"
+
+# Paragraph 158
+[[nodes]]
+id = "158"
+title = "Paragraph 158"
+description = """The Key fits and the lock opens. You pull back the door to find
+yourself face to face with a strange old man. In his right hand is
+a staff. Suddenly a bolt of lightning shoots from the staff and hits
+you square in the chest. You lose 6 ENDURANCE points. Gasping
+with pain, you knock the old man aside and run up the steep
+staircase towards daylight. You are halfway up the stairs when he
+fires another bolt at you.
+Pick a number from the Random Number Table.
+If the number is 0–5, the bolt misses you and shatters part of
+the wall.
+If the number is 6–9, then you have been hit in the back and
+lose a further 4 ENDURANCE points.
+If you survive, you stagger out into the daylight and curse your
+bad luck. It was only by an unlucky chance you discovered the
+secret temple of a sect of evil druids. You are very lucky to have
+escaped with your life. You quickly rejoin the path which now
+disappears over the hill."""
+[[nodes.options]]
+text = "If the number is 0–5, the bolt misses you and shatters part of the wall."
+[[nodes.options]]
+text = "If the number is 6–9, then you have been hit in the back and lose a further 4 ENDURANCE points."
+[[nodes.outcomes]]
+next_node_id = "106"
+[[nodes.outcomes]]
+next_node_id = "106"
+
+# Paragraph 159
+[[nodes]]
+id = "159"
+title = "Paragraph 159"
+description = """Your ploy does not work, for the merchant will not allow you to
+enter his caravan. Suddenly he clicks his fingers and the bodyguard grasps the hilt of his scimitar."""
+[[nodes.options]]
+text = "You must fight him by turning to 191."
+[[nodes.options]]
+text = "Or you must jump clear of the speeding caravan."
+[[nodes.outcomes]]
+next_node_id = "191"
+[[nodes.outcomes]]
+next_node_id = "234"
+
+# Paragraph 160
+[[nodes]]
+id = "160"
+title = "Paragraph 160"
+description = """Pick a number from the Random Number Table.
+If it is 0–4, you have been seen.
+If it is 5–9, they do not spot you and they slowly file away
+along the far side of the ridge."""
+[[nodes.options]]
+text = "If it is 0–4, you have been seen."
+[[nodes.options]]
+text = "If it is 5–9, they do not spot you and they slowly file away along the far side of the ridge."
+[[nodes.outcomes]]
+next_node_id = "286"
+[[nodes.outcomes]]
+next_node_id = "10"
+
+# Paragraph 161
+[[nodes]]
+id = "161"
+title = "Paragraph 161"
+description = """As you sit down, the stone serpent slowly moves forward on its
+plinth. You suddenly break out in a cold sweat and grasp your
+weapon with trembling fingers in case it should attack. A red
+forked tongue appears from the head of this strange statue and
+dips into the bowl of green light above your head. Slowly the
+tongue re-emerges holding a Golden Key which, to your surprise,
+it drops into your lap. A panel in the east wall clicks open to reveal
+an exit.
+You take the Key and leave as quickly as possible."""
+[[nodes.outcomes]]
+next_node_id = "209"
+
+# Paragraph 162
+[[nodes]]
+id = "162"
+title = "Paragraph 162"
+description = """As you get nearer to the men, you call to them. As they turn to
+face you, your skin turns cold and your heart pounds, for they
+are Drakkarim in disguise. Suddenly they charge at you. Forced
+to the ground, you are tied up with ropes and dragged behind
+them along a track. They take your Backpack and Weapons, but
+do not search your cloak or find your Gold Crowns. They cackle
+menacingly to themselves, and talk at great length of the tortures
+that await you at their camp."""
+[[nodes.options]]
+text = "If you have the Kai Discipline of Mind Over Matter"
+[[nodes.options]]
+text = "If you do not have this skill"
+[[nodes.outcomes]]
+next_node_id = "258"
+[[nodes.outcomes]]
+next_node_id = "127"
+
+# Paragraph 163
+[[nodes]]
+id = "163"
+title = "Paragraph 163"
+description = """After nearly half an hour you feel the current getting stronger.
+Looking out across the surface you can see that you are approaching a whirlpool in the middle of a large river bend. You will surely
+drown if caught in its current, so you quickly swim towards the
+right hand river bank and continue your mission on foot, carrying
+all your equipment."""
+[[nodes.outcomes]]
+next_node_id = "321"
+
+# Paragraph 164
+[[nodes]]
+id = "164"
+title = "Paragraph 164"
+description = """Carefully opening the seals on each of the bottles, you sniff at the
+contents. They all seem to be different types of wine. Suddenly a
+smaller bottle tucked behind the others catches your eye. Pulling
+out the glass stopper, you recognize the smell to be that of Alether,
+a Potion of Strength, which is orange in colour.
+You may keep this Potion and swallow it before you fight. It will
+increase your COMBAT SKILL by 2 points for the duration of your
+fight. Be sure to mark it down on your Action Chart and to strike
+it off once you have used it.
+You now decide to investigate the stable by turning to
+308."""
+[[nodes.outcomes]]
+next_node_id = "308"
+
+# Paragraph 165
+[[nodes]]
+id = "165"
+title = "Paragraph 165"
+description = """You awake in a fever. Images swim before your eyes and then
+fade completely. The pain in your back is intense and you cry out
+for relief. You feel a cool, damp cloth placed on your forehead
+and glimpse the worried face of a young woman. An old man
+whispers in her ear and then he disappears from view. The girl
+kneels at your side and comforts you with words of kindness and
+reassurance, but the light quickly fades and darkness engulfs you
+once more."""
+[[nodes.outcomes]]
+next_node_id = "212"
+
+# Paragraph 166
+[[nodes]]
+id = "166"
+title = "Paragraph 166"
+description = """You are in the presence of a great evil. Your mind is being probed
+by a powerful and timeless being and you must shield yourself.
+The struggle has begun and your sanity is at stake. It is a long and
+torturous ordeal, during which you experience many fantastic and
+terrible apparitions that tempt and appal you. After this you must
+lose 4 ENDURANCE points and stagger towards the tunnel."""
+[[nodes.outcomes]]
+next_node_id = "104"
+
+# Paragraph 167
+[[nodes]]
+id = "167"
+title = "Paragraph 167"
+description = """You have been travelling for about a mile when you notice two
+legs sticking out from behind a large boulder."""
+[[nodes.options]]
+text = "If you possess and wish to use the Kai Discipline of Sixth Sense"
+[[nodes.options]]
+text = "If you wish to take a closer look"
+[[nodes.options]]
+text = "If you would rather avoid meeting their owner and press on into the forest"
+[[nodes.outcomes]]
+next_node_id = "178"
+[[nodes.outcomes]]
+next_node_id = "88"
+[[nodes.outcomes]]
+next_node_id = "264"
+
+# Paragraph 168
+[[nodes]]
+id = "168"
+title = "Paragraph 168"
+description = """You pull yourself to the top of the opulent caravan and nestle
+among the travelling cases and bags. Night will soon engulf the
+highway. A chill wind blows from the west and you pull your cloak
+around yourself to keep warm. You listen to the voices below
+and you can smell the mouthwatering aroma of spiced meat. It
+reminds you that you are very hungry and must now take a Meal.
+The fatigue of your ordeal finally catches up with you and you
+drift off into a restless sleep."""
+[[nodes.outcomes]]
+next_node_id = "64"
+
+# Paragraph 169
+[[nodes]]
+id = "169"
+title = "Paragraph 169"
+description = """As you pass each skull, it slowly turns, as if watching your every
+move. You are halfway across the room when you hear the sharp
+crack of bone splitting. Suddenly you see hideous shapes hatching
+inside the skulls, and stretching their wings.
+Ten slimy winged creatures attack you, and you must fight them
+as one enemy.
+Crypt Spawn: COMBAT SKILL 16 ENDURANCE 16
+You may evade more fighting after the first round of combat
+and run for the archway by turning to 23.
+If you win the combat, turn to 137."""
+[[nodes.outcomes]]
+next_node_id = "23"
+[[nodes.outcomes]]
+next_node_id = "137"
+
+# Paragraph 170
+[[nodes]]
+id = "170"
+title = "Paragraph 170"
+description = """The tunnel is dark and the air is much cooler than outside. You
+carefully advance with one hand on the tunnel wall to aid your
+sense of direction. You have been in total darkness for three minutes when you detect the foul smell of decay ahead, similar to
+rotting meat. If you have a Torch and Tinderbox in your Pack,
+you may light the Torch to see your way ahead.
+Suddenly, something heavy drops from the tunnel ceiling onto
+your back and you fall to your knees. It is a Burrowcrawler and
+you must fight it, for it is trying to strangle you with its long slimy
+tentacles.
+Burrowcrawler: COMBAT SKILL 17 ENDURANCE 7
+If you do not have a torch, deduct 3 points from your COMBAT
+SKILL during this fight. The Burrowcrawler is immune to Mindblast and Animal Kinship."""
+[[nodes.outcomes]]
+next_node_id = "319"
+
+# Paragraph 171
+[[nodes]]
+id = "171"
+title = "Paragraph 171"
+description = """You are at the very edge of the wood when your horse rears up
+in agony. The Kraan has sunk its claws deep into the horse’s hind
+legs and is trying to knock you to the ground with its wings. The
+ghoulish Giak rider squeals with delight as he stabs at you with his
+spear. You jump to the ground and dash for the trees, leaving the
+poor dying horse in the clutches of the Kraan."""
+[[nodes.outcomes]]
+next_node_id = "303"
+
+# Paragraph 172
+[[nodes]]
+id = "172"
+title = "Paragraph 172"
+description = """Night falls and you are soon engulfed in darkness. To press on
+any further would be futile, for you would be sure to lose your
+way. Tethering your horse to a tree, you pull your green Kai cloak
+about you and fall into a restless sleep.
+You are awoken by the sound of troops in the distance. Across
+the lake you see the black shapes of Drakkarim and a pack of
+Doomwolves. A Kraan appears from above the trees and lands
+on the roof of the small wooden shack. It is being ridden by a
+creature dressed in red robes. The Kraan takes off and begins to
+fly across the lake to where you are hidden."""
+[[nodes.options]]
+text = "If you wish to use the Kai Discipline of Camouflage to hide yourself and your horse"
+[[nodes.options]]
+text = "If you wish to ride deeper into the forest to escape the Kraan"
+[[nodes.options]]
+text = "If you wish to prepare to fight the creature"
+[[nodes.outcomes]]
+next_node_id = "114"
+[[nodes.outcomes]]
+next_node_id = "239"
+[[nodes.outcomes]]
+next_node_id = "29"
+
+# Paragraph 173
+[[nodes]]
+id = "173"
+title = "Paragraph 173"
+description = """As you reach the door you hear the crash of a giant stone slab as
+it falls from the ceiling. Turning around, you see that your exit is
+now blocked."""
+[[nodes.options]]
+text = "If you have a Silver Key, you may try to open the door by turning to 158."
+[[nodes.options]]
+text = "If you do not possess a Silver Key"
+[[nodes.outcomes]]
+next_node_id = "158"
+[[nodes.outcomes]]
+next_node_id = "259"
+
+# Paragraph 174
+[[nodes]]
+id = "174"
+title = "Paragraph 174"
+description = """After nearly an hour of drifting downstream, the water current
+becomes quite strong and you can see that you are being drawn
+towards a whirlpool near the centre as the river curves round.
+You know that if you are caught in the swirling water, you stand
+very little chance of escaping a watery death. You dive into the
+muddy river and as you begin to swim towards the shore you
+unfortunately lose your Backpack and Weapons. Without your
+equipment, you reach the wooded bank."""
+[[nodes.outcomes]]
+next_node_id = "190"
+
+# Paragraph 175
+[[nodes]]
+id = "175"
+title = "Paragraph 175"
+description = """Waving your arms at the approaching cavalry, you recognize them
+to be Border Rangers of the King’s army, tough woodsmen who
+police the troubled western frontier of the kingdom. Your relief at
+seeing them soon fades when you realize that they are fleeing from
+a pack of Doomwolves with snarling Giak riders. Black arrows are
+dropping all around the rangers, as the vicious Doomwolves get
+nearer and nearer."""
+[[nodes.options]]
+text = "If you possess the Kai Discipline of Camouflage"
+[[nodes.options]]
+text = "If you wish to take cover and hide"
+[[nodes.options]]
+text = "If you wish to make for the other bank"
+[[nodes.outcomes]]
+next_node_id = "182"
+[[nodes.outcomes]]
+next_node_id = "41"
+[[nodes.outcomes]]
+next_node_id = "116"
+
+# Paragraph 176
+[[nodes]]
+id = "176"
+title = "Paragraph 176"
+description = """You hide behind some thick bushes so that the Doomwolf and its
+rider will not see your white horse. Luckily it works—the beast
+lopes past and vanishes down the track that you have just come
+along."""
+[[nodes.options]]
+text = "If you wish to attack the remaining Doomwolves and their riders"
+[[nodes.options]]
+text = "If you wish to press on deeper into the forest"
+[[nodes.outcomes]]
+next_node_id = "253"
+[[nodes.outcomes]]
+next_node_id = "126"
+
+# Paragraph 177
+[[nodes]]
+id = "177"
+title = "Paragraph 177"
+description = """You search all of the cupboards in the small cottage but do not
+find anything of use or value. You decide that you have wasted
+enough time here and must press on without further delay."""
+[[nodes.outcomes]]
+next_node_id = "83"
+
+# Paragraph 178
+[[nodes]]
+id = "178"
+title = "Paragraph 178"
+description = """Your skill enables you to recognize the boots and leggings of a
+King’s soldier. You can sense that the man is wounded and in
+need of help."""
+[[nodes.options]]
+text = "If you wish to aid him"
+[[nodes.options]]
+text = "If you would rather leave him here"
+[[nodes.outcomes]]
+next_node_id = "88"
+[[nodes.outcomes]]
+next_node_id = "264"
+
+# Paragraph 179
+[[nodes]]
+id = "179"
+title = "Paragraph 179"
+description = """You have been spotted by the guards who level their crossbows at
+you."""
+[[nodes.options]]
+text = "If you wish to raise your hands above your head and walk slowly towards them"
+[[nodes.options]]
+text = "If you wish to run for cover in the trees"
+[[nodes.outcomes]]
+next_node_id = "318"
+[[nodes.outcomes]]
+next_node_id = "51"
+
+# Paragraph 180
+[[nodes]]
+id = "180"
+title = "Paragraph 180"
+description = """They see you raise your weapon, and they instantly attack you.
+If you decide to fight them, you must fight them one at a time.
+Leader: COMBAT SKILL 15 ENDURANCE 22
+Soldier 1: COMBAT SKILL 13 ENDURANCE 20
+Soldier 2: COMBAT SKILL 12 ENDURANCE 20
+If you kill all three of them, turn to 62.
+If you wish to evade combat, turn to 22."""
+[[nodes.outcomes]]
+next_node_id = "62"
+[[nodes.outcomes]]
+next_node_id = "22"
+
+# Paragraph 181
+[[nodes]]
+id = "181"
+title = "Paragraph 181"
+description = """Instinctively you duck, and dive to avoid the crossbow bolt. The
+bandit fires and you feel the sleeve of your jacket tear as the missile grazes past your left arm. You thank the gods for your good
+fortune and sprint on.
+None of the other bandits have bows and they soon give up the
+chase. As you sprint off into the distance, you leave them all far
+behind. You have lost your Weapons and Equipment, but not
+your life.
+You stop just long enough to strap up your wounded arm and
+then continue along the road towards the outer defences of the
+capital."""
+[[nodes.outcomes]]
+next_node_id = "288"
+
+# Paragraph 182
+[[nodes]]
+id = "182"
+title = "Paragraph 182"
+description = """Three rangers gallop past the river bank, closely followed by the
+Giaks on their snarling mounts—the Doomwolves. But your Camouflage skill has saved you from being spotted. The pack of evil
+Giaks continue on their chase without even glancing at the river."""
+[[nodes.outcomes]]
+next_node_id = "174"
+
+# Paragraph 183
+[[nodes]]
+id = "183"
+title = "Paragraph 183"
+description = """The officer orders his men to halt and asks you your business. You
+tell him who you are, and how the monastery has been destroyed.
+He is deeply saddened to hear your news. He offers you a horse
+and asks you to accompany him to Prince Pelathar, the King’s son."""
+[[nodes.options]]
+text = "If you accept"
+[[nodes.options]]
+text = "If you decide to decline his offer"
+[[nodes.outcomes]]
+next_node_id = "97"
+[[nodes.outcomes]]
+next_node_id = "200"
+
+# Paragraph 184
+[[nodes]]
+id = "184"
+title = "Paragraph 184"
+description = """The caravan is out of control and is bumping wildly through the
+rough ground that borders the highway. With difficulty you eventually steer the frightened horses back onto the road and halt the
+caravan.
+A quick search of the interior reveals 40 Gold Crowns, a Sword,
+and enough Food for 4 Meals. If you wish to keep any of these
+items, mark them on your Action Chart.
+The fatigue of your ordeal finally catches up with you. You must
+eat a Meal after which you fall into a deep sleep."""
+[[nodes.outcomes]]
+next_node_id = "64"
+
+# Paragraph 185
+[[nodes]]
+id = "185"
+title = "Paragraph 185"
+description = """You narrow your eyes and scan the trees for some sign of the
+hidden archer. Your wait is not a long one, for a moment later a
+sharp pain tears through your chest and you are thrown back by
+the force of three arrows. Two of the black shafts have sunk deep
+into your rib cage, and the third has pierced your thigh.
+The last thing that you see is the canopy of fern trees above and
+a large green dragonfly as it settles on your belt buckle.
+Your life and your mission end here."""
+
+# Paragraph 186
+[[nodes]]
+id = "186"
+title = "Paragraph 186"
+description = """The Kakarmi disappear into the dense undergrowth and you soon
+find yourself lost. After nearly two hours of walking you hear the
+sound of running water. You decide to investigate a little closer."""
+[[nodes.outcomes]]
+next_node_id = "106"
+
+# Paragraph 187
+[[nodes]]
+id = "187"
+title = "Paragraph 187"
+description = """Two furry faces appear over the top of the trunk. Both pairs of
+eyes stare at your weapon and the two creatures let out a shriek
+of fright. Leaping from the trunk, they disappear into the forest."""
+[[nodes.options]]
+text = "If you wish to follow them"
+[[nodes.options]]
+text = "If you wish to let them go and continue"
+[[nodes.outcomes]]
+next_node_id = "186"
+[[nodes.outcomes]]
+next_node_id = "228"
+
+# Paragraph 188
+[[nodes]]
+id = "188"
+title = "Paragraph 188"
+description = """You can see the shadow of the Kraan getting larger all around
+you. It suddenly strikes, pitching you forward onto your face with
+the power of its attack.
+Pick a number from the Random Number Table.
+If the number you have picked is 0–6, the Kraan has ripped
+away your Backpack. You have lost the Pack and all the Equipment that was inside it.
+If the number picked is 7–9, your Backpack is intact but you
+have been wounded in both arms. Lose 3 ENDURANCE points
+and run to the trees."""
+[[nodes.options]]
+text = "If the number you have picked is 0–6, the Kraan has ripped away your Backpack. You have lost the Pack and all the Equipment that was inside it."
+[[nodes.options]]
+text = "If the number picked is 7–9, your Backpack is intact but you have been wounded in both arms. Lose 3 ENDURANCE points and run to the trees."
+[[nodes.outcomes]]
+next_node_id = "303"
+[[nodes.outcomes]]
+next_node_id = "303"
+
+# Paragraph 189
+[[nodes]]
+id = "189"
+title = "Paragraph 189"
+description = """You thank your Kai training and your quick thinking, for that bog
+could have proved as deadly as any Drakkarim or Kraan.
+You are worried about losing time, and push on further into the
+trees towards the south. Ahead of you, you see a wide path that
+also leads south."""
+[[nodes.outcomes]]
+next_node_id = "118"
+
+# Paragraph 190
+[[nodes]]
+id = "190"
+title = "Paragraph 190"
+description = """You walk for three miles along the water’s edge until you chance
+upon a wrecked river barge. It appears to have served as shelter
+for someone, as you can see a bed and some cooking utensils
+through a hole in the deck."""
+[[nodes.options]]
+text = "If you wish to search the barge"
+[[nodes.options]]
+text = "If you wish to press on"
+[[nodes.outcomes]]
+next_node_id = "20"
+[[nodes.outcomes]]
+next_node_id = "273"
+
+# Paragraph 191
+[[nodes]]
+id = "191"
+title = "Paragraph 191"
+description = """The bodyguard unsheathes a large scimitar and strikes at your
+head.
+Bodyguard: COMBAT SKILL 11 ENDURANCE 21
+If you win, turn to 24.
+If you wish to evade more combat during the fight, you can
+jump from the speeding caravan by turning to 234."""
+[[nodes.outcomes]]
+next_node_id = "24"
+[[nodes.outcomes]]
+next_node_id = "234"
+
+# Paragraph 192
+[[nodes]]
+id = "192"
+title = "Paragraph 192"
+description = """You see the razor-fanged mouth of a Doomwolf and hear the
+hideous cries of the Giaks. Two of them are coming straight for
+you. You are saved from certain death when your horse jumps at
+the approaching beasts, knocking them both to the ground. You
+lash out at the Giak and open a large wound in his head . . . and
+then suddenly, as if by a miracle, you’re through and racing on
+down the highway, clear of the rest of the pack.
+But a shadow follows you. It is a Kraan and it has started to
+dive. Its target is you."""
+[[nodes.options]]
+text = "If you veer off the highway towards the cover of the trees"
+[[nodes.options]]
+text = "If you press on regardless of the Kraan, and gallop flat out down the highway"
+[[nodes.outcomes]]
+next_node_id = "171"
+[[nodes.outcomes]]
+next_node_id = "120"
+
+# Paragraph 193
+[[nodes]]
+id = "193"
+title = "Paragraph 193"
+description = """The beast and its rider lie dead. You notice a Scroll tucked into the
+Giak’s belt. You may take this if you wish, but remember to mark it
+on your Action Chart. The other Doomwolves are charging along
+the path towards you."""
+[[nodes.options]]
+text = "If you wish to fight them"
+[[nodes.options]]
+text = "If you wish to escape into the woods"
+[[nodes.outcomes]]
+next_node_id = "253"
+[[nodes.outcomes]]
+next_node_id = "126"
+
+# Paragraph 194
+[[nodes]]
+id = "194"
+title = "Paragraph 194"
+description = """You sprint towards the wagon. People are running everywhere in
+panic as the Kraan make their attack, carrying their poor victims
+off into the darkening sky. A large Kraan is hovering above the
+wagon and three snarling Giaks drop from its back onto the startled horses. You must fight them or leave the wagon and run to
+the safety of a nearby farmhouse."""
+[[nodes.options]]
+text = "If you wish to fight the Giaks"
+[[nodes.options]]
+text = "If you wish to run to the farmhouse"
+[[nodes.outcomes]]
+next_node_id = "208"
+[[nodes.outcomes]]
+next_node_id = "148"
+
+# Paragraph 195
+[[nodes]]
+id = "195"
+title = "Paragraph 195"
+description = """Wiping the bear’s blood from your weapon, you notice the mouth
+of a cave hidden behind the rock from which the bear attacked."""
+[[nodes.options]]
+text = "If you wish to investigate this cave further"
+[[nodes.options]]
+text = "If you wish to press on"
+[[nodes.outcomes]]
+next_node_id = "59"
+[[nodes.outcomes]]
+next_node_id = "106"
+
+# Paragraph 196
+[[nodes]]
+id = "196"
+title = "Paragraph 196"
+description = """You follow the man into a small library off the main hall. He
+pushes one of the many books on the shelves which line all four
+walls, and you hear a metallic click. One section of the bookcase
+slowly slides back to reveal a hidden passage."""
+[[nodes.options]]
+text = "If you wish to follow the man into the passage"
+[[nodes.options]]
+text = "If you do not want to enter the dark corridor, leave the guildhall and return to the street"
+[[nodes.outcomes]]
+next_node_id = "332"
+[[nodes.outcomes]]
+next_node_id = "144"
+
+# Paragraph 197
+[[nodes]]
+id = "197"
+title = "Paragraph 197"
+description = """The Drakkar lies dead at the bottom of the ferry. He has a Short
+Sword and 6 Gold Crowns which you may keep if you wish. You
+push the body into the water where it floats for a few seconds
+before disappearing into the icy depths.
+Grabbing the pole, you steer to the other side of the lake and
+abandon the ferry."""
+[[nodes.outcomes]]
+next_node_id = "172"
+
+# Paragraph 198
+[[nodes]]
+id = "198"
+title = "Paragraph 198"
+description = """You can sense that there is someone else behind the screen. There
+is a lingering aura of wickedness around this shop. Be on your
+guard—something is wrong here."""
+[[nodes.options]]
+text = "If you wish to return to the street"
+[[nodes.options]]
+text = "If you wish to examine the goods in the glass counter"
+[[nodes.outcomes]]
+next_node_id = "7"
+[[nodes.outcomes]]
+next_node_id = "152"
+
+# Paragraph 199
+[[nodes]]
+id = "199"
+title = "Paragraph 199"
+description = """Most of the cupboards and drawers are empty. Whoever lived
+here took nearly everything they owned with them, but you do
+manage to scrape together enough fruit in the cellar for one Meal.
+You may mark this on your Action Chart."""
+[[nodes.outcomes]]
+next_node_id = "81"
+
+# Paragraph 200
+[[nodes]]
+id = "200"
+title = "Paragraph 200"
+description = """Night is starting to close in. The shadows of the forest are growing
+longer and darker. Just as you are about to stop and rest, you
+see through the trees a line of people moving south along a wide
+highway. Moving closer, you notice a large merchant’s caravan in
+the centre of the dusty turnpike. It is drawn by six large horses and
+is moving much faster than any of the other traffic. This could be
+your chance to reach the capital as quickly as possible."""
+[[nodes.options]]
+text = "If you wish to use the Kai Discipline of Camouflage to hide in among the packing cases strapped to the roof"
+[[nodes.options]]
+text = "If you wish to jump onto the caravan"
+[[nodes.outcomes]]
+next_node_id = "168"
+[[nodes.outcomes]]
+next_node_id = "78"
+
+# Paragraph 201
+[[nodes]]
+id = "201"
+title = "Paragraph 201"
+description = """You follow the rough track for nearly an hour when you notice
+ahead of you another wider path branching off towards the south."""
+[[nodes.options]]
+text = "If you wish to turn south along the new path"
+[[nodes.options]]
+text = "But if you wish to head east"
+[[nodes.options]]
+text = "Or if you wish to go west"
+[[nodes.outcomes]]
+next_node_id = "238"
+[[nodes.outcomes]]
+next_node_id = "15"
+[[nodes.outcomes]]
+next_node_id = "130"
+
+# Paragraph 202
+[[nodes]]
+id = "202"
+title = "Paragraph 202"
+description = """Urging your horse forward, you gallop down the long stretch of
+highway towards the capital. After only a few minutes your horse
+suddenly slows and finally limps to a halt. You dismount and
+examine its raised right foreleg. You curse your ill luck, for you
+see that it has thrown a shoe and injured its hoof quite badly. You
+will have to leave him here and proceed on foot as quickly as you
+can."""
+[[nodes.outcomes]]
+next_node_id = "58"
+
+# Paragraph 203
+[[nodes]]
+id = "203"
+title = "Paragraph 203"
+description = """You suddenly feel a searing pain shoot through your chest as
+something explodes against you in a shower of red sparks.
+You lose 10 ENDURANCE points. Through the smoke, the Sage
+is preparing to throw more explosives at you."""
+[[nodes.options]]
+text = "If you have 10 or more ENDURANCE points left"
+[[nodes.options]]
+text = "If you now have less than 10 ENDURANCE points"
+[[nodes.outcomes]]
+next_node_id = "80"
+[[nodes.outcomes]]
+next_node_id = "344"
+
+# Paragraph 204
+[[nodes]]
+id = "204"
+title = "Paragraph 204"
+description = """After an hour of walking you arrive at a junction. The path continues south and another path joins it from the west. You realize that
+the west path will lead you back to the marsh, so you continue
+southwards."""
+[[nodes.outcomes]]
+next_node_id = "111"
+
+# Paragraph 205
+[[nodes]]
+id = "205"
+title = "Paragraph 205"
+description = """Their leader picks up your discarded Equipment and ushers you
+along the road ahead. An evil grin spreads across the face of
+the other two men, and you suddenly realize that they are not
+soldiers after all. You make a break for it and run away from
+there, sprinting towards the distant capital.
+Behind you, the ominous click of a crossbow being primed
+sends a shiver down your spine.
+Pick a number from the Random Number Table.
+If the number you have picked is 0–4, turn to 181.
+If the number is 5–9, turn to 145."""
+[[nodes.options]]
+text = "If the number you have picked is 0–4"
+[[nodes.options]]
+text = "If the number is 5–9"
+[[nodes.outcomes]]
+next_node_id = "181"
+[[nodes.outcomes]]
+next_node_id = "145"
+
+# Paragraph 206
+[[nodes]]
+id = "206"
+title = "Paragraph 206"
+description = """The path soon joins a highway where a signpost indicates Toran
+to the north and Holmgard to the south. You turn south towards
+the capital."""
+[[nodes.outcomes]]
+next_node_id = "224"
+
+# Paragraph 207
+[[nodes]]
+id = "207"
+title = "Paragraph 207"
+description = """The track soon reaches a larger road which crosses the stream via
+a stone bridge. A signpost at the bridge points north to Toran and
+south to Holmgard. The road itself is jammed with people moving
+south, some pushing their possessions along on handcarts. You
+join the refugee column and head towards the capital."""
+[[nodes.outcomes]]
+next_node_id = "30"
+
+# Paragraph 208
+[[nodes]]
+id = "208"
+title = "Paragraph 208"
+description = """The ghoulish creatures thrust their spears at you and attack. Fight
+these creatures as a single enemy.
+Giaks: COMBAT SKILL 15 ENDURANCE 13
+If you win, you can run to the safety of the farmhouse by
+turning to 148.
+Or you can return to the woods by turning to 320."""
+[[nodes.outcomes]]
+next_node_id = "148"
+[[nodes.outcomes]]
+next_node_id = "320"
+
+# Paragraph 209
+[[nodes]]
+id = "209"
+title = "Paragraph 209"
+description = """You see ahead a corridor sloping upwards, and as you reach the
+top of this slope, a stone portal slides across to reveal another
+passage ahead.
+You step through the opening which then quickly closes with a
+crunch."""
+[[nodes.outcomes]]
+next_node_id = "23"
+
+# Paragraph 210
+[[nodes]]
+id = "210"
+title = "Paragraph 210"
+description = """Just inside the door, you are stopped by a journeyman of the
+Guildhall and asked to explain your intrusion. You calmly inform
+him of your urgent message for the King, and he hurries you into
+the Guildmaster’s chambers.
+A distinguished old man in deep purple robes turns to greet
+you and listens to your story. Taking you by the arm, he leads
+you into an adjoining library and closes the door. Pressing one
+of the many thousands of books, he releases a secret panel in the
+wall and beckons you to follow him."""
+[[nodes.options]]
+text = "If you wish to follow him into the dark passage"
+[[nodes.options]]
+text = "If you are not completely happy about this man and wish to leave the Guildhall"
+[[nodes.outcomes]]
+next_node_id = "332"
+[[nodes.outcomes]]
+next_node_id = "37"
+
+# Paragraph 211
+[[nodes]]
+id = "211"
+title = "Paragraph 211"
+description = """You walk along a dimly lit corridor which opens out into a large
+square room, with an oak door in the far wall."""
+[[nodes.options]]
+text = "If you possess the Kai Discipline of Sixth Sense"
+[[nodes.options]]
+text = "If you wish to walk across to the door"
+[[nodes.options]]
+text = "If you would prefer to return to the surface and continue your journey"
+[[nodes.outcomes]]
+next_node_id = "244"
+[[nodes.outcomes]]
+next_node_id = "173"
+[[nodes.outcomes]]
+next_node_id = "106"
+
+# Paragraph 212
+[[nodes]]
+id = "212"
+title = "Paragraph 212"
+description = """When you awake, the pain is but a memory. Restore all lost ENDURANCE points to your original score. A tall man dressed in
+white robes stands before you, a bowl of herbs in his hands. Placing the leaves into a kettle of boiling water, he then turns to greet
+you.
+‘You have passed close to death and have seen his face, Kai
+Lord, but the Grey One has not claimed you for his flock. You are
+healed in body but I sense that you are wounded in spirit. What
+is it that troubles you so?’
+You recognize the man to be one of the King’s senior physicians,
+for the gold embroidered emblem of a dove upon his sleeve is the
+sign of his respected vocation. You tell the aged cleric of the events
+at the monastery and of your perilous journey to the King.
+Raising you gently from the bed by your arm, he bids you follow
+him. You notice that you are in a lavishly decorated room which
+leads out through a long corridor lined with tapestries. It slowly
+dawns on you just where you are.
+This is the citadel of Holmgard and you are about to meet the
+King."""
+[[nodes.outcomes]]
+next_node_id = "350"
+
+# Paragraph 213
+[[nodes]]
+id = "213"
+title = "Paragraph 213"
+description = """You have been trudging through the forest for nearly two hours.
+The nagging fear that you are lost begins to seem a reality. Apart
+from the occasional cry of a Kraan in the far distance, you have
+seen or heard no evidence that the enemy is in this part of the
+forest. As you descend a rocky hillock, you see something unusual
+in the tangled woods ahead."""
+[[nodes.outcomes]]
+next_node_id = "331"
+
+# Paragraph 214
+[[nodes]]
+id = "214"
+title = "Paragraph 214"
+description = """The path gradually narrows until it disappears completely into a
+mass of dense vegetation. You cannot go any further on this route
+and therefore you must return to the clearing."""
+[[nodes.outcomes]]
+next_node_id = "125"
+
+# Paragraph 215
+[[nodes]]
+id = "215"
+title = "Paragraph 215"
+description = """You emerge into a small clearing. In the centre you see the skeletal
+remains of a large animal. To the south a narrow track leads off
+into the distance."""
+[[nodes.options]]
+text = "If you wish to examine the skeleton"
+[[nodes.options]]
+text = "If you would rather press on"
+[[nodes.outcomes]]
+next_node_id = "346"
+[[nodes.outcomes]]
+next_node_id = "14"
+
+# Paragraph 216
+[[nodes]]
+id = "216"
+title = "Paragraph 216"
+description = """Placing one hand on his forehead and the other on his wounded
+arm, you feel the warmth of your healing powers leave your body
+and give strength to the injured man.
+He tells you his name is Trimis and he is a soldier in Prince
+Pelathar’s army. The Prince and his troops are engaged in battle to the south, where a large force of the Darklords’ creatures
+are attacking the bridge of Alema. During the fight, he had been
+snatched into the air by a Kraan, and dropped into the forest.
+You make the soldier as comfortable as possible before continuing on your mission."""
+[[nodes.outcomes]]
+next_node_id = "264"
+
+# Paragraph 217
+[[nodes]]
+id = "217"
+title = "Paragraph 217"
+description = """You quickly escape from the madman and dodge along a dark
+alleyway where the houses are small and cramped together. At
+the very end is a green door with a sign above it that says:
+If you wish to enter, turn to 91.
+If you wish to wait until you are sure the madman has disappeared and then return to the main street, turn to 7."""
+[[nodes.options]]
+text = "If you wish to enter"
+[[nodes.options]]
+text = "If you wish to wait until you are sure the madman has disappeared and then return to the main street"
+[[nodes.outcomes]]
+next_node_id = "91"
+[[nodes.outcomes]]
+next_node_id = "7"
+
+# Paragraph 218
+[[nodes]]
+id = "218"
+title = "Paragraph 218"
+description = """Your senses reveal that more than just horses are heading towards
+you. You can just make out the very high shrieks of Giak war-cries
+in the distance. By the number of cries and curses you estimate
+that there are over a dozen Giaks, and probably Doomwolves as
+well. You decide that advertising your existence is perhaps not
+quite such a good idea after all!"""
+[[nodes.outcomes]]
+next_node_id = "75"
+
+# Paragraph 219
+[[nodes]]
+id = "219"
+title = "Paragraph 219"
+description = """All that remains of you now is embedded five feet into the stairs
+on which you were standing, beneath a vast granite block.
+Your mission and your life end here."""
+
+# Paragraph 220
+[[nodes]]
+id = "220"
+title = "Paragraph 220"
+description = """The bodyguard unsheathes a scimitar and lunges for your head.
+Bodyguard: COMBAT SKILL 11 ENDURANCE 20
+If you win, turn to 24.
+If you wish to evade combat at any time during the fight,
+you can jump from the speeding caravan by turning to
+234."""
+[[nodes.outcomes]]
+next_node_id = "24"
+[[nodes.outcomes]]
+next_node_id = "234"
+
+# Paragraph 221
+[[nodes]]
+id = "221"
+title = "Paragraph 221"
+description = """Cautiously, you approach the base of the log wall. The tree trunks
+are rough-hewn and afford plenty of footholds for your climb. As
+you reach the top of the wall, you come face to face with a crossbow. The soldier holding it in your face motions for you to descend a wooden ladder to the ground. You do not argue with
+him. Slowly you descend the ladder."""
+[[nodes.outcomes]]
+next_node_id = "318"
+
+# Paragraph 222
+[[nodes]]
+id = "222"
+title = "Paragraph 222"
+description = """As you go on you discover a forest path that divides at the point
+you join it."""
+[[nodes.options]]
+text = "If you wish to use your Kai Discipline of Tracking"
+[[nodes.options]]
+text = "If you wish to take the south fork"
+[[nodes.options]]
+text = "If you wish to take the east fork"
+[[nodes.outcomes]]
+next_node_id = "67"
+[[nodes.outcomes]]
+next_node_id = "140"
+[[nodes.outcomes]]
+next_node_id = "252"
+
+# Paragraph 223
+[[nodes]]
+id = "223"
+title = "Paragraph 223"
+description = """After quite a struggle, you manage to free the heavy trunk from
+the river bank. Gathering your equipment in a bundle, you stow
+it on top of the log and then slowly wade out into the river. The
+current soon takes you and you drift slowly downstream.
+After twenty minutes you hear the sound of horses along the
+left bank."""
+[[nodes.options]]
+text = "If you wish to hide behind the log"
+[[nodes.options]]
+text = "If you wish to climb onto the log and prepare to catch the riders’ attention"
+[[nodes.outcomes]]
+next_node_id = "75"
+[[nodes.outcomes]]
+next_node_id = "175"
+
+# Paragraph 224
+[[nodes]]
+id = "224"
+title = "Paragraph 224"
+description = """You have ridden several miles and have seen no sign of refugees
+or of the enemy. You race on towards a high ridge in the middle
+distance. You should be able to see the capital from there.
+As you reach the peak, the sight that meets you on the far side
+is one of hope—but there is still one challenge you know you have
+to face."""
+[[nodes.outcomes]]
+next_node_id = "153"
+
+# Paragraph 225
+[[nodes]]
+id = "225"
+title = "Paragraph 225"
+description = """You recognize the language to be that of the Kakarmi, an intelligent race of forest animals that live in, and care for the forests of
+Sommerlund. You have nothing to fear from these creatures as
+they are very timid and gentle in their behaviour. Using your skill
+of Animal Kinship, you call to them in their strange native tongue."""
+[[nodes.options]]
+text = "If you say ‘Do not be afraid, I am a friend,’"
+[[nodes.options]]
+text = "If you say ‘I am a Kai Lord. I wish you no harm. I must talk with you,’"
+[[nodes.outcomes]]
+next_node_id = "187"
+[[nodes.outcomes]]
+next_node_id = "39"
+
+# Paragraph 226
+[[nodes]]
+id = "226"
+title = "Paragraph 226"
+description = """At first the descent is quite easy, but you soon find it difficult to see
+clearly and your legs feel very weak. The ‘Sleeptooth’ scratches
+are affecting you, and suddenly you pitch forward and slip headfirst into darkness.
+Pick a number from the Random Number Table.
+If the number you have picked is 0–4, turn to 277.
+If the number is 5–9, turn to 338."""
+[[nodes.options]]
+text = "If the number you have picked is 0–4"
+[[nodes.options]]
+text = "If the number is 5–9"
+[[nodes.outcomes]]
+next_node_id = "277"
+[[nodes.outcomes]]
+next_node_id = "338"
+
+# Paragraph 227
+[[nodes]]
+id = "227"
+title = "Paragraph 227"
+description = """You are now up to your waist in slimy water. The air is thick with
+small insects that sting your face and clog your nose. Something
+wraps itself around your leg. It is a Marshviper and you must fight
+it.
+Marshviper: COMBAT SKILL 16 ENDURANCE 6
+If you lose any ENDURANCE points in the combat, turn to
+271.
+If you kill it without losing any ENDURANCE points, turn to
+348."""
+[[nodes.outcomes]]
+next_node_id = "271"
+[[nodes.outcomes]]
+next_node_id = "348"
+
+# Paragraph 228
+[[nodes]]
+id = "228"
+title = "Paragraph 228"
+description = """The path continues eastwards but soon disappears into thick undergrowth."""
+[[nodes.options]]
+text = "If you continue east, cutting through the vegetation with your weapon"
+[[nodes.options]]
+text = "If you head south to where the bushes are less dense, and then press on through the forest"
+[[nodes.outcomes]]
+next_node_id = "140"
+[[nodes.outcomes]]
+next_node_id = "215"
+
+# Paragraph 229
+[[nodes]]
+id = "229"
+title = "Paragraph 229"
+description = """The Kraan hovers above you, raising dust with the beat of its huge
+black wings. The dust gets into your eyes and nose, and you start
+to cough. Now the beast attacks.
+You must fight it to the death. Because of the dust, you must
+reduce your COMBAT SKILL by 1 point.
+Kraan: COMBAT SKILL 16 ENDURANCE 25
+If you win you have a choice.
+Will you search the body by turning to 267?
+Or will you continue along the east path by turning to
+125?"""
+[[nodes.outcomes]]
+next_node_id = "267"
+[[nodes.outcomes]]
+next_node_id = "125"
+
+# Paragraph 230
+[[nodes]]
+id = "230"
+title = "Paragraph 230"
+description = """In the far distance, you can make out the silhouette of soldiers on
+barges that are strung out in a line across the river. You can hear
+the low growls of Doomwolves returning along the opposite bank.
+For once you throw caution to the wind and sprint along the
+river bank towards the barges in the distance."""
+[[nodes.outcomes]]
+next_node_id = "179"
+
+# Paragraph 231
+[[nodes]]
+id = "231"
+title = "Paragraph 231"
+description = """You are about to ask the price of the potions when the bamboo
+screen crashes down and a young man leaps at you. He has a
+long curved dagger in his hand.
+He is upon you and you must fight for your life.
+Robber: COMBAT SKILL 13 ENDURANCE 20
+If you kill him within 4 rounds of combat, turn to 94.
+If you are still fighting after 4 rounds of combat, turn to
+203.
+You may evade more fighting after 2 rounds of combat by
+dashing through the front door. If you wish to do this, turn
+to 7."""
+[[nodes.outcomes]]
+next_node_id = "94"
+[[nodes.outcomes]]
+next_node_id = "203"
+[[nodes.outcomes]]
+next_node_id = "7"
+
+# Paragraph 232
+[[nodes]]
+id = "232"
+title = "Paragraph 232"
+description = """The rough-looking leader approaches you and says, ‘Our needs
+are simple, kind sir. Your money or your life!’"""
+[[nodes.options]]
+text = "If you wish to fight them"
+[[nodes.options]]
+text = "If you wish to run"
+[[nodes.outcomes]]
+next_node_id = "180"
+[[nodes.outcomes]]
+next_node_id = "22"
+
+# Paragraph 233
+[[nodes]]
+id = "233"
+title = "Paragraph 233"
+description = """After nearly an hour, you catch up with the horse and succeed in
+calming him down. You are now north of the cabin, but you are
+confident of finding your way back.
+Mounting the horse, you ride back past the cabin, and press on
+towards the south once again."""
+[[nodes.outcomes]]
+next_node_id = "206"
+
+# Paragraph 234
+[[nodes]]
+id = "234"
+title = "Paragraph 234"
+description = """You jump clear of the speeding caravan but land very badly and
+break your ankle. The pain is terrible and you soon lose consciousness.
+Unfortunately you never wake up, but it may be of interest to
+you that your head is now adorning the saddle of a Kraan.
+Your life and your mission end here."""
+
+# Paragraph 235
+[[nodes]]
+id = "235"
+title = "Paragraph 235"
+description = """The Prince’s horse is indeed a magnificent animal, fast and sure
+of foot. You gallop along the twisting track as if it were a straight
+highway, until the noise of battle has disappeared far behind you.
+You are hungry and must eat a Meal during your ride.
+After several miles, the path stops abruptly at a junction. There
+is a signpost, but it has been hacked down."""
+[[nodes.options]]
+text = "If you wish to use your Kai Discipline of Tracking"
+[[nodes.options]]
+text = "If you wish to turn left, go to 32."
+[[nodes.options]]
+text = "If you wish to turn right, go to 146."
+[[nodes.outcomes]]
+next_node_id = "254"
+[[nodes.outcomes]]
+next_node_id = "32"
+[[nodes.outcomes]]
+next_node_id = "146"
+
+# Paragraph 236
+[[nodes]]
+id = "236"
+title = "Paragraph 236"
+description = """The Gem hovers above the mouth of the skeleton king, glowing a
+fierce red. Suddenly, an explosion of searing crimson flame lashes
+upwards from the sarcophagus, destroying the Gem completely.
+You are thrown against the far wall and knocked unconscious.
+When you awake, the chamber is completely empty. The skeleton king and the sarcophagus have vanished. You have lost 6
+ENDURANCE points, and your initial COMBAT SKILL is reduced by
+1 point for the rest of your life."""
+[[nodes.outcomes]]
+next_node_id = "104"
+
+# Paragraph 237
+[[nodes]]
+id = "237"
+title = "Paragraph 237"
+description = """You make full use of your Kai Discipline and quickly burrow deep
+into the loose earth of the wooded hillside. Covering yourself with
+your cloak, you pull a loose branch across your hastily dug shelter.
+Pick a number from the Random Number Table.
+If you have picked a number 0–4, then you have passed
+undetected. Turn to 265.
+If you have picked a number 5–9, then you are not so lucky!
+Turn to 72."""
+[[nodes.options]]
+text = "If you have picked a number 0–4, then you have passed undetected."
+[[nodes.options]]
+text = "If you have picked a number 5–9, then you are not so lucky!"
+[[nodes.outcomes]]
+next_node_id = "265"
+[[nodes.outcomes]]
+next_node_id = "72"
+
+# Paragraph 238
+[[nodes]]
+id = "238"
+title = "Paragraph 238"
+description = """The path meanders between several small, wooded hills and eventually leads to a ruined log cabin. It seems that it had burnt down
+not so long ago, for the ashes are still warm and a haze of smoke
+still lingers. You sense possible danger here."""
+[[nodes.options]]
+text = "You may leave by the south route by turning to 42."
+[[nodes.options]]
+text = "Or you may take the north track by turning to 68."
+[[nodes.outcomes]]
+next_node_id = "42"
+[[nodes.outcomes]]
+next_node_id = "68"
+
+# Paragraph 239
+[[nodes]]
+id = "239"
+title = "Paragraph 239"
+description = """As you push on into the forest, you hear the wings of the Kraan
+pass above the trees and disappear northwards. You ride on for
+nearly an hour until you come to a clearing. On the far side is a
+track that leads off to the south."""
+[[nodes.options]]
+text = "If you wish to enter the clearing and take the south exit"
+[[nodes.options]]
+text = "If you would rather skirt the edge of the clearing and pick up the track further on"
+[[nodes.outcomes]]
+next_node_id = "34"
+[[nodes.outcomes]]
+next_node_id = "118"
+
+# Paragraph 240
+[[nodes]]
+id = "240"
+title = "Paragraph 240"
+description = """The path leads along a ridge of wooded hillocks and changes direction towards the east."""
+[[nodes.outcomes]]
+next_node_id = "79"
+
+# Paragraph 241
+[[nodes]]
+id = "241"
+title = "Paragraph 241"
+description = """The wizard heeds your cry and spins around just in time to loose
+a searing bolt of energy at the Giak. The creature’s head disintegrates in flames and its twitching body falls in a heap at the foot of
+the pillar. The Giak officer sees you and shouts, ‘Ogot . . . Ogot!’
+to his cowering troops, who quickly run away from the ruins to
+the safety of the forest beyond.
+The young wizard wipes his brow, and walks towards you, his
+hand extended in gratitude and friendship."""
+[[nodes.outcomes]]
+next_node_id = "349"
+
+# Paragraph 242
+[[nodes]]
+id = "242"
+title = "Paragraph 242"
+description = """The lid of the sarcophagus slips to the floor with a dull crunch.
+You are looking at the remains of an ancient king, who lies still
+surrounded by his treasure. An ornate crown is still in position on
+his skull. The jaw of the skeleton is wide open and the darkness
+of the mouth seems strangely bottomless. A distant rumbling can
+now be heard from deep in the earth."""
+[[nodes.options]]
+text = "If you have the Kai Discipline of Mindshield"
+[[nodes.options]]
+text = "If you do not"
+[[nodes.outcomes]]
+next_node_id = "166"
+[[nodes.outcomes]]
+next_node_id = "9"
+
+# Paragraph 243
+[[nodes]]
+id = "243"
+title = "Paragraph 243"
+description = """Hurrying through the forest, you stumble and fall down a steep
+slope which drops you in a heap on a hidden path below. On the
+path is a dead body. It is a Giak, a spiteful and ghoulish servant
+of the Darklords. Many centuries ago, their ancestors were used
+by the Darklords to build for them the infernal city of Helgedad,
+which lies in the volcanic wastelands beyond the Durncrag range
+of mountains. The construction of the city was a long and torturous nightmare, and only the strongest of the Giaks survived the
+heat and poisonous atmospheres of Helgedad. This creature that
+lies before you is a descendant of these Giak slaves. It has been
+killed by a sword blow to its head, and by its side lies a Mace. You
+may take this Weapon if you wish.
+Continue along the hidden path by turning to 97."""
+[[nodes.outcomes]]
+next_node_id = "97"
+
+# Paragraph 244
+[[nodes]]
+id = "244"
+title = "Paragraph 244"
+description = """Your senses tell you that you are not alone. You are in very great
+danger. Return to the surface as quickly as you can."""
+[[nodes.outcomes]]
+next_node_id = "93"
+
+# Paragraph 245
+[[nodes]]
+id = "245"
+title = "Paragraph 245"
+description = """Arrows hit the water above you, and drop harmlessly past as you
+swim beneath the surface towards the opposite bank.
+Quickly you wade out of the river and dash for the trees. You
+are now out of range of the Giaks, who remount their Doomwolves and continue their chase."""
+[[nodes.outcomes]]
+next_node_id = "190"
+
+# Paragraph 246
+[[nodes]]
+id = "246"
+title = "Paragraph 246"
+description = """When the ferry reaches the middle of the lake, the man stops
+rowing and stands up. He laughs menacingly and pulls back the
+hood of his cloak to reveal himself. He is a Drakkar and you must
+fight him.
+Drakkar: COMBAT SKILL 15 ENDURANCE 23
+If you win, turn to 197."""
+[[nodes.outcomes]]
+next_node_id = "197"
+
+# Paragraph 247
+[[nodes]]
+id = "247"
+title = "Paragraph 247"
+description = """The merchant looks angry. He calls to his bodyguard. You must
+think of something quickly."""
+[[nodes.options]]
+text = "If you decide to offer him something of greater value that you have in your Backpack"
+[[nodes.options]]
+text = "If you prepare to fight the bodyguard"
+[[nodes.outcomes]]
+next_node_id = "159"
+[[nodes.outcomes]]
+next_node_id = "220"
+
+# Paragraph 248
+[[nodes]]
+id = "248"
+title = "Paragraph 248"
+description = """You reach the base of the hill and hurry into the forest. After only
+a few minutes you discover an old forest track."""
+[[nodes.options]]
+text = "If you wish to follow this track north"
+[[nodes.options]]
+text = "If you wish to follow this track east"
+[[nodes.outcomes]]
+next_node_id = "44"
+[[nodes.outcomes]]
+next_node_id = "300"
+
+# Paragraph 249
+[[nodes]]
+id = "249"
+title = "Paragraph 249"
+description = """You descend a flight of stone stairs that lead to a large chamber.
+A macabre sight awaits you. Directly opposite, across the large
+stone room, is an ornate archway with a corridor leading into the
+darkness beyond. The strange green light radiates from two lines
+of skulls each resting on a stone plinth. They face each other to
+form an eerie walkway across the room."""
+[[nodes.options]]
+text = "If you wish to walk across the room to the archway"
+[[nodes.options]]
+text = "If you wish to attack the skulls"
+[[nodes.outcomes]]
+next_node_id = "169"
+[[nodes.outcomes]]
+next_node_id = "107"
+
+# Paragraph 250
+[[nodes]]
+id = "250"
+title = "Paragraph 250"
+description = """Leaping from the top of the trunk, you land in front of two small
+furry creatures. You recognize that they are Kakarmi, an intelligent
+race of animals that inhabit and tend the forests of Sommerlund.
+Before you can apologize for your dramatic entrance, the frightened little creatures scurry off into the forest."""
+[[nodes.options]]
+text = "If you wish to follow them"
+[[nodes.options]]
+text = "If you wish to continue"
+[[nodes.outcomes]]
+next_node_id = "186"
+[[nodes.outcomes]]
+next_node_id = "228"
+
+# Paragraph 251
+[[nodes]]
+id = "251"
+title = "Paragraph 251"
+description = """You are lucky, they do not seem to have spotted you. They slowly
+move on and have soon disappeared along the far side of the
+ridge. You continue your run."""
+[[nodes.outcomes]]
+next_node_id = "10"
+
+# Paragraph 252
+[[nodes]]
+id = "252"
+title = "Paragraph 252"
+description = """In the centre of a small clearing you see a group of humans talking
+excitedly and gesturing wildly with their hands. There are two chil-
+dren, three men, and a woman. Their belongings are wrapped in
+bundles which they carry slung over their shoulders. Their clothes
+look well made and expensive but they are dirty and torn."""
+[[nodes.options]]
+text = "If you wish to approach them and ask who they are"
+[[nodes.options]]
+text = "If you wish to avoid them and continue onwards on your mission"
+[[nodes.outcomes]]
+next_node_id = "155"
+[[nodes.outcomes]]
+next_node_id = "70"
+
+# Paragraph 253
+[[nodes]]
+id = "253"
+title = "Paragraph 253"
+description = """The Doomwolves are soon on you and you must fight them one
+at a time.
+Doomwolf 1: COMBAT SKILL 13 ENDURANCE 24
+Doomwolf 2: COMBAT SKILL 14 ENDURANCE 23
+Doomwolf 3: COMBAT SKILL 14 ENDURANCE 22
+Doomwolf 4: COMBAT SKILL 15 ENDURANCE 21
+If you kill them all in battle, turn to 278."""
+[[nodes.outcomes]]
+next_node_id = "278"
+
+# Paragraph 254
+[[nodes]]
+id = "254"
+title = "Paragraph 254"
+description = """Your Tracking ability tells you that several trails from the right path
+lead off in the direction of the left path. They have been made by
+large wolves. The Darklords use such beasts to scout for their
+armies. They are vicious creatures and are often ridden by Giaks.
+The left path leads towards Holmgard, and the right path leads off
+towards the Durncrag Mountains. The choice of route is yours."""
+[[nodes.options]]
+text = "If you wish to turn left, go to 32."
+[[nodes.options]]
+text = "If you wish to turn right, go to 146."
+[[nodes.outcomes]]
+next_node_id = "32"
+[[nodes.outcomes]]
+next_node_id = "146"
+
+# Paragraph 255
+[[nodes]]
+id = "255"
+title = "Paragraph 255"
+description = """The creature that you now face is a Gourgaz, one of a race of
+cold-blooded reptilian creatures that dwell deep in the treacherous
+Maakenmire swamps. Their favourite food is human flesh!
+The Prince’s Sword lies at your feet. You may pick up and use
+this weapon if you wish. The Gourgaz is about to strike at you—
+you must fight him to the death.
+Gourgaz: COMBAT SKILL 20 ENDURANCE 30
+This creature is immune to Mindblast.
+If you win, turn to 82."""
+[[nodes.outcomes]]
+next_node_id = "82"
+
+# Paragraph 256
+[[nodes]]
+id = "256"
+title = "Paragraph 256"
+description = """You are awoken by the cries of Kraan high above you in the clear
+morning sky. Rubbing your eyes, you peer upwards through the
+canopy of branches to see three of the loathsome creatures fly off
+towards the north.
+You are sure you have not been spotted, but perhaps it would
+be best to leave now—just in case. You mount your horse and
+ride south along the highway."""
+[[nodes.outcomes]]
+next_node_id = "224"
+
+# Paragraph 257
+[[nodes]]
+id = "257"
+title = "Paragraph 257"
+description = """You find a stone portal in the east wall, but there does not appear
+to be any way of opening it."""
+[[nodes.options]]
+text = "If you wish to examine the statue"
+[[nodes.options]]
+text = "If you wish to sit on the seat"
+[[nodes.outcomes]]
+next_node_id = "133"
+[[nodes.outcomes]]
+next_node_id = "161"
+
+# Paragraph 258
+[[nodes]]
+id = "258"
+title = "Paragraph 258"
+description = """Using your Kai Discipline of Mind Over Matter, you untie the ropes
+binding your hands. You wait for a chance to make a break for
+it and then sprint as fast as you can into the dense undergrowth.
+Black arrows whistle past you, but you are soon deep among the
+trees and safe again. You have lost your Backpack and Weapons
+but you have your life and limbs intact. You continue to push on
+into the forest."""
+[[nodes.outcomes]]
+next_node_id = "50"
+
+# Paragraph 259
+[[nodes]]
+id = "259"
+title = "Paragraph 259"
+description = """The room is getting colder. You gradually notice the smell of sulphur in the air. You can hear chanting in the distance. It sounds
+as if it is somewhere in another part of this cave. A slit in the stone
+wall opens, and the end of a black staff begins to appear. Suddenly a bolt of blue lightning leaps from the staff and hits you in
+the chest.
+As your life slowly drains away, the last thing you see is an old
+man dressed in black robes raising a dagger above your throat.
+Your life and your mission end here."""
+
+# Paragraph 260
+[[nodes]]
+id = "260"
+title = "Paragraph 260"
+description = """Swimming towards the bank, you can see the ranger spreadeagled at the water’s edge. You reach him but only to find that
+he has broken his neck in the fall and is dead.
+Suddenly, two Giaks jump on you from above and you must
+fight them. You are unarmed and must fight the Giaks with your
+bare hands. Deduct 4 points from your COMBAT SKILL and fight
+them one at a time.
+Giak 1: COMBAT SKILL 11 ENDURANCE 18
+Giak 2: COMBAT SKILL 12 ENDURANCE 17
+If you win, turn to 156."""
+[[nodes.outcomes]]
+next_node_id = "156"
+
+# Paragraph 261
+[[nodes]]
+id = "261"
+title = "Paragraph 261"
+description = """Sweating, and out of breath, you part the dense undergrowth to
+see a Kraan hovering over the wagon. Three ghoulish Giaks drop
+from its back, startling the horses. They advance upon the helpless
+children with their spears."""
+[[nodes.options]]
+text = "If you wish to run back to the wagon and defend the children"
+[[nodes.options]]
+text = "If you want to run deeper into the forest"
+[[nodes.outcomes]]
+next_node_id = "208"
+[[nodes.outcomes]]
+next_node_id = "264"
+
+# Paragraph 262
+[[nodes]]
+id = "262"
+title = "Paragraph 262"
+description = """The merchant takes your Gold and clicks his fingers. His bodyguard attacks you with his scimitar."""
+[[nodes.options]]
+text = "If you wish to fight"
+[[nodes.options]]
+text = "If you wish to evade combat, jump clear of the speeding caravan by turning to 234."
+[[nodes.outcomes]]
+next_node_id = "191"
+[[nodes.outcomes]]
+next_node_id = "234"
+
+# Paragraph 263
+[[nodes]]
+id = "263"
+title = "Paragraph 263"
+description = """Carefully, you follow the stream as it makes its way towards the
+east. Suddenly you notice something in the distance that brings
+you to a halt.
+Lying in the rushing water like a great black dam is a dead
+Kraan. You creep nearer, under cover of the foliage, until you
+see three arrows deep in the beast’s chest. Trapped beneath the
+beast is the body of its rider. It is a Giak, a spiteful and malicious servant of the Darklords. Many centuries ago, their ancestors
+were used by the Darklords to build the infernal city of Helgedad,
+which lies in the volcanic wastelands beyond the Durncrag range
+of mountains. The construction of the city was a long and torturous nightmare, and only the strongest Giaks survived the heat
+and poisonous atmospheres of Helgedad. This creature is a descendant of these Giak slaves. It seems that this one must have
+drowned. The Giak’s pouch contains 3 Gold Crowns. (You may
+take these if you wish.)
+You may continue downstream, by turning to 70.
+Or you may leave the stream and make your way on foot
+through the wooded hills to the south by turning to 157."""
+[[nodes.options]]
+text = "You may continue downstream, by turning to 70."
+[[nodes.options]]
+text = "Or you may leave the stream and make your way on foot through the wooded hills to the south by turning to 157."
+[[nodes.outcomes]]
+next_node_id = "70"
+[[nodes.outcomes]]
+next_node_id = "157"
+
+# Paragraph 264
+[[nodes]]
+id = "264"
+title = "Paragraph 264"
+description = """You have not gone far when you hear the sound of battle to the
+west."""
+[[nodes.options]]
+text = "If you wish to follow the sound"
+[[nodes.options]]
+text = "If you would rather continue south"
+[[nodes.outcomes]]
+next_node_id = "97"
+[[nodes.outcomes]]
+next_node_id = "6"
+
+# Paragraph 265
+[[nodes]]
+id = "265"
+title = "Paragraph 265"
+description = """You quickly move off into the forest before more Doomwolves or
+Kraan appear.
+You have walked for more than an hour when you reach the
+top of a rocky hill. The sight that befalls you on the other side is
+one of hope. But there is also a daunting challenge to be faced."""
+[[nodes.outcomes]]
+next_node_id = "142"
+
+# Paragraph 266
+[[nodes]]
+id = "266"
+title = "Paragraph 266"
+description = """As the beast writhes in its final death agony on the black stone
+floor, the portal in the east wall clicks open to reveal a corridor
+beyond. You quickly dash through the secret door just as it crashes
+shut."""
+[[nodes.outcomes]]
+next_node_id = "209"
+
+# Paragraph 267
+[[nodes]]
+id = "267"
+title = "Paragraph 267"
+description = """Covering your nose with your cloak, you cautiously approach the
+dead beast. The sharp smell of its fetid black blood makes your
+stomach churn, but you are determined to press on. Then you
+notice a large saddlebag strapped to its chest. Opening the bag,
+you find a Message written on an animal skin.
+Deeper in the bag is a Dagger. You may keep both the Message
+and the Dagger if you wish.
+You leave the body and continue eastwards along the path."""
+[[nodes.outcomes]]
+next_node_id = "125"
+
+# Paragraph 268
+[[nodes]]
+id = "268"
+title = "Paragraph 268"
+description = """You black out for only a few minutes before you are revived with
+a measure of strong spirit. Feeling weary but thankful to be alive,
+you lean on the shoulders of the King’s men and you stagger towards the outer defences."""
+[[nodes.outcomes]]
+next_node_id = "288"
+
+# Paragraph 269
+[[nodes]]
+id = "269"
+title = "Paragraph 269"
+description = """The madman lies dead at your feet. Two soldiers soon appear
+at the doorway and immediately congratulate you. They tell you
+that he was an escaped lunatic whom they had been tracking for
+the last two days. One of the soldiers gives you 10 Gold Crowns
+reward money and offers to escort you to the citadel."""
+[[nodes.options]]
+text = "If you accept his offer"
+[[nodes.options]]
+text = "If you would prefer to trust your own sense of direction"
+[[nodes.outcomes]]
+next_node_id = "314"
+[[nodes.outcomes]]
+next_node_id = "7"
+
+# Paragraph 270
+[[nodes]]
+id = "270"
+title = "Paragraph 270"
+description = """You hear the angry cries of the enemy drift across the lake. You
+must leave here before more Kraan appear. You mount your steed
+and push on further into the forest."""
+[[nodes.outcomes]]
+next_node_id = "21"
+
+# Paragraph 271
+[[nodes]]
+id = "271"
+title = "Paragraph 271"
+description = """You feel very weak. The poison of the snake has entered your
+bloodstream and you can feel the muscles of your body involuntarily tightening and relaxing. Your legs suddenly collapse beneath
+you and you feel the slimy water of the marsh close over your
+head.
+Your life ends here."""
+
+# Paragraph 272
+[[nodes]]
+id = "272"
+title = "Paragraph 272"
+description = """Keeping a watchful eye on the sky above, you move quickly along
+the track. You recall that this route leads to Fogwood, a small
+cluster of huts that have been used by a family of charcoal burners
+for nearly fifty years. After twenty minutes you reach the edge of
+a clearing where the huts are grouped in a small circle. There is
+no sign of the usual mist of wood smoke which gives Fogwood its
+apt name, and the huts are unusually quiet."""
+[[nodes.options]]
+text = "If you have the Kai Discipline of Tracking, you may turn to 134."
+[[nodes.options]]
+text = "If you do not possess this skill, you prepare your weapon and stealthily approach the huts. Turn to 305."
+[[nodes.outcomes]]
+next_node_id = "134"
+[[nodes.outcomes]]
+next_node_id = "305"
+
+# Paragraph 273
+[[nodes]]
+id = "273"
+title = "Paragraph 273"
+description = """The outer fieldworks of the city can now be seen. Drawn across
+the river is a line of barges chained together to form a floating
+barricade. You can also see soldiers running along the log walls of
+the fieldworks, and you can hear the faint noise of battle drifting
+from the west."""
+[[nodes.options]]
+text = "If you wish to approach the barges"
+[[nodes.options]]
+text = "If you wish to take cover in the trees"
+[[nodes.outcomes]]
+next_node_id = "179"
+[[nodes.outcomes]]
+next_node_id = "51"
+
+# Paragraph 274
+[[nodes]]
+id = "274"
+title = "Paragraph 274"
+description = """In your haste to avoid the enemy, you catch your foot in a tree
+root and you are pitched head over heels in a tumble of dust and
+leaves. You quickly get to your feet and, crashing through the
+undergrowth at the base of the hill, you run into the forest. You
+have been running for nearly ten minutes when you discover that
+you have lost your Weapon(s). Well, at least you still have your
+life and your Backpack. Wiping the grime from your face, you
+push on through the trees ahead."""
+[[nodes.outcomes]]
+next_node_id = "331"
+
+# Paragraph 275
+[[nodes]]
+id = "275"
+title = "Paragraph 275"
+description = """You have followed this twisting track for about twenty minutes
+when you hear the beating of wings high above the trees. Looking
+up you see a large Kraan approaching from the north, its huge
+black wings casting a gigantic shadow on the trees below.
+On its back are two creatures armed with long spears. They are
+Mountain Giaks—small ugly creatures full of hatred and malice.
+Many centuries ago, their ancestors were used by the Darklords
+to build the infernal city of Helgedad, which lies in the volcanic
+wastelands beyond the Durncrag mountain range. The construction of the city was long and torturous, and only the strongest
+of the creatures survived the heat and poisonous atmosphere of
+Helgedad.
+Quickly you dive for the shelter of a large fern tree as the Kraan
+passes overhead. With heart pounding, you pray that your quick
+reactions have saved you from being spotted.
+Pick a number from the Random Number Table.
+If the number you have picked is 0–4, turn to 345.
+If the number is 5–9, turn to 74."""
+[[nodes.options]]
+text = "If the number you have picked is 0–4"
+[[nodes.options]]
+text = "If the number is 5–9"
+[[nodes.outcomes]]
+next_node_id = "345"
+[[nodes.outcomes]]
+next_node_id = "74"
+
+# Paragraph 276
+[[nodes]]
+id = "276"
+title = "Paragraph 276"
+description = """Reaching for your weapon you manage to hack your way through
+the tangle of wood and twisted branches to the clearer forest beyond. Your cloak is torn in several places and your right leg is
+badly bruised above the knee.
+Lose 1 ENDURANCE point and turn to 213."""
+[[nodes.outcomes]]
+next_node_id = "213"
+
+# Paragraph 277
+[[nodes]]
+id = "277"
+title = "Paragraph 277"
+description = """When you awake, you find yourself lying at the foot of a steep
+slope in a tangle of tall grasses. Your Backpack and Weapon
+are missing and your head aches. You cannot tell how long you
+have been unconscious, but you realize that you must not delay
+in pressing on with your mission.
+Standing up, you see your Backpack is intact but the Weapon
+is broken in two and is now useless. Remember to cross it off your
+Action Chart. (If you have more than one weapon, only one of
+them is broken—you may choose which one it is.) You quickly
+pick up your Backpack and move off into the trees ahead."""
+[[nodes.outcomes]]
+next_node_id = "113"
+
+# Paragraph 278
+[[nodes]]
+id = "278"
+title = "Paragraph 278"
+description = """You quickly leave the path and gallop off along the track heading
+towards the capital. When you reach the point where the Doomwolves stopped, you can see just beyond a meadow the main
+highway which runs from the northern port of Toran to Holmgard. You should reach the capital by morning."""
+[[nodes.outcomes]]
+next_node_id = "149"
+
+# Paragraph 279
+[[nodes]]
+id = "279"
+title = "Paragraph 279"
+description = """You clamber over the loose rocks and into the mouth of the cave,
+and then quickly turn to push a large rock over the entrance.
+After a few minutes you see the Giaks on the rocky ledge outside, their evil yellow eyes furtively searching every crevice of the
+hillside. They are so close that you feel sure that they must spot
+you any second now.
+Pick a number from the Random Number Table.
+If the number you have picked is 0–6, turn to 112.
+If the number is 7–9, turn to 96."""
+[[nodes.options]]
+text = "If the number you have picked is 0–6"
+[[nodes.options]]
+text = "If the number is 7–9"
+[[nodes.outcomes]]
+next_node_id = "112"
+[[nodes.outcomes]]
+next_node_id = "96"
+
+# Paragraph 280
+[[nodes]]
+id = "280"
+title = "Paragraph 280"
+description = """As you begin your climb, you hear the beat of wings approaching
+from the west. Kraan! By the noise they are making you estimate
+there are at least ten, perhaps more. You curse your bad luck, for
+the hillside offers no cover from the sky. If you are attacked during
+this difficult climb, you will find it nearly impossible to fight back
+and remain upright at the same time."""
+[[nodes.options]]
+text = "If you decide to draw your weapon and remain completely still, in the hope that the Kraan will not spot you"
+[[nodes.options]]
+text = "If you decide to quickly descend the hillside and take cover in the tunnel"
+[[nodes.outcomes]]
+next_node_id = "327"
+[[nodes.outcomes]]
+next_node_id = "170"
+
+# Paragraph 281
+[[nodes]]
+id = "281"
+title = "Paragraph 281"
+description = """As you race through the trees you can hear the horrible cackle of
+the Giaks close behind you. Soon the trees start to thin out and
+directly ahead you can see a rocky hillside."""
+[[nodes.options]]
+text = "If you break cover and climb up the hill"
+[[nodes.options]]
+text = "If you change direction and continue your run through the forest"
+[[nodes.outcomes]]
+next_node_id = "311"
+[[nodes.outcomes]]
+next_node_id = "77"
+
+# Paragraph 282
+[[nodes]]
+id = "282"
+title = "Paragraph 282"
+description = """Looking above the heads of the crowd, you notice that one of
+the shops opposite the main gate is the timbered surgery of a
+city physician. Suddenly, a bold plan springs to mind. Bracing
+yourself against the tide of bodies, you struggle across to the other
+side of the street. You quickly enter to find that there is no sign
+of life, apart from a brightly coloured parrot in its cage by the
+window.
+Taking a selection of small bottles you slip on a white surgeon’s
+cloak, and fight your way back to the main gate. ‘An emergency!’
+you bluff, as guards stop and question you. ‘It’s the royal cook’s
+wife . . . she’s having a baby.’
+The guards hesitate for a moment, but you assure them that
+the matter is most urgent and they decide to let you in. One of
+the great doors swings open about two feet, and you are roughly
+pushed through the narrow gap into the courtyard beyond."""
+[[nodes.outcomes]]
+next_node_id = "11"
+
+# Paragraph 283
+[[nodes]]
+id = "283"
+title = "Paragraph 283"
+description = """You are only ten feet or so away from the robed stranger when
+the raven squawks a warning to its master who instantly spins
+around. You are frozen in your tracks by the hideous apparition
+of a Vordak, a lieutenant of the Darklords and one of the undead.
+You must fight him.
+Due to the surprise of your attack, you may add 2 points to
+your COMBAT SKILL for the first round of combat only.
+Unless you have the Kai Discipline of Mindshield, deduct 2
+points from your COMBAT SKILL for the second and subsequent
+rounds of fighting, for the creature is attacking you with the power
+of its Mindforce as well as with a large black mace!
+Vordak: COMBAT SKILL 17 ENDURANCE 25
+If you win, turn to 123."""
+[[nodes.outcomes]]
+next_node_id = "123"
+
+# Paragraph 284
+[[nodes]]
+id = "284"
+title = "Paragraph 284"
+description = """Your passage through the Graveyard will not be easy, for the
+ground is broken and covered with a thorny graveweed. This
+wicked briar tears your cloak and cuts your legs. The air hangs
+heavy and still. Foul gases seep from open crypts and the haunting murmur of distant whispering fills your ears.
+Carefully, you approach a gap between two ancient pillars, and
+part the graveweed with your cloaked hand. Suddenly, the ground
+collapses beneath you and you fall in a tumble of earth and stone."""
+[[nodes.outcomes]]
+next_node_id = "71"
+
+# Paragraph 285
+[[nodes]]
+id = "285"
+title = "Paragraph 285"
+description = """With a sickening thud, the chunk of marble cracks open the back
+of the Giak’s head. The creature drops to its knees and slowly falls
+forward, down to the ruins below. Elated by your skill, you race
+forward to aid the young wizard."""
+[[nodes.outcomes]]
+next_node_id = "325"
+
+# Paragraph 286
+[[nodes]]
+id = "286"
+title = "Paragraph 286"
+description = """Messengers of death—and ones eager to deliver their news—the
+Doomwolves surround and then attack you. Valiantly you fight,
+but it is to no avail for there are too many of them.
+As your life’s blood seeps away and eternal dark approaches,
+the last sight you remember is the glint of sunlight on the spires of
+Holmgard.
+You have failed in your mission."""
+
+# Paragraph 287
+[[nodes]]
+id = "287"
+title = "Paragraph 287"
+description = """The track soon disappears completely into a tangle of thorny brambles and low-branched fir trees."""
+[[nodes.options]]
+text = "If you decide to return to the junction and head east"
+[[nodes.options]]
+text = "If you decide to hack your way slowly through the undergrowth in this present direction"
+[[nodes.outcomes]]
+next_node_id = "13"
+[[nodes.outcomes]]
+next_node_id = "330"
+
+# Paragraph 288
+[[nodes]]
+id = "288"
+title = "Paragraph 288"
+description = """As you reach the walls of the fieldworks, the large oak gates open
+and you are quickly hurried inside. A sergeant, bloodstained and
+battle-weary, calls to an officer who turns and recognizes your
+cloak.
+‘My Lord,’ he says. ‘Where are the other Kai Masters? We are
+in desperate need of their wisdom. The Darklords press us most
+cruelly and casualties are high.’
+You inform the brave officer of the terrible fate of your kinsmen,
+and the urgency of your mission to seek the King’s council. Without saying a word, he motions to a soldier to bring forward two
+horses. You both mount and gallop off towards the high city wall
+of Holmgard."""
+[[nodes.outcomes]]
+next_node_id = "129"
+
+# Paragraph 289
+[[nodes]]
+id = "289"
+title = "Paragraph 289"
+description = """The two guards look tired and anxious. They nervously hold their
+royal halberds in front of themselves, using the weapons to push
+away anyone who comes too close to the gates. An angry woman
+attacks one of them, pounding his chest with her clenched fists
+making him fall against the other guard. All three collapse in a
+struggling heap of flailing arms and legs. Seeing your chance, you
+dash forward and pull the large lever which opens the great doors.
+You slip inside and the doors close without either of the guards
+seeing you enter."""
+[[nodes.outcomes]]
+next_node_id = "139"
+
+# Paragraph 290
+[[nodes]]
+id = "290"
+title = "Paragraph 290"
+description = """Inside the long box is a Quarterstaff wrapped in leather. You may
+take this Weapon if you wish. You close the box and descend the
+ladder to the clearing below, taking care to use only the sound
+rungs."""
+[[nodes.outcomes]]
+next_node_id = "140"
+
+# Paragraph 291
+[[nodes]]
+id = "291"
+title = "Paragraph 291"
+description = """The two Giaks lie at your feet, their bodies twisted and lifeless. A
+quick search reveals 6 Gold Crowns, 2 Spears and a Dagger.
+You may keep the Gold and take either the Dagger or a Spear.
+Remember to mark this on your Action Chart.
+The Kraan flew off during your battle, and the track is now
+deserted. You adjust your Backpack and continue your mission."""
+[[nodes.outcomes]]
+next_node_id = "272"
+
+# Paragraph 292
+[[nodes]]
+id = "292"
+title = "Paragraph 292"
+description = """The last thing that you experience of this life is the feeling of being
+sucked into the void of darkness. No trace of you remains in this
+world, for you have passed into a realm of timeless existence. You
+have become a slave of an ancient evil.
+Your adventure ends here."""
+
+# Paragraph 293
+[[nodes]]
+id = "293"
+title = "Paragraph 293"
+description = """With a wave of his hand, Banedon leaves the ruins and you continue your mission, pushing on through the thick woods ahead.
+You have not gone far when you realize several pairs of yellow
+eyes are watching you from the undergrowth to your left. Sud-
+denly, a black arrow skims the top of your head. It is a Giak
+ambush and you must run as fast as you can to escape it."""
+[[nodes.outcomes]]
+next_node_id = "281"
+
+# Paragraph 294
+[[nodes]]
+id = "294"
+title = "Paragraph 294"
+description = """Staying underwater for as long as you can, you finally surface to
+see the Giaks far behind you. You have lost your Weapon(s) and
+Backpack but at least you are still alive.
+You wade out of the muddy water and continue your journey
+under cover of the trees that line the right-hand bank.
+Pick a number from the Random Number Table.
+If the number you pick is 0–2, turn to 230.
+If the number is 3–6, turn to 190.
+If the number is 7–9, turn to 321."""
+[[nodes.options]]
+text = "If the number you pick is 0–2"
+[[nodes.options]]
+text = "If the number is 3–6"
+[[nodes.options]]
+text = "If the number is 7–9"
+[[nodes.outcomes]]
+next_node_id = "230"
+[[nodes.outcomes]]
+next_node_id = "190"
+[[nodes.outcomes]]
+next_node_id = "321"
+
+# Paragraph 295
+[[nodes]]
+id = "295"
+title = "Paragraph 295"
+description = """You have continued your journey for about fifteen minutes when
+suddenly a black arrow whistles past your head and embeds itself
+in a tree. Instinctively you duck and draw your weapon."""
+[[nodes.options]]
+text = "If you wish to remain where you are in order to try to spot the hidden archer"
+[[nodes.options]]
+text = "If you wish to run for the cover of denser undergrowth"
+[[nodes.outcomes]]
+next_node_id = "185"
+[[nodes.outcomes]]
+next_node_id = "92"
+
+# Paragraph 296
+[[nodes]]
+id = "296"
+title = "Paragraph 296"
+description = """You sense something is wrong. With fighting all around and the
+forces of the Darklords so near, why has this man stayed in the
+forest? You feel a strange aura of evil about him and decline his
+offer."""
+[[nodes.outcomes]]
+next_node_id = "90"
+
+# Paragraph 297
+[[nodes]]
+id = "297"
+title = "Paragraph 297"
+description = """Using the skills taught to you by your masters in the art of Hunting,
+you inch your way through the foliage undetected. In less than a
+minute you are directly behind, and only a few feet from, the stake
+to which the ranger is tied. The wood is alight and great clouds of
+smoke are engulfing the poor victim. You take your weapon and
+run forward, hidden by the smoke. One blow of your weapon
+is all that is needed to sever his bonds, and you pull him free
+and back into the safety of the forest. As you press on into the
+forest, you hear the shrieks of the Giaks as they discover that their
+prisoner has literally disappeared in a cloud of smoke!"""
+[[nodes.outcomes]]
+next_node_id = "117"
+
+# Paragraph 298
+[[nodes]]
+id = "298"
+title = "Paragraph 298"
+description = """The head of the bird slowly turns and it curses you. An instant later, it flies off above the trees and has soon disappeared.
+Shocked by what you have heard you are now sure that the
+fledgling was a scout of the Darklords and is now probably on
+its way to inform them of your whereabouts."""
+[[nodes.options]]
+text = "If you wish to continue your journey along the track"
+[[nodes.options]]
+text = "If you wish to leave the track and continue through the forest instead"
+[[nodes.outcomes]]
+next_node_id = "121"
+[[nodes.outcomes]]
+next_node_id = "38"
+
+# Paragraph 299
+[[nodes]]
+id = "299"
+title = "Paragraph 299"
+description = """You soon realize that you are walking deeper into a wooded marsh.
+To continue in this direction will be slow and hazardous."""
+[[nodes.options]]
+text = "If you wish to continue"
+[[nodes.options]]
+text = "If you wish to change direction and head towards firmer ground"
+[[nodes.outcomes]]
+next_node_id = "227"
+[[nodes.outcomes]]
+next_node_id = "95"
+
+# Paragraph 300
+[[nodes]]
+id = "300"
+title = "Paragraph 300"
+description = """You walk for over an hour, during which time you keep a constant vigil for any sign of Kraan in the sky above. You have twice
+spotted their tell-tale shadows in the sky and on both occasions
+your quick wits have saved you from capture. You are now very
+hungry and must eat a Meal.
+You may now continue on your journey by turning to 13."""
+[[nodes.outcomes]]
+next_node_id = "13"
+
+# Paragraph 301
+[[nodes]]
+id = "301"
+title = "Paragraph 301"
+description = """Your Kai Discipline reveals that the west path is a dead end.
+You choose the south path and turn to 27."""
+[[nodes.outcomes]]
+next_node_id = "27"
+
+# Paragraph 302
+[[nodes]]
+id = "302"
+title = "Paragraph 302"
+description = """Pick a number from the Random Number Table.
+If the number you have picked is 0–2, turn to 110.
+If the number is 3–9, turn to 285."""
+[[nodes.options]]
+text = "If the number you have picked is 0–2"
+[[nodes.options]]
+text = "If the number is 3–9"
+[[nodes.outcomes]]
+next_node_id = "110"
+[[nodes.outcomes]]
+next_node_id = "285"
+
+# Paragraph 303
+[[nodes]]
+id = "303"
+title = "Paragraph 303"
+description = """The forest here is sparse and hilly. It does not give much cover
+from an attack from the air. You move as quickly as you can from
+tree to tree, to avoid the Kraan but you can hear the sound of
+Doomwolves close behind."""
+[[nodes.options]]
+text = "If you have the Kai Discipline of Camouflage"
+[[nodes.options]]
+text = "If you do not"
+[[nodes.outcomes]]
+next_node_id = "237"
+[[nodes.outcomes]]
+next_node_id = "72"
+
+# Paragraph 304
+[[nodes]]
+id = "304"
+title = "Paragraph 304"
+description = """The Gem feels incredibly hot and burns your hand. Lose 2 ENDURANCE points.
+You quickly pick it up with the edge of your Kai cloak and slip
+it into your Backpack. A Gem that size must be worth hundreds
+of Crowns. But the Giaks are very close and their arrows whistle
+past your head as you turn and run for the safety of the forest."""
+[[nodes.outcomes]]
+next_node_id = "2"
+
+# Paragraph 305
+[[nodes]]
+id = "305"
+title = "Paragraph 305"
+description = """Through the open doorway of the first hut, you can see the body
+of a charcoal burner lying face down on the rough stone floor.
+He has been murdered, stabbed in the back by a spear. All his
+furniture and belongings have been smashed and broken and not
+one piece remains intact.
+This is the evil handiwork of Giaks without any doubt, for they
+delight in the destruction of all things. A quick check of the other
+huts reveals a similar story of murder and wreckage. In the last
+hut that you search, you discover a Giak Spear—proof of your
+suspicions. You may keep this Weapon if you wish.
+More determined than ever now to succeed in your mission,
+you continue along the track."""
+[[nodes.outcomes]]
+next_node_id = "105"
+
+# Paragraph 306
+[[nodes]]
+id = "306"
+title = "Paragraph 306"
+description = """The sound of battle gradually fades behind you. Suddenly, you
+are pulled to the ground. Three Drakkarim have dropped from a
+tree above. You struggle but it is useless for there are too many of
+them for you and they are very strong.
+The last thing that you hear is the vicious snarls of Drakkarim
+as they raise their spears.
+Your life and your mission end here."""
+
+# Paragraph 307
+[[nodes]]
+id = "307"
+title = "Paragraph 307"
+description = """Your climb is swift and easy. It reminds you of the many trees
+that you climbed and explored near Toran as a child, when you
+wanted to pick fruit or to look out over the beautiful countryside
+of Sommerlund.
+Pushing open the treehouse door, you see an old hermit huddled in the corner of the small cabin. A look of great relief spreads
+across his face as he recognizes your green Kai cloak. He tells you
+that this area is full of Giaks, and that he has counted over forty
+Kraan flying over his home in the last three hours. They were
+heading east.
+He scurries over to a cupboard and returns with a plate of fresh
+fruit. You thank him and place the fruit in your Backpack. There is
+enough for one Meal. The hermit also produces a fine Warhammer and lays it upon a table by the door. ‘Your need is greater
+than mine, Kai Lord,’ he says. ‘Please take this trusty Warhammer if you so wish.’
+You may take this Weapon only if you exchange it for another
+Weapon already in your possession, for it is the only defence that
+the hermit has against the enemy.
+Thanking the old man, you carefully descend the tree and continue on your mission."""
+[[nodes.outcomes]]
+next_node_id = "213"
+
+# Paragraph 308
+[[nodes]]
+id = "308"
+title = "Paragraph 308"
+description = """The stable door is open and you can hear the breathing of a horse
+from inside the darkened interior. Suddenly, the horse senses your
+presence and rushes past, knocking you to the ground. You lose
+1 ENDURANCE point."""
+[[nodes.options]]
+text = "If you wish to use the Kai Discipline of Animal Kinship"
+[[nodes.options]]
+text = "If you wish to chase after the runaway horse"
+[[nodes.outcomes]]
+next_node_id = "122"
+[[nodes.outcomes]]
+next_node_id = "233"
+
+# Paragraph 309
+[[nodes]]
+id = "309"
+title = "Paragraph 309"
+description = """You have taken less than ten paces when the raven squawks a
+warning to the stranger. Turning to face you, the robed creature
+utters a piercing screech that freezes your blood and grips your
+stomach with fear and panic. It is a Vordak, a lieutenant of the
+Darklords and one of the undead. Within seconds, a host of Giaks
+appear at its side and attack you. You fight bravely but you are
+greatly outnumbered.
+The last thing you remember is the icy grasp of the Vordak’s
+skeletal fingers as they close around your throat.
+Your life and your mission end here."""
+
+# Paragraph 310
+[[nodes]]
+id = "310"
+title = "Paragraph 310"
+description = """You notice a small faded sign on the wall of a building opposite.
+You remember that the royal court sessions are held within the
+citadel and you are sure that the west road must lead there."""
+[[nodes.outcomes]]
+next_node_id = "37"
+
+# Paragraph 311
+[[nodes]]
+id = "311"
+title = "Paragraph 311"
+description = """The hillside is steep and the earth is loose and slippery. You
+chance a swift glance over your shoulder and see the two Gi-
+aks emerge from the woods. They start to climb after you. About
+halfway from the peak of the hill, you spot a cave to your right,
+almost totally hidden by a landslide."""
+[[nodes.options]]
+text = "If you have the Kai Discipline of Camouflage"
+[[nodes.options]]
+text = "If you wish to hide in the cave"
+[[nodes.options]]
+text = "If you wish to avoid the cave and continue your climb to the peak"
+[[nodes.outcomes]]
+next_node_id = "324"
+[[nodes.outcomes]]
+next_node_id = "279"
+[[nodes.outcomes]]
+next_node_id = "47"
+
+# Paragraph 312
+[[nodes]]
+id = "312"
+title = "Paragraph 312"
+description = """You curse your ill luck. It seems that nature and the Darklords
+have conspired against you, but it does not shake your determination to reach the King.
+Wiping the sticky mud from your clothes, you turn and press on
+into the forest."""
+[[nodes.outcomes]]
+next_node_id = "299"
+
+# Paragraph 313
+[[nodes]]
+id = "313"
+title = "Paragraph 313"
+description = """Wiping the foul Giak blood from your weapon, you quickly descend the hillside before the Kraan spots its dead riders. Many
+times you lose your footing on the loose rocks, falling several feet.
+Deduct 1 ENDURANCE point for cuts and bruises to your legs."""
+[[nodes.outcomes]]
+next_node_id = "248"
+
+# Paragraph 314
+[[nodes]]
+id = "314"
+title = "Paragraph 314"
+description = """It takes you nearly an hour to reach the citadel. When you arrive
+you find that the citizens of Holmgard are in panic and confusion.
+Your escort approaches the armoured guards at the main entrance
+and tells them of your urgent message for the King.
+Pick a number from the Random Number Table.
+If you have picked a number that is 0–6, turn to 341.
+If the number is 7–9, turn to 98."""
+[[nodes.options]]
+text = "If you have picked a number that is 0–6"
+[[nodes.options]]
+text = "If the number is 7–9"
+[[nodes.outcomes]]
+next_node_id = "341"
+[[nodes.outcomes]]
+next_node_id = "98"
+
+# Paragraph 315
+[[nodes]]
+id = "315"
+title = "Paragraph 315"
+description = """Wrapped in a bundle of women’s clothing is a small velvet purse
+containing 6 Gold Crowns and a Tablet of Perfumed Soap. You
+may take these items and continue your journey."""
+[[nodes.outcomes]]
+next_node_id = "213"
+
+# Paragraph 316
+[[nodes]]
+id = "316"
+title = "Paragraph 316"
+description = """In your haste to avoid the enemy, you catch your foot in a tree
+root and you are pitched head over heels in a tumble of dust and
+leaves. Crashing through the undergrowth at the base of the hill,
+you quickly pick up your weapon and run into the thick forest.
+The Kraan is no longer circling above, but you can make out the
+silhouette of two Giaks on the peak of the hill behind.
+Wiping the grime from your eyes, you wince as you discover a
+large bruise on your forehead. Without delay, you run deeper into
+the safety of the forest."""
+[[nodes.outcomes]]
+next_node_id = "331"
+
+# Paragraph 317
+[[nodes]]
+id = "317"
+title = "Paragraph 317"
+description = """Instinctively you dive away from the stairs, and land on the stone
+floor. Your quick reactions have saved your life, for a vast granite
+block has fallen from the ceiling and crushed the steps, just in front
+of the lockplate!
+Shaken but still in one piece, you get to your feet. A shaft of dull
+grey light is seeping into the chamber from above, where the stone
+block was. Through a hole in the ceiling you can see a tangle of
+graveweed and the cloudy sky above. You clamber out of the
+tomb and head for the arched south gate of the necropolis as fast
+as possible. The pointed log walls of the city’s outer defence works
+are now visible."""
+[[nodes.outcomes]]
+next_node_id = "61"
+
+# Paragraph 318
+[[nodes]]
+id = "318"
+title = "Paragraph 318"
+description = """Two soldiers and a sergeant run towards you, their crossbows
+aimed at your head. As they get nearer, they recognize your Kai
+cloak and a look of relief spreads across their faces.
+‘My Lord,’ says the sergeant, ‘where are the other Kai Masters?
+We are in desperate need of their wisdom. The Darklords press us
+most cruelly and our casualties are high.’
+You inform the brave soldier of the fate of your kinsmen, and
+the urgency of your mission to see the King. He takes you back
+to the barges where an officer accompanies you on horseback
+towards the high walls and the main gate of Holmgard."""
+[[nodes.outcomes]]
+next_node_id = "129"
+
+# Paragraph 319
+[[nodes]]
+id = "319"
+title = "Paragraph 319"
+description = """The slimy creature lets out a long, ghastly death-cry and collapses.
+You are near to panic and scramble to your feet, grabbing what
+you think to be your belt from the jaws of the dead beast. You
+can see light in the far distance, and you sprint for it as fast as you
+can. When you finally emerge into the daylight, you fall onto the
+leafy ground and fight for breath in painful gasps.
+Slowly sitting upright, you notice that you are still wearing your
+belt—you had not lost it after all. What you grabbed from the jaw
+of the Burrowcrawler was a leather strap with a small pouch and
+a sheathed Dagger halfway along it. You break open the clasp to
+find it contains 20 Gold Crowns. You may take both the Dagger
+and the Crowns if you are able to.
+Feeling a little better now, you gather your Equipment together
+and push on eastwards into the forest."""
+[[nodes.outcomes]]
+next_node_id = "157"
+
+# Paragraph 320
+[[nodes]]
+id = "320"
+title = "Paragraph 320"
+description = """As you race across the open field towards the wood, a Kraan dives
+at you and claws your arm. Before you can fight back, it has flown
+off again, shrieking with cold malice.
+You enter the wood, but you have lost 2 ENDURANCE points."""
+[[nodes.outcomes]]
+next_node_id = "264"
+
+# Paragraph 321
+[[nodes]]
+id = "321"
+title = "Paragraph 321"
+description = """You walk for nearly an hour along the twisting river’s edge. Beyond the next turn you can hear the faint noise of battle. You
+carefully climb a steep hillock to get a better view of the area."""
+[[nodes.outcomes]]
+next_node_id = "273"
+
+# Paragraph 322
+[[nodes]]
+id = "322"
+title = "Paragraph 322"
+description = """After what seems an eternity of struggling, you reach the peak of
+the steep hill. Behind you, above the canopy of trees, you can
+see the still smouldering remains of the monastery. To the north,
+a column of jet-black smoke rises high into the sky. Small orange
+tongues of flame flicker at its base. Your heart sinks as you realize
+that the port of Toran is ablaze.
+Suddenly, a piercing cry above warns you that a Kraan is about
+to attack. It is about thirty yards away and diving for the kill."""
+[[nodes.options]]
+text = "If you are going to stand and fight it as it swoops down"
+[[nodes.options]]
+text = "If you are going to evade its attack and slide down the other side of the hill, away from the Kraan"
+[[nodes.outcomes]]
+next_node_id = "17"
+[[nodes.outcomes]]
+next_node_id = "89"
+
+# Paragraph 323
+[[nodes]]
+id = "323"
+title = "Paragraph 323"
+description = """From the top of the tower you can see above the trees in all directions. Far to the north, a column of jet-black smoke rises high into
+the sky. Small orange tongues of flame flicker at its base. Your
+heart sinks as you realize that the port of Toran is ablaze. From
+the southwest, the wind carries the noise of battle. It is close; no
+more than five miles at most.
+On the floor of the watchtower is a large oblong box."""
+[[nodes.options]]
+text = "If you wish to open this box"
+[[nodes.options]]
+text = "If you would prefer to descend the ladder, and leave the tower, taking care to use only the good rungs"
+[[nodes.outcomes]]
+next_node_id = "290"
+[[nodes.outcomes]]
+next_node_id = "140"
+
+# Paragraph 324
+[[nodes]]
+id = "324"
+title = "Paragraph 324"
+description = """You pull up your hood and drop down behind the rocks that litter
+the mouth of the cave. Holding your breath, you curl up into a
+tight ball, and completely cover yourself with your green cloak.
+Only a few minutes later the Giaks clamber over the rocky ledge
+outside, their evil yellow eyes furtively searching every crevice of
+the hillside.
+Then cursing in their strange tongue, they leave the ledge and
+start to climb towards the peak. You silently thank your old Masters for teaching you the Kai Discipline of Camouflage—it has
+probably saved your life on this occasion."""
+[[nodes.options]]
+text = "If you wish to explore the cave"
+[[nodes.options]]
+text = "If you wish to leave and descend the hill in case the Giaks return"
+[[nodes.outcomes]]
+next_node_id = "33"
+[[nodes.outcomes]]
+next_node_id = "248"
+
+# Paragraph 325
+[[nodes]]
+id = "325"
+title = "Paragraph 325"
+description = """Upon seeing you emerge from the woods, the Giak officer shouts
+‘Ogot! Ogot!’ to his cowering troops, who flee the ruins and run
+to the safety of the forest.
+Shaking his mailed fist at you, the black-clad Giak screams,
+‘RANEG ROGAG OK—ORGADAKA OKAK ROGAG GAJ!’ before leaving. Surveying the scene of battle, you count over fifteen
+Giak dead lying among the broken pillars of Raumas.
+The young wizard wipes his brow and walks towards you, his
+hand extended in friendship."""
+[[nodes.outcomes]]
+next_node_id = "349"
+
+# Paragraph 326
+[[nodes]]
+id = "326"
+title = "Paragraph 326"
+description = """You carefully insert the Key and turn it clockwise. You hear a dull
+click—the Key works. You lift out the pin, and the large granite
+door slowly swings towards you on hidden hinges. The grey halflight of the Graveyard floods into the tomb. The exit is overgrown
+with graveweed and you suffer many cuts to your face and arms
+as you fight your way through to the surface.
+Looking back, you see the tomb door slowly close and a cruel
+inhuman laugh seems to rise out of the very ground on which
+you stand. In blind panic, you race through the eerie necropolis
+towards the south gate."""
+[[nodes.outcomes]]
+next_node_id = "61"
+
+# Paragraph 327
+[[nodes]]
+id = "327"
+title = "Paragraph 327"
+description = """Within a few minutes, you can see the Kraan hovering over a
+hilltop behind you. At a quick count you can make out at least
+sixteen of these horrible creatures, each of which has at least two
+Giaks riding upon its back. They are armed with long spears and
+wear tall pointed helmets of dull bronze. You hear the excited
+grunts of the Giaks. They have spotted you.
+You jump for the entrance of the tunnel some twenty-five feet
+below, but your boot gets caught in a thorny briar and you hang
+helplessly upside down—weaponless and vulnerable. Fortunately
+for you the end is swift: As the first Giak lance pierces your heart,
+death is instantaneous.
+Your life and your mission end here."""
+
+# Paragraph 328
+[[nodes]]
+id = "328"
+title = "Paragraph 328"
+description = """As the creature dies, its body slowly dissolves into a vile green
+liquid. You notice that the grass and plants beneath the smoking
+fluid are beginning to shrivel and die. But a large valuable looking
+Gem lies on the ground near to the decaying body."""
+[[nodes.options]]
+text = "If you wish to take the Gem"
+[[nodes.options]]
+text = "If you would rather leave as quickly as possible"
+[[nodes.outcomes]]
+next_node_id = "76"
+[[nodes.outcomes]]
+next_node_id = "118"
+
+# Paragraph 329
+[[nodes]]
+id = "329"
+title = "Paragraph 329"
+description = """As you descend the ridge towards the Graveyard of the Ancients,
+you are aware of a strange mist and cloud that swirls all around
+this grey and forbidding place, blocking the sun and keeping the
+Graveyard in perpetual gloom.
+A creeping chill seems to penetrate your very bones. Your horse
+becomes startled and no matter how you urge him on, he refuses
+to go any nearer to this dreadful place. So you must leave your
+horse and press on by foot."""
+[[nodes.outcomes]]
+next_node_id = "284"
+
+# Paragraph 330
+[[nodes]]
+id = "330"
+title = "Paragraph 330"
+description = """Fatigued by your exertions, you stop to rest for a few minutes at a
+fallen tree. You notice a large bundle, beneath the trunk."""
+[[nodes.options]]
+text = "If you wish to examine the contents of the bundle"
+[[nodes.options]]
+text = "If you wish to leave it where it is and continue your mission"
+[[nodes.outcomes]]
+next_node_id = "315"
+[[nodes.outcomes]]
+next_node_id = "213"
+
+# Paragraph 331
+[[nodes]]
+id = "331"
+title = "Paragraph 331"
+description = """Surrounded by thorny briars and closely packed roots, you see
+the entrance of a tunnel disappearing into the hillside beyond. It
+is approximately seven feet in height and just over ten feet wide.
+As you get closer, you can feel a slight breeze coming from the
+inky blackness. If the other end of this tunnel emerges on the far
+side of the hill, it could save you many hours of difficult climbing.
+But it could also harbour unknown danger."""
+[[nodes.options]]
+text = "If you wish to enter the tunnel"
+[[nodes.options]]
+text = "If you would prefer to climb the hillside"
+[[nodes.outcomes]]
+next_node_id = "170"
+[[nodes.outcomes]]
+next_node_id = "280"
+
+# Paragraph 332
+[[nodes]]
+id = "332"
+title = "Paragraph 332"
+description = """You walk for nearly ten minutes along a dark and winding corridor, and then start to climb a steep staircase to a small wooden
+door. The man presses a secret catch and the door opens. You
+enter a large, plushly decorated bedroom with a huge marble bath
+that takes up one corner of the room. The man suggests that you
+refresh yourself here whilst he seeks an audience with the King.
+You quickly bathe and change into some white robes that have
+been left out on a large marble table. Shortly, the man returns and
+leads you through a long corridor lined with exquisite tapestries.
+You finally arrive at a large door guarded by two soldiers wearing
+silver armour.
+You are about to meet the King."""
+[[nodes.outcomes]]
+next_node_id = "350"
+
+# Paragraph 333
+[[nodes]]
+id = "333"
+title = "Paragraph 333"
+description = """You have cut your way through the thick undergrowth for nearly
+half an hour when you hear the beat of wings high above the trees.
+Looking up you can just make out the shape of a Kraan approaching from the north. It is one of the monsters that attacked the
+monastery and on its back are two grey-skinned creatures armed
+with long spears.
+These are Mountain Giaks—evil servants of the Darklords, full
+of hatred and malice. Many centuries ago, their ancestors were
+used by the Darklords to build the infernal city of Helgedad, which
+lies in the volcanic wastelands beyond the Durncrag range of
+mountains. The construction of the city was long and torturous
+and only the strongest of the Giaks survived the heat and poisonous atmosphere of Helgedad.
+Hidden by the trees, you freeze, keeping absolutely still as the
+Kraan passes overhead and disappears towards the south. When
+you are sure that it has gone, you move off once again into the
+forest."""
+[[nodes.outcomes]]
+next_node_id = "131"
+
+# Paragraph 334
+[[nodes]]
+id = "334"
+title = "Paragraph 334"
+description = """As the stream vanishes up into the rocky hillside, you can see
+on the track above four soldiers and their officer. They wear the
+uniform of the King’s army."""
+[[nodes.options]]
+text = "If you wish to use the Kai Discipline of Sixth Sense"
+[[nodes.options]]
+text = "If you wish to use the Kai Discipline of Camouflage and wait for them to pass"
+[[nodes.options]]
+text = "If you wish to approach them"
+[[nodes.outcomes]]
+next_node_id = "48"
+[[nodes.outcomes]]
+next_node_id = "73"
+[[nodes.outcomes]]
+next_node_id = "162"
+
+# Paragraph 335
+[[nodes]]
+id = "335"
+title = "Paragraph 335"
+description = """As you approach, the black bird flies off above the trees and soon
+disappears from view. You search the tree on which it was perched
+but find nothing unusual. Rather than waste any more precious
+time, you continue off along the track."""
+[[nodes.outcomes]]
+next_node_id = "121"
+
+# Paragraph 336
+[[nodes]]
+id = "336"
+title = "Paragraph 336"
+description = """You rush into the clearing and take the Giaks completely by surprise. Without a moment’s hesitation, you strike out at the one
+nearest to you. He is dead before his body hits the ground. The
+other Giaks unsheathe their curved swords and attack you. You
+must fight them one at a time.
+Giak 1: COMBAT SKILL 14 ENDURANCE 11
+Giak 2: COMBAT SKILL 13 ENDURANCE 11
+If you win, you free the ranger and turn to 117."""
+[[nodes.outcomes]]
+next_node_id = "117"
+
+# Paragraph 337
+[[nodes]]
+id = "337"
+title = "Paragraph 337"
+description = """Just as you remove the ornate pin, a loud crack deafens you.
+Pick a number from the Random Number Table.
+If the number picked is 0–4, turn to 219.
+If the number is 5–9, turn to 317."""
+[[nodes.options]]
+text = "If the number picked is 0–4"
+[[nodes.options]]
+text = "If the number is 5–9"
+[[nodes.outcomes]]
+next_node_id = "219"
+[[nodes.outcomes]]
+next_node_id = "317"
+
+# Paragraph 338
+[[nodes]]
+id = "338"
+title = "Paragraph 338"
+description = """When you awake, you find yourself lying at the foot of a steep
+slope in a tangle of long grasses. Your Backpack and Weapons
+are missing and your head aches violently. You cannot tell how
+long you have been unconscious, but you realize that time is running out and you must press on. Standing up, you notice your
+Backpack and Weapon on the slope above. They must have broken free when you fell. You quickly retrieve them and move off
+into the trees ahead."""
+[[nodes.outcomes]]
+next_node_id = "113"
+
+# Paragraph 339
+[[nodes]]
+id = "339"
+title = "Paragraph 339"
+description = """You quickly sidestep just as a long dagger shatters the glass top of
+the counter. A swarthy youth is attacking you and you must fight
+him.
+Robber: COMBAT SKILL 13 ENDURANCE 20
+If you kill him within 4 rounds of Combat, turn to 94.
+If you are still fighting after 4 rounds of Combat, turn to
+203.
+You may evade combat by escaping through the front door
+at any stage of the fight, by turning to 7."""
+[[nodes.options]]
+text = "If you kill him within 4 rounds of Combat"
+[[nodes.options]]
+text = "If you are still fighting after 4 rounds of Combat"
+[[nodes.options]]
+text = "You may evade combat by escaping through the front door at any stage of the fight"
+[[nodes.outcomes]]
+next_node_id = "94"
+[[nodes.outcomes]]
+next_node_id = "203"
+[[nodes.outcomes]]
+next_node_id = "7"
+
+# Paragraph 340
+[[nodes]]
+id = "340"
+title = "Paragraph 340"
+description = """You gallop forward to meet the oncoming Doomwolf and rider,
+your Weapon raised to strike. The Giak sees you and unsheathes
+his scimitar. You must fight both Giak and Doomwolf as one enemy.
+Giak + Doomwolf: COMBAT SKILL 14 ENDURANCE 24
+If you win the fight, turn to 193."""
+[[nodes.outcomes]]
+next_node_id = "193"
+
+# Paragraph 341
+[[nodes]]
+id = "341"
+title = "Paragraph 341"
+description = """The guards do not believe your story and refuse to let you enter.
+Your escort disappears into the crowd and you are left alone to
+find your way in this confused city.
+Shocked, and then dejected by such a rebuff, you are carried
+along by the crowds until you find yourself at the entrance to the
+Guildhall. It stands at one side of the Guild Bridge which crosses
+the River Eledil near where it joins the Holmgulf."""
+[[nodes.options]]
+text = "If you wish to use the Kai Discipline of Tracking"
+[[nodes.options]]
+text = "If you wish to enter the Guildhall"
+[[nodes.options]]
+text = "If you wish to search for another route into the citadel"
+[[nodes.outcomes]]
+next_node_id = "310"
+[[nodes.outcomes]]
+next_node_id = "210"
+[[nodes.outcomes]]
+next_node_id = "37"
+
+# Paragraph 342
+[[nodes]]
+id = "342"
+title = "Paragraph 342"
+description = """As your voice echoes through the trees, the stranger slowly turns
+to face you. Your heart pounds and your blood freezes as you
+realize that the stranger is not human. It is a Vordak, a hideous
+lieutenant of the Darklords and one of the undead. A piercing
+scream fills your ears, and the creature raises a huge black mace
+above its head and charges at you. Frozen with horror, you can
+also feel the Vordak attacking you with the force of its mind.
+Deduct 2 points from your COMBAT SKILL unless you have the
+Kai Discipline of Mindshield. You must fight this creature. It is
+immune to Mindblast.
+Vordak: COMBAT SKILL 18 ENDURANCE 26
+If you win, turn to 123."""
+[[nodes.outcomes]]
+next_node_id = "123"
+
+# Paragraph 343
+[[nodes]]
+id = "343"
+title = "Paragraph 343"
+description = """You are held by the mass of tangled branches and roots. Eventually you free your right hand, grab your weapon and hack your
+way slowly through the foliage to the clearer forest beyond. Your
+cloak is torn in several places and your left arm is cut and badly
+bruised above the elbow.
+Lose 2 ENDURANCE points and turn to 213."""
+[[nodes.outcomes]]
+next_node_id = "213"
+
+# Paragraph 344
+[[nodes]]
+id = "344"
+title = "Paragraph 344"
+description = """You are weak and dizzy. You can no longer feel your legs and they
+refuse to bear your weight. You try to crawl for the door but the
+robber jumps on you and pins you to the ground."""
+[[nodes.outcomes]]
+next_node_id = "60"
+
+# Paragraph 345
+[[nodes]]
+id = "345"
+title = "Paragraph 345"
+description = """You pull up the hood of your green Kai cloak and hold your breath
+as the Kraan circles above. After a few minutes, you hear the
+frantic curses of the Giaks. The beating of Kraan wings fades, as
+they disappear towards the west. Your quick reactions have saved
+you from capture and likely death.
+You can now return to the track, by turning to 272.
+Or push on under cover of the trees. Turn to 19."""
+[[nodes.options]]
+text = "You can now return to the track"
+[[nodes.options]]
+text = "Or push on under cover of the trees"
+[[nodes.outcomes]]
+next_node_id = "272"
+[[nodes.outcomes]]
+next_node_id = "19"
+
+# Paragraph 346
+[[nodes]]
+id = "346"
+title = "Paragraph 346"
+description = """Lodged deep in the rib cage of the skeleton is a Spear. It is in
+good condition and you may take it if you wish and are able to.
+To leave the clearing, turn to 14."""
+[[nodes.outcomes]]
+next_node_id = "14"
+
+# Paragraph 347
+[[nodes]]
+id = "347"
+title = "Paragraph 347"
+description = """The trees start to thin out, and just ahead you can make out the
+silhouette of an old log cabin beneath an oak tree. This hut seems
+to have been abandoned and there is little of apparent value left
+behind. Opening a small chest near the main door, you discover
+bunches of twigs that have been tied together with strong twine.
+One end of the bundle has been coated with pitch. They are
+Torches. Next to the chest is a Short Sword and a Tinderbox. You
+may take them and a Torch if you wish but make sure that you
+mark them on your Action Chart.
+Closing the door of the cabin, you head off along an overgrown
+path towards the northeast."""
+[[nodes.outcomes]]
+next_node_id = "103"
+
+# Paragraph 348
+[[nodes]]
+id = "348"
+title = "Paragraph 348"
+description = """Raising your boot to kick away the dead snake, your heart skips
+a beat as you realize that it was a Red Marshviper. There is no
+known cure for its venomous bite! You decide that to go any
+further in this direction would be suicide. Carefully retracing your
+steps, you eventually reach firm ground and continue on your
+mission."""
+[[nodes.outcomes]]
+next_node_id = "95"
+
+# Paragraph 349
+[[nodes]]
+id = "349"
+title = "Paragraph 349"
+description = """He is a young blond-haired youth with deep brooding eyes. His
+face is lined with exhaustion and the grime of battle, and his long
+sky-blue robes bear evidence of living rough in the wilds. He
+shakes your hand and bows. ‘My eternal thanks, Kai Lord. My
+powers are nearly drained. Had you not come to my aid, I fear I
+would have ended my days atop a Giak lance.’
+He is weak and unsteady on his feet. You take his arm and sit
+him down upon a fallen pillar where you listen intently to what he
+has to say.
+‘My name is Banedon. I am journeyman to the Brotherhood
+of the Crystal Star, which is the Magicians’ Guild of Toran. My
+Guildmaster has sent me to your monastery with this urgent message.’ He removes a vellum envelope from inside his robes and
+hands it to you.
+‘As you see, I have opened the letter and read its contents.
+When the war started, I was on the highway with two travelling
+companions. The Kraan attacked us and we lost each other in the
+forest during our escape.’
+The letter is a warning to the Kai Lords that the Darklords have
+mustered a vast army beyond the Durncrag Range. The Guildmaster urges the Kai to cancel the celebrations of Fehmarn and
+prepare for war.
+‘I fear we were betrayed,’ says Banedon, his head bowed in
+sorrow.
+‘One of my order, a brother called Vonotar, had explored the
+forbidden mysteries of the Black Art. Ten days ago he denounced
+the Brotherhood and killed one of our Elders. He has since disappeared. It is rumoured that he now aids the Darklords.’
+You tell Banedon what has happened at the monastery, and of
+your mission to warn the King. Silently, he removes a gold chain
+from around his neck and hands it to you. On the chain is a small
+Crystal Star Pendant. ‘It is the symbol of my Brotherhood, and
+we are both truly brothers in this hour of darkness. It is a talisman
+of good fortune—may it protect you on your road ahead.’
+You thank him, place the chain around your neck and slip the
+Crystal Star inside your shirt. (Remember to mark this on your
+Action Chart.)
+Banedon bids you farewell. ‘We must leave this place lest the
+Giaks return with more of their loathsome kind to put an end to
+us. I must return to my Guild. I bid you farewell, my brother. May
+the luck of the gods go with you.’"""
+[[nodes.outcomes]]
+next_node_id = "293"
+
+# Paragraph 350
+[[nodes]]
+id = "350"
+title = "Paragraph 350"
+description = """You enter the Chamber of State, a magnificent hall decorated lavishly in white and gold. The King and his closest advisers are
+studying a large map spread upon a marble plinth in the centre of
+the chamber. Their faces are lined with worry and concentration.
+A silence fills the hall as you tell of the death of your kinsmen and
+of your perilous journey to the citadel. As you finish your story,
+the King approaches and takes your right hand in his.
+‘Lone Wolf, you have selfless courage: the quality of a true Kai
+Lord. Your journey here has been one of great peril and although
+your news comes as a grievous blow, the spirit of your determination is like a beacon of hope to us all in this dark hour. You have
+brought great honour to the memory of your Masters, and for that
+we praise you.’
+You receive the praise and heartfelt thanks of the entire hall—
+an honour that brings a certain redness to your young face. The
+King raises his hand and all the voices cease.
+‘You have done all that Sommerlund could have asked of a
+loyal son, but she is greatly in need of you still. The Darklords are
+powerful once more and their ambition knows no bounds. Our
+only hope lies within Durenor with the power that once defeated
+the Darklords an age ago. Lone Wolf, you are the last of the Kai—
+you have the skills. Will you journey to Durenor and return with
+the Sommerswerd, the sword of the sun? Only with that gift of the
+gods may we crush this evil and save our land.’
+If you wish to accept the quest of the Sommerswerd, begin your
+adventure with Book 2 of the Lone Wolf adventures:Fire on the Water"""
+[[nodes.options]]
+text = "If you wish to accept the quest of the Sommerswerd, begin your adventure with Book 2 of the Lone Wolf adventures:Fire on the Water"
+[[nodes.outcomes]]
+next_node_id = "Book 2"

@@ -31,12 +31,17 @@ type Node struct {
 	Choices   []Choice   `toml:"choices,omitempty"`   // storyノードの選択肢
 	Encounter *Encounter `toml:"encounter,omitempty"` // encounterノードの詳細
 	Outcomes  []Outcome  `toml:"outcomes,omitempty"`  // encounterノードの結果
+
 }
 
 // Choice はユーザーが選択できる項目を表す構造体
 type Choice struct {
-	Text       string `toml:"text"`
-	NextNodeID string `toml:"next_node_id"`
+	description         string `toml:"description"`
+	next_node_id        string `toml:"next_node_id"`
+	required_discipline string `toml:"required_discipline,omitempty"`
+	required_item       string `toml:"required_item,omitempty"`
+	//Text                 string `toml:"text"`
+	//NextNodeID           string `toml:"next_node_id"`
 }
 
 // Encounter は遭遇戦の詳細を表す構造体
@@ -48,9 +53,7 @@ type Encounter struct {
 
 // CombatData は戦闘の詳細データ
 type CombatData struct {
-	Terrain    string  `toml:"terrain"`
-	Difficulty string  `toml:"difficulty"`
-	Enemies    []Enemy `toml:"enemies"`
+	Enemies []Enemy `toml:"enemies"`
 }
 
 // Enemy は戦闘の敵キャラクター
@@ -61,14 +64,15 @@ type Enemy struct {
 
 // Stats は敵のステータス
 type Stats struct {
-	HP int `toml:"hp"`
-	CS int `toml:"ac"`
+	HP int `toml:"HP"`
+	CS int `toml:"CS"`
 }
 
 // Outcome は遭遇戦の結果と次に進むノードを表す構造体
 type Outcome struct {
-	Condition  string `toml:"condition"` // "combat_won", "combat_lost" など
-	NextNodeID string `toml:"next_node_id"`
+	Condition     string `toml:"condition,omitempty"` // "combat_won", "combat_lost" など
+	Condition_int []int  `toml:"condition_int,omitempty"`
+	NextNodeID    string `toml:"next_node_id"`
 }
 
 type KaiDisciplines struct {
@@ -172,7 +176,6 @@ func NewGameState(config *GameConfig) *GameState {
 			HP:   15,
 			CS:   5,
 			GOLD: 100,
-			MEAL: 10,
 			KaiDisciplines: KaiDisciplines{
 				Kamouflage:     false,
 				Hunting:        false,
@@ -187,6 +190,7 @@ func NewGameState(config *GameConfig) *GameState {
 			},
 			Weapon: []string{"Sword"},
 			Armor:  []string{"Leather"},
+			Items:  []string{"Meal"},
 		},
 
 		CurrentNodeID: config.Nodes[0].ID, // 最初のノードから開始
@@ -213,6 +217,8 @@ func (gs *GameState) Run() {
 			gs.handleStoryNode(currentNode)
 		case "encounter":
 			gs.handleEncounterNode(currentNode)
+		case "random_roll":
+			gs.handleRandomNode(currentNode)
 		case "end":
 			fmt.Println("ゲーム終了。")
 			return // ゲームループを終了
@@ -221,6 +227,22 @@ func (gs *GameState) Run() {
 			return
 		}
 	}
+}
+
+func (gs *GameState) handleRandomNode(node Node) {
+
+	source := rand.NewSource(time.Now().UnixNano())
+	r := rand.New(source)
+
+	randomNumber := r.Intn(10)
+
+	fmt.Printf("RandomNumberは%dです\n", randomNumber)
+
+	fmt.Println("選択肢:")
+	for i, choice := range node.Choices {
+
+	}
+
 }
 
 // handleStoryNode はストーリーノードの処理
@@ -233,7 +255,7 @@ func (gs *GameState) handleStoryNode(node Node) {
 
 	fmt.Println("\n選択肢:")
 	for i, choice := range node.Choices {
-		fmt.Printf("%d. %s\n", i+1, choice.Text)
+		fmt.Printf("%d. %s\n", i+1, choice.description)
 	}
 
 	for {
@@ -243,7 +265,7 @@ func (gs *GameState) handleStoryNode(node Node) {
 		choiceNum, err := strconv.Atoi(input)
 
 		if err == nil && choiceNum >= 1 && choiceNum <= len(node.Choices) {
-			gs.CurrentNodeID = node.Choices[choiceNum-1].NextNodeID
+			gs.CurrentNodeID = node.Choices[choiceNum-1].next_node_id
 			break
 		} else {
 			fmt.Println("無効な入力です。もう一度入力してください。")
@@ -287,14 +309,13 @@ func (gs *GameState) handleEncounterNode(node Node) {
 	for _, currentEnemy := range node.Encounter.CombatData.Enemies {
 		// エンカウント情報が完全かチェックし、敵を設定
 
-		fmt.Printf("戦闘システム: %s, 難易度: %s\n",
-			node.Encounter.CombatSystemType,
-			node.Encounter.CombatData.Difficulty)
-		fmt.Printf("敵: %s (HP:%d AC:%d)\n",
+		fmt.Printf("戦闘システム: %s",
+			node.Encounter.CombatSystemType)
+		fmt.Printf("敵: %s (HP:%d CS:%d)\n",
 			currentEnemy.Name, currentEnemy.Stats.HP, currentEnemy.Stats.CS)
 
 		for {
-			fmt.Printf("\n%s (HP:%d AC:%d)\n",
+			fmt.Printf("\n%s (HP:%d CS:%d)\n",
 				currentEnemy.Name, currentEnemy.Stats.HP, currentEnemy.Stats.CS) // 敵のHPを更新して表示
 
 			// プレイヤーの選択肢を表示
@@ -361,7 +382,7 @@ func (gs *GameState) handleEncounterNode(node Node) {
 func main() {
 
 	// TOMLファイルを読み込む
-	tomlData, err := ioutil.ReadFile("game.toml")
+	tomlData, err := ioutil.ReadFile("testlw.toml")
 	if err != nil {
 		log.Fatalf("Error reading TOML file: %v", err)
 	}
