@@ -25,12 +25,12 @@ type GameConfig struct {
 
 // Node はゲームの各ステップ（ノード）を表す構造体
 type Node struct {
-	ID        string     `toml:"id"`
-	Type      string     `toml:"type"` // "story", "encounter", "end" など
-	Text      string     `toml:"text"`
-	Choices   []Choice   `toml:"choices,omitempty"`   // storyノードの選択肢
-	Encounter *Encounter `toml:"encounter,omitempty"` // encounterノードの詳細
-	Outcomes  []Outcome  `toml:"outcomes,omitempty"`  // encounterノードの結果
+	ID       string    `toml:"id"`
+	Type     string    `toml:"type"` // "story", "encounter", "end" など
+	Text     string    `toml:"text"`
+	Choices  []Choice  `toml:"choices,omitempty"`  // storyノードの選択肢
+	Enemies  []*Enemy  `toml:"enemies,omitempty"`  // 戦闘の場合
+	Outcomes []Outcome `toml:"outcomes,omitempty"` // ノードの結果
 
 }
 
@@ -44,28 +44,11 @@ type Choice struct {
 	//NextNodeID           string `toml:"next_node_id"`
 }
 
-// Encounter は遭遇戦の詳細を表す構造体
-type Encounter struct {
-	Type             string      `toml:"type"`               // "combat" など
-	CombatSystemType string      `toml:"combat_system_type"` // "DnD5e" など
-	CombatData       *CombatData `toml:"combat_data,omitempty"`
-}
-
-// CombatData は戦闘の詳細データ
-type CombatData struct {
-	Enemies []Enemy `toml:"enemies"`
-}
-
 // Enemy は戦闘の敵キャラクター
 type Enemy struct {
-	Name  string `toml:"name"`
-	Stats *Stats `toml:"stats"`
-}
-
-// Stats は敵のステータス
-type Stats struct {
-	HP int `toml:"HP"`
-	CS int `toml:"CS"`
+	Name string `toml:"Name"`
+	HP   int    `toml:"HP"`
+	CS   int    `toml:"CS"`
 }
 
 // Outcome は遭遇戦の結果と次に進むノードを表す構造体
@@ -240,6 +223,7 @@ func (gs *GameState) handleRandomNode(node Node) {
 
 	fmt.Println("選択肢:")
 	for i, choice := range node.Choices {
+		fmt.Printf("%d. %s\n", i+1, choice.description)
 
 	}
 
@@ -306,17 +290,15 @@ func (gs *GameState) handleEncounterNode(node Node) {
 
 	//var currentEnemy *Enemy // 現在の敵へのポインタを保持する変数
 
-	for _, currentEnemy := range node.Encounter.CombatData.Enemies {
+	for _, currentEnemy := range node.Enemies {
 		// エンカウント情報が完全かチェックし、敵を設定
 
-		fmt.Printf("戦闘システム: %s",
-			node.Encounter.CombatSystemType)
 		fmt.Printf("敵: %s (HP:%d CS:%d)\n",
-			currentEnemy.Name, currentEnemy.Stats.HP, currentEnemy.Stats.CS)
+			currentEnemy.Name, currentEnemy.HP, currentEnemy.CS)
 
 		for {
 			fmt.Printf("\n%s (HP:%d CS:%d)\n",
-				currentEnemy.Name, currentEnemy.Stats.HP, currentEnemy.Stats.CS) // 敵のHPを更新して表示
+				currentEnemy.Name, currentEnemy.HP, currentEnemy.CS) // 敵のHPを更新して表示
 
 			// プレイヤーの選択肢を表示
 			fmt.Println("選択してください (番号): ")
@@ -338,9 +320,9 @@ func (gs *GameState) handleEncounterNode(node Node) {
 			case 1: // 物理攻撃
 				//	damage := playerAC - currentEnemy.Stats.AC // 簡易的にプレイヤーの攻撃力をそのままダメージとする
 				//	currentEnemy.Stats.HP -= damage
-				Edamage := makeCombatResult(gs.Player.CS, currentEnemy.Stats.CS).EnemyLoss
-				Pdamage := makeCombatResult(gs.Player.CS, currentEnemy.Stats.CS).PlayerLoss
-				currentEnemy.Stats.HP -= Edamage
+				Edamage := makeCombatResult(gs.Player.CS, currentEnemy.CS).EnemyLoss
+				Pdamage := makeCombatResult(gs.Player.CS, currentEnemy.CS).PlayerLoss
+				currentEnemy.HP -= Edamage
 				gs.Player.HP -= Pdamage
 				fmt.Printf("あなたは%sに%dダメージを与えた！\nそしてあなたは%dダメージを受けた！\n",
 					currentEnemy.Name, Edamage, Pdamage)
@@ -351,7 +333,7 @@ func (gs *GameState) handleEncounterNode(node Node) {
 			}
 
 			// 敵のHPチェック
-			if currentEnemy.Stats.HP <= 0 {
+			if currentEnemy.HP <= 0 {
 				fmt.Printf("%sを倒した！\n", currentEnemy.Name)
 				// 勝利した場合の次のノードを探す
 				foundOutcome := false

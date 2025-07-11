@@ -26,16 +26,14 @@ text = """
 これはテストデータです
 アークデーモンが現れた
 """
-    [node.encounter]
-        [nodes.encounter.combat_data]
-            [[nodes.encounter.enemies.stats]]
-            Name = "アークデーモンA"
-            HP = 10
-            CS = 10
-            [[nodes.encounter.enemies.stats]]
-            Name = "アークデーモンB"
-            HP = 10
-            CS = 10
+    [[nodes.enemies]]
+    Name = "アークデーモンA"
+    HP = 10
+    CS = 10
+    [[nodes.enemies]]
+    Name = "アークデーモンB"
+    HP = 10
+    CS = 10
     [[node.outcomes]]
     condition = "combat_won"
     next_node_id = "5"
