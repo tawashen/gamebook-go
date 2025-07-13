@@ -34,14 +34,12 @@ type Node struct {
 
 }
 
-// Choice はユーザーが選択できる項目を表す構造体
 type Choice struct {
-	description         string `toml:"description"`
-	next_node_id        string `toml:"next_node_id"`
-	required_discipline string `toml:"required_discipline,omitempty"`
-	required_item       string `toml:"required_item,omitempty"`
-	//Text                 string `toml:"text"`
-	//NextNodeID           string `toml:"next_node_id"`
+	// フィールド名を大文字に修正しました
+	Description        string `toml:"description"`
+	NextNodeID         string `toml:"next_node_id"`
+	RequiredDiscipline string `toml:"required_discipline,omitempty"`
+	RequiredItem       string `toml:"required_item,omitempty"`
 }
 
 // Enemy は戦闘の敵キャラクター
@@ -223,7 +221,7 @@ func (gs *GameState) handleRandomNode(node Node) {
 
 	fmt.Println("選択肢:")
 	for i, choice := range node.Choices {
-		fmt.Printf("%d. %s\n", i+1, choice.description)
+		fmt.Printf("%d. %s\n", i+1, choice.Description)
 
 	}
 
@@ -239,7 +237,7 @@ func (gs *GameState) handleStoryNode(node Node) {
 
 	fmt.Println("\n選択肢:")
 	for i, choice := range node.Choices {
-		fmt.Printf("%d. %s\n", i+1, choice.description)
+		fmt.Printf("%d. %s\n", i+1, choice.Description)
 	}
 
 	for {
@@ -249,7 +247,7 @@ func (gs *GameState) handleStoryNode(node Node) {
 		choiceNum, err := strconv.Atoi(input)
 
 		if err == nil && choiceNum >= 1 && choiceNum <= len(node.Choices) {
-			gs.CurrentNodeID = node.Choices[choiceNum-1].next_node_id
+			gs.CurrentNodeID = node.Choices[choiceNum-1].NextNodeID
 			break
 		} else {
 			fmt.Println("無効な入力です。もう一度入力してください。")
@@ -300,38 +298,50 @@ func (gs *GameState) handleEncounterNode(node Node) {
 			fmt.Printf("\n%s (HP:%d CS:%d)\n",
 				currentEnemy.Name, currentEnemy.HP, currentEnemy.CS) // 敵のHPを更新して表示
 
-			// プレイヤーの選択肢を表示
-			fmt.Println("選択してください (番号): ")
-			fmt.Println("1. 力を込めて物理で殴る")
-			fmt.Println("2. 心を鎮めて魔法を唱える")
-			fmt.Println("3. 懐を探って道具を使う")
+			time.Sleep(1 * time.Second)
+			fmt.Println("力を込めて物理で殴る！")
+			time.Sleep(1 * time.Second)
 
-			input, _ := gs.Reader.ReadString('\n')
-			input = strings.TrimSpace(input)
-			choiceNum, err := strconv.Atoi(input)
+			Edamage := makeCombatResult(gs.Player.CS, currentEnemy.CS).EnemyLoss
+			Pdamage := makeCombatResult(gs.Player.CS, currentEnemy.CS).PlayerLoss
+			currentEnemy.HP -= Edamage
+			gs.Player.HP -= Pdamage
+			fmt.Printf("あなたは%sに%dダメージを与えた！\nそしてあなたは%dダメージを受けた！\n",
+				currentEnemy.Name, Edamage, Pdamage)
 
-			if err != nil || choiceNum < 1 || choiceNum > 3 { // 入力エラーまたは範囲外の場合
-				fmt.Println("無効な入力です。1〜3で選択してください。")
-				continue // ループの最初に戻る
-			}
+			/*
+				// プレイヤーの選択肢を表示
+				fmt.Println("選択してください (番号): ")
+				fmt.Println("1. 力を込めて物理で殴る")
+				fmt.Println("2. 心を鎮めて魔法を唱える")
+				fmt.Println("3. 懐を探って道具を使う")
 
-			// 選択肢に応じた処理
-			switch choiceNum {
-			case 1: // 物理攻撃
-				//	damage := playerAC - currentEnemy.Stats.AC // 簡易的にプレイヤーの攻撃力をそのままダメージとする
-				//	currentEnemy.Stats.HP -= damage
-				Edamage := makeCombatResult(gs.Player.CS, currentEnemy.CS).EnemyLoss
-				Pdamage := makeCombatResult(gs.Player.CS, currentEnemy.CS).PlayerLoss
-				currentEnemy.HP -= Edamage
-				gs.Player.HP -= Pdamage
-				fmt.Printf("あなたは%sに%dダメージを与えた！\nそしてあなたは%dダメージを受けた！\n",
-					currentEnemy.Name, Edamage, Pdamage)
-			case 2: // 魔法
-				fmt.Println("しかし何も起きなかった。")
-			case 3: // 道具
-				fmt.Println("何も持っていない。")
-			}
+				input, _ := gs.Reader.ReadString('\n')
+				input = strings.TrimSpace(input)
+				choiceNum, err := strconv.Atoi(input)
 
+				if err != nil || choiceNum < 1 || choiceNum > 3 { // 入力エラーまたは範囲外の場合
+					fmt.Println("無効な入力です。1〜3で選択してください。")
+					continue // ループの最初に戻る
+				}
+
+				// 選択肢に応じた処理
+				switch choiceNum {
+				case 1: // 物理攻撃
+					//	damage := playerAC - currentEnemy.Stats.AC // 簡易的にプレイヤーの攻撃力をそのままダメージとする
+					//	currentEnemy.Stats.HP -= damage
+					Edamage := makeCombatResult(gs.Player.CS, currentEnemy.CS).EnemyLoss
+					Pdamage := makeCombatResult(gs.Player.CS, currentEnemy.CS).PlayerLoss
+					currentEnemy.HP -= Edamage
+					gs.Player.HP -= Pdamage
+					fmt.Printf("あなたは%sに%dダメージを与えた！\nそしてあなたは%dダメージを受けた！\n",
+						currentEnemy.Name, Edamage, Pdamage)
+				case 2: // 魔法
+					fmt.Println("しかし何も起きなかった。")
+				case 3: // 道具
+					fmt.Println("何も持っていない。")
+				}
+			*/
 			// 敵のHPチェック
 			if currentEnemy.HP <= 0 {
 				fmt.Printf("%sを倒した！\n", currentEnemy.Name)
@@ -352,11 +362,16 @@ func (gs *GameState) handleEncounterNode(node Node) {
 			}
 
 			if gs.Player.HP <= 0 {
-				fmt.Println("あなたは倒れた！")
-				gs.CurrentNodeID = "game_over"
+				//fmt.Println("あなたは倒れた！")
+				//gs.CurrentNodeID = "game_over"
 				break // プレイヤーのHPが0以下になった場合、ゲームオーバーへ
 			}
 
+		}
+		if gs.Player.HP <= 0 {
+			fmt.Println("あなたは倒れた！")
+			gs.CurrentNodeID = "game_over"
+			break // プレイヤーのHPが0以下になった場合、ゲームオーバーへ
 		}
 	}
 }
