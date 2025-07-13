@@ -29,11 +29,11 @@ text = """
     [[nodes.enemies]]
     Name = "アークデーモンA"
     HP = 10
-    CS = 20
+    CS = 5
     [[nodes.enemies]]
     Name = "アークデーモンB"
     HP = 10
-    CS = 20
+    CS = 5
     [[node.outcomes]]
     condition = "combat_won"
     next_node_id = "5"

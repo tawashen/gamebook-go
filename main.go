@@ -246,7 +246,13 @@ func (gs *GameState) handleStoryNode(node Node) {
 		input = strings.TrimSpace(input)
 		choiceNum, err := strconv.Atoi(input)
 
-		if err == nil && choiceNum >= 1 && choiceNum <= len(node.Choices) {
+		choice := node.Choices[choiceNum-1]
+
+		if err == nil &&
+			choiceNum >= 1 &&
+			choiceNum <= len(node.Choices) &&
+			choice.RequiredDiscipline == nil &&
+			choice.RequiredItem == nil {
 			gs.CurrentNodeID = node.Choices[choiceNum-1].NextNodeID
 			break
 		} else {
@@ -286,21 +292,18 @@ func makeCombatResult(PCS int, ECS int) DamagePair {
 func (gs *GameState) handleEncounterNode(node Node) {
 	fmt.Println("\n--- エンカウント！ ---")
 
-	//var currentEnemy *Enemy // 現在の敵へのポインタを保持する変数
-
 	for _, currentEnemy := range node.Enemies {
 		// エンカウント情報が完全かチェックし、敵を設定
 
-		fmt.Printf("敵: %s (HP:%d CS:%d)\n",
-			currentEnemy.Name, currentEnemy.HP, currentEnemy.CS)
-
 		for {
+			fmt.Printf("\nLone Wolf (HP:%d CS;%d)",
+				gs.Player.HP, gs.Player.CS)
 			fmt.Printf("\n%s (HP:%d CS:%d)\n",
 				currentEnemy.Name, currentEnemy.HP, currentEnemy.CS) // 敵のHPを更新して表示
 
 			time.Sleep(1 * time.Second)
-			fmt.Println("力を込めて物理で殴る！")
-			time.Sleep(1 * time.Second)
+			fmt.Println("\n力を込めて物理で殴る！")
+			time.Sleep(2 * time.Second)
 
 			Edamage := makeCombatResult(gs.Player.CS, currentEnemy.CS).EnemyLoss
 			Pdamage := makeCombatResult(gs.Player.CS, currentEnemy.CS).PlayerLoss
@@ -309,70 +312,37 @@ func (gs *GameState) handleEncounterNode(node Node) {
 			fmt.Printf("あなたは%sに%dダメージを与えた！\nそしてあなたは%dダメージを受けた！\n",
 				currentEnemy.Name, Edamage, Pdamage)
 
-			/*
-				// プレイヤーの選択肢を表示
-				fmt.Println("選択してください (番号): ")
-				fmt.Println("1. 力を込めて物理で殴る")
-				fmt.Println("2. 心を鎮めて魔法を唱える")
-				fmt.Println("3. 懐を探って道具を使う")
-
-				input, _ := gs.Reader.ReadString('\n')
-				input = strings.TrimSpace(input)
-				choiceNum, err := strconv.Atoi(input)
-
-				if err != nil || choiceNum < 1 || choiceNum > 3 { // 入力エラーまたは範囲外の場合
-					fmt.Println("無効な入力です。1〜3で選択してください。")
-					continue // ループの最初に戻る
-				}
-
-				// 選択肢に応じた処理
-				switch choiceNum {
-				case 1: // 物理攻撃
-					//	damage := playerAC - currentEnemy.Stats.AC // 簡易的にプレイヤーの攻撃力をそのままダメージとする
-					//	currentEnemy.Stats.HP -= damage
-					Edamage := makeCombatResult(gs.Player.CS, currentEnemy.CS).EnemyLoss
-					Pdamage := makeCombatResult(gs.Player.CS, currentEnemy.CS).PlayerLoss
-					currentEnemy.HP -= Edamage
-					gs.Player.HP -= Pdamage
-					fmt.Printf("あなたは%sに%dダメージを与えた！\nそしてあなたは%dダメージを受けた！\n",
-						currentEnemy.Name, Edamage, Pdamage)
-				case 2: // 魔法
-					fmt.Println("しかし何も起きなかった。")
-				case 3: // 道具
-					fmt.Println("何も持っていない。")
-				}
-			*/
 			// 敵のHPチェック
 			if currentEnemy.HP <= 0 {
 				fmt.Printf("%sを倒した！\n", currentEnemy.Name)
 				// 勝利した場合の次のノードを探す
-				foundOutcome := false
-				for _, outcome := range node.Outcomes {
-					if outcome.Condition == "combat_won" { // "combat_won" 条件をチェック
-						gs.CurrentNodeID = outcome.NextNodeID
-						foundOutcome = true
-						break
-					}
-				}
-				if !foundOutcome {
-					fmt.Println("エラー: 勝利時の次のノードが見つかりません。ゲーム終了。")
-					gs.CurrentNodeID = "game_over"
-				}
-				break // 戦闘ループを終了し、次のノードへ
+
+				break // 戦闘ループを終了し次の敵がいれば次の敵へ
 			}
 
 			if gs.Player.HP <= 0 {
-				//fmt.Println("あなたは倒れた！")
-				//gs.CurrentNodeID = "game_over"
-				break // プレイヤーのHPが0以下になった場合、ゲームオーバーへ
+				break // プレイヤーのHPが0以下になった場合、抜ける
 			}
 
 		}
+
 		if gs.Player.HP <= 0 {
 			fmt.Println("あなたは倒れた！")
 			gs.CurrentNodeID = "game_over"
 			break // プレイヤーのHPが0以下になった場合、ゲームオーバーへ
 		}
+	}
+	foundOutcome := false
+	for _, outcome := range node.Outcomes {
+		if outcome.Condition == "combat_won" { // "combat_won" 条件をチェック
+			gs.CurrentNodeID = outcome.NextNodeID
+			foundOutcome = true
+			break
+		}
+	}
+	if !foundOutcome {
+		fmt.Println("エラー: 勝利時の次のノードが見つかりません。ゲーム終了。")
+		gs.CurrentNodeID = "game_over"
 	}
 }
 
