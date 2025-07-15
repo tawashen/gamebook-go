@@ -8,7 +8,7 @@ text = """
     [[nodes.choices]]
     description = "If you wish to use your Kai Discipline of Sixth Sense, turn to 2."
     next_node_id = "2"
-    required_discipline = "Sixth Sense"
+    required_discipline = "SixthSense"
 
     [[nodes.choices]]
     description = "If you wish to take the right path into the wood, turn to 3."

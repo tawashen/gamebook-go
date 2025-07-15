@@ -36,10 +36,10 @@ type Node struct {
 
 type Choice struct {
 	// フィールド名を大文字に修正しました
-	Description        string `toml:"description"`
-	NextNodeID         string `toml:"next_node_id"`
-	RequiredDiscipline string `toml:"required_discipline,omitempty"`
-	RequiredItem       string `toml:"required_item,omitempty"`
+	Description        string  `toml:"description"`
+	NextNodeID         string  `toml:"next_node_id"`
+	RequiredDiscipline *string `toml:"required_discipline,omitempty"`
+	RequiredItem       *string `toml:"required_item,omitempty"`
 }
 
 // Enemy は戦闘の敵キャラクター
@@ -56,6 +56,7 @@ type Outcome struct {
 	NextNodeID    string `toml:"next_node_id"`
 }
 
+/*
 type KaiDisciplines struct {
 	Kamouflage     bool
 	Hunting        bool
@@ -68,16 +69,17 @@ type KaiDisciplines struct {
 	AnimalKinship  bool
 	MindOverMatter bool
 }
+*/
 
 type Player struct {
 	HP             int
 	CS             int //combat skill
 	GOLD           int
 	MEAL           int
-	KaiDisciplines KaiDisciplines //Kai Disciplines
-	Weapon         []string       //Weapon
-	Armor          []string       //Armor
-	Items          []string       //Items
+	KaiDisciplines map[string]bool //Kai Disciplines
+	Weapon         []string        //Weapon
+	Armor          []string        //Armor
+	Items          []string        //Items
 }
 
 func init() {
@@ -146,6 +148,15 @@ func normalizeCombatRatio(ratio int) int {
 	return ratio // それ以外はそのまま
 }
 
+func contains(slice []string, str string) bool {
+	for _, s := range slice {
+		if s == str {
+			return true
+		}
+	}
+	return false
+}
+
 // NewGameState は新しいGameStateを初期化する
 func NewGameState(config *GameConfig) *GameState {
 	nodeMap := make(map[string]Node) //ノードのマップを作成
@@ -155,19 +166,19 @@ func NewGameState(config *GameConfig) *GameState {
 	return &GameState{ //GameState初期化
 		Player: &Player{
 			HP:   15,
-			CS:   5,
+			CS:   10,
 			GOLD: 100,
-			KaiDisciplines: KaiDisciplines{
-				Kamouflage:     false,
-				Hunting:        false,
-				SixthSense:     false,
-				Tracking:       false,
-				Healing:        false,
-				WeaponSkill:    false,
-				MindBlast:      false,
-				MindShield:     false,
-				AnimalKinship:  false,
-				MindOverMatter: false,
+			KaiDisciplines: map[string]bool{
+				"Kamouflage":     false,
+				"Hunting":        false,
+				"SixthSense":     true,
+				"Tracking":       false,
+				"Healing":        false,
+				"WeaponSkill":    false, //武器種が入る
+				"MindBlast":      false,
+				"MindShield":     false,
+				"AnimalKinship":  false,
+				"MindOverMatter": false,
 			},
 			Weapon: []string{"Sword"},
 			Armor:  []string{"Leather"},
@@ -247,12 +258,42 @@ func (gs *GameState) handleStoryNode(node Node) {
 		choiceNum, err := strconv.Atoi(input)
 
 		choice := node.Choices[choiceNum-1]
+		//required_discipline_name := *choice.RequiredDiscipline
+		//required_item_name := *choice.RequiredItem
 
-		if err == nil &&
+		var required_discipline_name string
+		if choice.RequiredDiscipline != nil {
+			required_discipline_name = *choice.RequiredDiscipline
+		}
+
+		var required_item_name string
+		if choice.RequiredItem != nil {
+			required_item_name = *choice.RequiredItem
+		}
+
+		//fmt.Print(required_discipline_name)
+
+		if err == nil && //エラーじゃなく
+			choiceNum >= 1 && //1以上で
+			choiceNum <= len(node.Choices) && //選択肢数以下で
+			choice.RequiredDiscipline == nil && //必須ディシプリンなし
+			choice.RequiredItem == nil { //必須アイテムなし
+			gs.CurrentNodeID = node.Choices[choiceNum-1].NextNodeID
+			break
+		} else if err == nil &&
+			choiceNum >= 1 &&
+			choiceNum <= len(node.Choices) &&
+			//choice.RequiredDiscipline != nil &&
+			//choice.RequiredItem == nil &&
+			gs.Player.KaiDisciplines[required_discipline_name] {
+			gs.CurrentNodeID = node.Choices[choiceNum-1].NextNodeID
+			break
+		} else if err == nil &&
 			choiceNum >= 1 &&
 			choiceNum <= len(node.Choices) &&
 			choice.RequiredDiscipline == nil &&
-			choice.RequiredItem == nil {
+			choice.RequiredItem != nil &&
+			contains(gs.Player.Items, required_item_name) {
 			gs.CurrentNodeID = node.Choices[choiceNum-1].NextNodeID
 			break
 		} else {
