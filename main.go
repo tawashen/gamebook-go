@@ -167,6 +167,33 @@ func contains_int(slice []int, number int) bool {
 	return false
 }
 
+func keysByValue(m map[string]bool, value bool) []string {
+	var keys []string
+	for k, v := range m {
+		if v == value {
+			keys = append(keys, k)
+		}
+	}
+	return keys
+}
+
+func (gs *GameState) display_status() {
+	fmt.Println("--- ステータス ---")
+	fmt.Println("HP:", gs.Player.HP)
+	fmt.Println("CS:", gs.Player.CS)
+	fmt.Println("GOLD:", gs.Player.GOLD)
+	fmt.Println("MEAL:", gs.Player.MEAL)
+	map_strings := keysByValue(gs.Player.KaiDisciplines, true)
+	for _, discipline := range map_strings {
+		fmt.Printf("Kai Discipline: %s\n", discipline)
+	}
+	//fmt.Printf("Kai Disciplines:", gs.Player.KaiDisciplines)
+	fmt.Println("Weapon:", gs.Player.Weapon)
+	fmt.Println("Armor:", gs.Player.Armor)
+	fmt.Println("Items:", gs.Player.Items)
+	fmt.Println("--- ステータス ---")
+}
+
 // NewGameState は新しいGameStateを初期化する
 func NewGameState(config *GameConfig) *GameState {
 	nodeMap := make(map[string]Node) //ノードのマップを作成
@@ -179,7 +206,7 @@ func NewGameState(config *GameConfig) *GameState {
 			CS:   10,
 			GOLD: 100,
 			KaiDisciplines: map[string]bool{
-				"Kamouflage":     false,
+				"Kamouflage":     true,
 				"Hunting":        false,
 				"SixthSense":     true,
 				"Tracking":       false,
@@ -282,6 +309,11 @@ func (gs *GameState) handleStoryNode(node Node) {
 		input = strings.TrimSpace(input)
 		choiceNum, err := strconv.Atoi(input)
 
+		if err != nil || choiceNum < 1 || choiceNum > len(node.Choices) {
+			gs.display_status()
+			continue
+		}
+
 		choice := node.Choices[choiceNum-1]
 		//required_discipline_name := *choice.RequiredDiscipline
 		//required_item_name := *choice.RequiredItem
@@ -322,7 +354,8 @@ func (gs *GameState) handleStoryNode(node Node) {
 			gs.CurrentNodeID = node.Choices[choiceNum-1].NextNodeID
 			break
 		} else {
-			fmt.Println("無効な入力です。もう一度入力してください。")
+			//fmt.Println("無効な入力です。もう一度入力してください。")
+			gs.display_status()
 		}
 	}
 }
