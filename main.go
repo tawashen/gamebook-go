@@ -51,6 +51,7 @@ type Enemy struct {
 
 // Outcome は遭遇戦の結果と次に進むノードを表す構造体
 type Outcome struct {
+	Description   string `toml:"description,omitempty"`
 	Condition     string `toml:"condition,omitempty"` // "combat_won", "combat_lost" など
 	Condition_int []int  `toml:"condition_int,omitempty"`
 	NextNodeID    string `toml:"next_node_id"`
@@ -148,9 +149,18 @@ func normalizeCombatRatio(ratio int) int {
 	return ratio // それ以外はそのまま
 }
 
-func contains(slice []string, str string) bool {
+func contains_str(slice []string, str string) bool {
 	for _, s := range slice {
 		if s == str {
+			return true
+		}
+	}
+	return false
+}
+
+func contains_int(slice []int, number int) bool {
+	for _, i := range slice {
+		if i == number {
 			return true
 		}
 	}
@@ -230,12 +240,27 @@ func (gs *GameState) handleRandomNode(node Node) {
 
 	fmt.Printf("RandomNumberは%dです\n", randomNumber)
 
-	fmt.Println("選択肢:")
-	for i, choice := range node.Choices {
+	fmt.Println("\n選択肢:")
+	for i, choice := range node.Outcomes {
 		fmt.Printf("%d. %s\n", i+1, choice.Description)
-
 	}
 
+	for {
+		fmt.Print("選択してください (番号): ")
+		input, _ := gs.Reader.ReadString('\n')
+		input = strings.TrimSpace(input)
+		choiceNum, err := strconv.Atoi(input)
+
+		outcome := node.Outcomes[choiceNum-1]
+
+		if err == nil &&
+			contains_int(outcome.Condition_int, randomNumber) {
+			gs.CurrentNodeID = outcome.NextNodeID
+			break //RunLoopへ戻る
+		} else {
+			fmt.Println("条件を満たしていません。")
+		}
+	}
 }
 
 // handleStoryNode はストーリーノードの処理
@@ -293,7 +318,7 @@ func (gs *GameState) handleStoryNode(node Node) {
 			choiceNum <= len(node.Choices) &&
 			choice.RequiredDiscipline == nil &&
 			choice.RequiredItem != nil &&
-			contains(gs.Player.Items, required_item_name) {
+			contains_str(gs.Player.Items, required_item_name) {
 			gs.CurrentNodeID = node.Choices[choiceNum-1].NextNodeID
 			break
 		} else {

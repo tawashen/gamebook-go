@@ -46,9 +46,11 @@ id = "3"
 type = "random_roll"
 text = "1-5なら6へ　6-0なら7へ"
     [[nodes.outcomes]]
+    description = "1-5なので6へ"
     condition_int = [1,2,3,4,5]
     next_node_id = "6"
     [[nodes.outcomes]]
+    description = "6-0なので7へ"
     condition_int = [6,7,8,9,0]
     next_node_id = "7"
 
