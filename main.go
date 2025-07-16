@@ -182,7 +182,7 @@ func NewGameState(config *GameConfig) *GameState {
 			},
 			Weapon: []string{"Sword"},
 			Armor:  []string{"Leather"},
-			Items:  []string{"Meal"},
+			Items:  []string{"Meal", "SilverKey"},
 		},
 
 		CurrentNodeID: config.Nodes[0].ID, // 最初のノードから開始

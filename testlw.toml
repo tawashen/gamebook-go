@@ -13,7 +13,7 @@ text = """
     [[nodes.choices]]
     description = "If you wish to take the right path into the wood, turn to 3."
     next_node_id = "3"
-    required_item = "Silver Key"
+    required_item = "SilverKey"
 
     [[nodes.choices]]
     description = "If you wish to follow the left track, turn to 4."
