@@ -109,7 +109,7 @@ func init() {
 
 // --- ゲームロジック ---
 
-// GameState は現在のゲームの状態を保持する
+// GameState は現在のゲームの状態を保持する　以前のもの
 type GameState struct {
 	Player        *Player
 	CurrentNodeID string
