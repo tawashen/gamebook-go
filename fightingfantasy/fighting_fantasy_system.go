@@ -6,6 +6,8 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"gamebook-go/game"
 )
 
 // FightingFantasySystem はFighting Fantasyゲームブックのルールを実装
@@ -21,13 +23,13 @@ func NewFightingFantasySystem() *FightingFantasySystem {
 }
 
 // Initialize はFightingFantasySystemを初期化
-func (ff *FightingFantasySystem) Initialize(config *GameConfig) error {
+func (ff *FightingFantasySystem) Initialize(config *game.GameConfig) error {
 	fmt.Println("Fighting Fantasy initialized successfully.")
 	return nil
 }
 
 // HandleNode はノードタイプに応じて処理
-func (ff *FightingFantasySystem) HandleNode(gs *GameState, node Node) error {
+func (ff *FightingFantasySystem) HandleNode(gs *game.GameState, node game.Node) error {
 	fmt.Println("\n---")
 	fmt.Println(node.Text)
 	fmt.Println("---")
@@ -47,7 +49,7 @@ func (ff *FightingFantasySystem) HandleNode(gs *GameState, node Node) error {
 }
 
 // UpdatePlayer はプレイヤーの状態を更新
-func (ff *FightingFantasySystem) UpdatePlayer(gs *GameState, action string) error {
+func (ff *FightingFantasySystem) UpdatePlayer(gs *game.GameState, action string) error {
 	if action == "eat_meal" && contains(gs.Player.Inventory, "Meal") {
 		gs.Player.Stats["STAMINA"] += 4
 		gs.Player.Inventory = remove(gs.Player.Inventory, "Meal")
@@ -57,7 +59,7 @@ func (ff *FightingFantasySystem) UpdatePlayer(gs *GameState, action string) erro
 }
 
 // handleStoryNode はストーリーノードを処理
-func (ff *FightingFantasySystem) handleStoryNode(gs *GameState, node Node) error {
+func (ff *FightingFantasySystem) handleStoryNode(gs *game.GameState, node game.Node) error {
 	if len(node.Choices) == 0 {
 		gs.CurrentNodeID = "game_over"
 		return fmt.Errorf("no choices available")
@@ -74,7 +76,7 @@ func (ff *FightingFantasySystem) handleStoryNode(gs *GameState, node Node) error
 		input = strings.TrimSpace(input)
 		choiceNum, err := strconv.Atoi(input)
 		if err != nil || choiceNum < 1 || choiceNum > len(node.Choices) {
-			gs.display_status()
+			//s.display_status()
 			continue
 		}
 
@@ -94,14 +96,14 @@ func (ff *FightingFantasySystem) handleStoryNode(gs *GameState, node Node) error
 			gs.CurrentNodeID = choice.NextNodeID
 			break
 		} else {
-			gs.display_status()
+			//.display_status()
 		}
 	}
 	return nil
 }
 
 // handleEncounterNode は戦闘ノードを処理
-func (ff *FightingFantasySystem) handleEncounterNode(gs *GameState, node Node) error {
+func (ff *FightingFantasySystem) handleEncounterNode(gs *game.GameState, node game.Node) error {
 	fmt.Println("\n--- エンカウント！ ---")
 	for _, enemy := range node.Enemies {
 		for {
@@ -148,7 +150,7 @@ func (ff *FightingFantasySystem) handleEncounterNode(gs *GameState, node Node) e
 }
 
 // handleLuckTestNode はLuckテストノードを処理
-func (ff *FightingFantasySystem) handleLuckTestNode(gs *GameState, node Node) error {
+func (ff *FightingFantasySystem) handleLuckTestNode(gs *game.GameState, node game.Node) error {
 	roll := ff.Rand.Intn(6) + ff.Rand.Intn(6)
 	fmt.Printf("Luckテスト: 2D6 = %d (LUCK以下で成功: %d)\n", roll, gs.Player.Stats["LUCK"])
 

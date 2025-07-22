@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"time"
 
-	"path/to/your/project/game"
+	"gamebook-go/game"
 
 	"github.com/BurntSushi/toml"
 )
